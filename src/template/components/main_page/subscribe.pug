@@ -1,0 +1,38 @@
+//- Variable for subscribe
+
+-
+  var hintText = "МОЗ обирає для вас найкорисніші новини, пов'язані з найголовнішим у житті - здоров'ям. Тож будьте завжди в курсі важливих новин!"
+ 
+mixin subscribe()
+  .subscribe__wrapper.bg_white-noise-to-dark-blue
+    .container
+      div(class="popup subscribe__popup" data-popup-id="subscribe" tabindex="-1" role="dialog")
+        div(class="popup__container subscribe__popup-container bg_white-noise-to-dark-blue")
+          div(class="popup__close subscribe__popup-close-icon")
+            span
+            span
+          div(class="popup__content subscribe__popup-content")
+            div(class="popup__title subscribe__popup-title h4 font_black") Дякуємо!
+            div(class="popup__title subscribe__popup-desc regular font_black") Підписка на новини успішно оформлена! Приємного дня!
+            button(class="btn subscribe__popup-close bg_yellow-to-black bg_contrast_yellow-to-white h5 font_black-to-white font_upper") Закрити
+              
+      .subscribe__flex-wrapper
+        .subscribe__email
+          .subscribe__email-bg-text.font_upper.font_white-to-light-blue Email
+          .subscribe__email-content
+            h5.subscribe__email-heading.h5.font_black.font_upper Підписка на новини
+            .subscribe__hint.bg_yellow-to-black.bg_contrast_yellow-to-white
+              i.subscribe__hint-icon.fill_black-to-white
+                +svg('question')
+            .subscribe__hint-popup.bg_white
+              .subscribe__hint-desc.bg_white-to-dark-blue
+                +onlineFormItem(false, hintText)
+              .subscribe__hint-close
+                i.subscribe__hint-close-icon.fill_black
+                  +svg('close')
+        form(class="subscribe__form" action="" method="" novalidate)
+          input(class="subscribe__form-input font_gray regular bg_white-to-light-blue" type="email" placeholder="Введіть Ваш Email")
+          button(class="btn subscribe__form-btn bg_yellow-to-black bg_contrast_yellow-to-white h5 font_black-to-white font_upper" type="submit" data-popup-target="subscribe")
+            span Підписатись
+            i.subscribe__form-btn-icon.fill_white
+              +svg('email')

@@ -1,0 +1,48 @@
+include ../partials/variables
+include ../partials/mixins
+
+doctype html
+html(lang='ru')
+
+    block variables
+        - var title = defaultPageTitle;
+
+    block head
+        head
+            meta(name='format-detection', content='telephone=no')
+            meta(charset='utf-8')
+            meta(http-equiv='X-UA-Compatible', content='IE=edge')
+            meta(name='viewport', content='width=device-width, initial-scale=1.0')
+            title= title
+            link(href='static/css/index.css', rel='stylesheet')
+            link(rel='icon', href='static/moz_favicon.png')
+
+    block body
+        body
+
+            // SVG
+            block svg
+                div.svg-container(style="position: absolute; width: 0; height: 0; overflow: hidden;")
+                    include ../partials/sprite.svg
+                    include ../partials/sprite-secondary.pug
+
+            // picture element HTML5 shiv
+            block inlineScripts
+                script.
+                    document.createElement('picture');
+
+            // Header
+            block header
+                +header()
+
+            // Main content
+            block main
+                main
+
+            // Footer
+            block footer
+                +footer()
+
+            // Scripts
+            block scripts
+                script(src='static/js/index.js')

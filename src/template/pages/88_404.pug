@@ -1,0 +1,20 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    
+block main
+  main.main(class="bg_white-to-light-blue" data-page='404')
+    #search__wrapper
+      +search()
+    .container
+      ._404
+        ._404__bg-text 404
+        ._404__desc
+          h2._404__title.h2.font_black.font_upper 404 помилка
+          h4._404__text.h4.font_black
+            | Цієї сторінки вже не існує
+            br
+            | Скоріше за все, ви перейшли за неправильним посиланням
+          a._404__btn.h5.font_upper.font_black-to-white.bg_yellow-to-black.bg_contrast_yellow-to-white(href="#") Перейти на головну

@@ -1,0 +1,168 @@
+.pagination {
+  margin: 0 0 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  a, span {
+    font-size: 14px;
+    color: $gray-dark;
+    transition: color .3s ease;
+    will-change: color;
+  }
+  span {
+    color: $blue-light;
+    transition: 0.3s;
+  }
+  li {
+    height: 16px;
+    font-size: 14px;
+    font-family: $AkrobatSemiBold;
+    position: relative;
+    &.pagination__dots.left {
+      padding-left: 15px;
+      &:before{
+        display: none;
+      }
+    }
+    &.pagination__dots.right {
+      padding-right: 15px;
+      &:before{
+        display: none;
+      }
+    }
+    &:not(.pagination__active) + .pagination__dots {
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 10px;
+        background-color: $white-dark2;
+        margin: 0 17px;
+      }
+    }
+    &:nth-child(2).pagination__active::before {
+      margin-left: 0!important;
+    }
+    &:nth-child(6) {
+      &.pagination__active {
+        &::after {
+          content: '';
+          display: inline-block;
+          width: 10px;
+          height: 1px;
+          background-color: $blue-light;
+          margin: 4px 0 4px 13px!important;
+        }
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 10px!important;
+          height: 1px!important;
+          background-color: $blue-light;
+          margin: 4px 13px!important;
+        }
+      }
+      &:not(.pagination__dots)::after {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 10px;
+        background-color: $white-dark2;
+        margin: 0 0 0 17px;
+      }
+    }
+    &:not(.pagination__arrow):not(.pagination__dots){
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 10px;
+        background-color: $white-dark2;
+        margin: 0 17px;
+      }
+    }
+  }
+  &__arrow {
+    &_prev {
+      a {
+        padding-right: 20px;
+      }
+      .icon {
+        transform: rotate(90deg);
+        transition: 0.3s;
+      }
+    }
+    &_next {
+      a {
+        margin-left: 20px;
+      }
+      .icon {
+        transform: rotate(-90deg);
+        transition: 0.3s;
+      }
+    }
+    &_disabled {
+      a {
+        cursor: default;
+      }
+      .icon{
+        fill: $white-dark2!important;
+      }
+    }
+    .icon {
+      width: 10px;
+      pointer-events: none;
+      // fill: $blue-light;
+    }
+  }
+  &__active {
+    a, span {
+      color: $blue-light!important;
+    }
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 10px!important;
+      height: 1px!important;
+      background-color: $blue-light!important;
+      margin: 4px 13px!important;
+    }
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 10px!important;
+      height: 1px!important;
+      background-color: $blue-light!important;
+      margin: 4px 13px!important;
+    }
+    & + li {
+      &::before {
+        display: none!important;
+      }
+    }
+  }
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__only-tab {
+    display: none;
+  }
+  @include respond-to($tam) {
+    &__only-tab {
+      display: inline-flex;
+    }
+  }
+  @include respond-to($tab) {
+    &__wrapper {
+      justify-content: flex-end;
+    }
+  }
+  @include respond-to($mob) {
+    margin: 0 0 35px;
+    &__wrapper {
+      justify-content: center;
+    }
+  }
+}

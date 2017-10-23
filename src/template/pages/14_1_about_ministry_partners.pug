@@ -1,0 +1,93 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    var partnerItems = [
+      {
+        imgSrc: "static/img/partners_img1.jpg",
+        desc: "Університет медицини та лікарської діяльності у Вені"
+      },
+      {
+        imgSrc: "static/img/partners_img2.jpg",
+        desc: "Посольство Британії"
+      },
+      {
+        imgSrc: "static/img/partners_img1.jpg",
+        desc: "Університет медицини та лікарської діяльності у Вені"
+      },
+      {
+        imgSrc: "static/img/partners_img4.jpg",
+        desc: "Новини «Українські новини»"
+      },
+      {
+        imgSrc: "static/img/partners_img5.jpg",
+        desc: "Університет «Крок»"
+      },
+      {
+        imgSrc: "static/img/partners_img6.jpg",
+        desc: "Новини «CCTV News»"
+      },
+      {
+        imgSrc: "static/img/partners_img7.jpg",
+        desc: "Новини «Укр.нет»"
+      },
+      {
+        imgSrc: "static/img/partners_img1.jpg",
+        desc: "Університет медицини та лікарської діяльності у Вені"
+      },
+      {
+        imgSrc: "static/img/partners_img2.jpg",
+        desc: "Посольство Британії"
+      },
+      {
+        imgSrc: "static/img/partners_img1.jpg",
+        desc: "Університет медицини та лікарської діяльності у Вені"
+      },
+      {
+        imgSrc: "static/img/partners_img4.jpg",
+        desc: "Новини «Українські новини»"
+      },
+      {
+        imgSrc: "static/img/partners_img5.jpg",
+        desc: "Університет «Крок»"
+      },
+      {
+        imgSrc: "static/img/partners_img6.jpg",
+        desc: "Новини «CCTV News»"
+      },
+      {
+        imgSrc: "static/img/partners_img7.jpg",
+        desc: "Новини «Укр.нет»"
+      },
+      {
+        imgSrc: "static/img/partners_img1.jpg",
+        desc: "Університет медицини та лікарської діяльності у Вені"
+      }
+    ];
+    
+block main
+  main.main(class="bg_white-to-light-blue" data-page='about-ministry')
+    #search__wrapper
+      +search()
+    +disabilities()
+    .container
+      +breadrcrumbs(['Головна', 'Про міністерство'], 'Партнери')
+      h1.about__title.h2.font_upper.font_black Партнери
+      .about__row
+        .accordion__wrapper
+          +accordion(accordion, true)
+        .about__ministry.about__ministry-partners
+          .partners
+            each partner in partnerItems
+              .partners__item
+                a(href="#" class="partners__item-img-link" target="_blank")
+                  .h5.more-info.font_upper.font_white Детальніше
+                    span.more-info__stripe.bg_white
+                  .partners__item-img-overlay
+                  .partners__item-img-wrapper
+                    img(src=`${partner.imgSrc}` class="partners__item-img obj-fit")
+                .partners__item-desc
+                  p(class="partners__item-desc-text regular font_black")= partner.desc
+          +separateBorder()
+          +loadMore()

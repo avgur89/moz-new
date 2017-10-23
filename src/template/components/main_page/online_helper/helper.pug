@@ -1,0 +1,114 @@
+//- Variable for helper
+
+- 
+  var defaultLineHeight = '100';
+  var newsItems = [
+    {
+      imgSrc: 'static/img/news_img1.jpg',
+      links: [{ text: 'МОЗ 2017', href: '/link1' }],
+      desc: 'МОЗ та регіони визначили план роботи на січень 2017',
+      date: '14 січня'
+    },
+    {
+      imgSrc: 'static/img/news_img2.jpg',
+      links: [{ text: 'розробки', href: '/link2' }],
+      desc: 'МОЗ працює над розробкою нової форми',
+      date: '25 січня'
+    },
+    {
+      imgSrc: 'static/img/news_img3.jpg',
+      links: [{ text: 'ліки', href: '/link4' }, { text: 'громадяни', href: '/link5' }],
+      desc: 'Пенсіонерам видадуть безкоштовні ліки у найближчий час, пенсіонерам видадуть безкоштовні ліки у найближчий час',
+      date: '27 січня'
+    },
+    {
+      imgSrc: 'static/img/news_img4.jpg',
+      links: [{ text: 'медицина', href: '/link6' }],
+      desc: 'Нові українські ліки - прорив у медицині',
+      date: '1 лютого'
+    }
+  ];
+  var stages = [
+    {
+      index: 1,
+      question: 'Хто Ви за фахом',
+      answers: ['Акушер', 'Вірусолог', 'Онколог', 'Дерматолог', 'Лор', 'Терапевт', 'Імунолог', 'Хірург', 'Кардіолог', 'Офтальмолог']      
+    },
+    {
+      index: 2,
+      question: 'Що шукаете',
+      answers: ["Новини", "Інформація про ліки", "Інформація про міністерство", "Інформація про здоровья та інша корисна інформація" ]
+    },
+    {
+      index: 3,
+      question: 'Кого шукаете',
+      answers: ['Акушер', 'Вірусолог', 'Онколог', 'Дерматолог', 'Лор', 'Терапевт', 'Імунолог', 'Хірург', 'Кардіолог', 'Офтальмолог']
+    }
+  ];
+
+
+mixin helper()
+  .helper
+    .helper__desc
+      h2.helper__desc-heading.h2.font_upper.font_yellow-to-gray.font_contrast_yellow-to-black Інтерактивний 
+        span.font_black Помічник
+      p.regular.font_gray-dark Інтерактивний помічник - це інтерактивна система, яка розуміє, що вам потрібно і пропонує відповідні розділи. Лише дайте відповіді на кілька питань і ми запропонуємо Вам рішення:
+    
+    .helper__quiz
+      ul.helper__quiz-stages
+        each stage in stages
+          li(class="helper__quiz-stage bg_white-dark-to-dark-blue" data-stage-index=`stage-${stage.index}`)
+            .helper__quiz-stage-wrapper
+              div.helper__quiz-stage-answer.regular-small.font_gray-to-black
+            span(class="helper__quiz-stage-index font_gray-to-black" data-index=`stage-${stage.index}`)= stage.index
+        li(class="helper__quiz-stage bg_white-dark-to-dark-blue" data-stage-index='stage-final')
+          span(class="helper__quiz-stage-index font_gray-to-black" data-index='stage-final')= stages.length + 1
+            
+      each stage in stages
+        div(id=`stage-${stage.index}` data-qa-index=`stage-${stage.index}` class="helper__QA")
+          .helper__QA-flex
+            div(class="helper__QA-question h4 font_black")= stage.question + '?'
+            .helper__QA-answer-wrapper
+              .helper__dropdown
+                .helper__dropdown-title.bg_white-noise-to-dark-blue
+                    div(class="helper__dropdown-title-text regular font_gray-to-black helper__dropdown-open") Оберіть відповідь
+                    i.helper__dropdown-arrow.fill_gray
+                      +svg('arrow_small')
+                div.helper__dropdown-scroll-up.bg_white-noise-to-dark-blue
+                  i.helper__dropdown-scroll-up-arrow.fill_gray
+                    +svg('arrow_small')      
+                ul.helper__dropdown-list
+                  each answer in stage.answers
+                    li(class="helper__dropdown-item bg_white-noise-to-dark-blue")
+                      a(class="helper__dropdown-link regular font_gray-to-black" href="#")= answer
+                div.helper__dropdown-scroll-down.bg_white-noise-to-dark-blue
+                  i.helper__dropdown-scroll-down-arrow.fill_gray
+                    +svg('arrow_small')
+              .helper__QA-btn-wrapper
+                .helper__QA-next-wrapper
+                  button(class="helper__QA-next helper__QA-btn bg_yellow-to-black bg_contrast_yellow-to-white h5 font_black-to-white font_upper" disabled)
+                    span Далі
+                    i.helper__QA-next-icon.fill_white
+                      +svg('arrow_goto')
+                .helper__QA-prev-wrapper
+                  button(class="helper__QA-prev helper__QA-btn bg_white-to-light-blue h5 font_black font_upper") Назад
+    
+    .helper__render
+      .helper__render-row
+        h4.helper__render-heading.h4.font_black Можливо, Ви прийшли за останніми новинами:
+        ul.helper__render-list
+          each item in newsItems
+            li.helper__render-item
+              a(href="#" class="helper__render-img-link")
+                div.h5.more-info.font_upper.font_white Детальніше
+                  span.more-info__stripe.bg_white
+                .helper__render-img-overlay
+                  .helper__render-img-wrapper
+                    img(src=`${item.imgSrc}` class="helper__render-img obj-fit")
+              .menu-flex-wrapper(data-parent=".helper__render-item")       
+                ul.helper__render-links.menu-flex
+                  each link in item.links
+                    +links(link)
+              a(href="#" class="h4 helper__render-desc regular font_black dot" data-height=`${defaultLineHeight}`)= item.desc
+              span.helper__render-date.regular-small.font_gray-light= item.date 
+        a(href="#" class="helper__render-btn bg_yellow-to-black bg_contrast_yellow-to-white h5 font_black-to-white font_upper") Всі новини по темі

@@ -1,0 +1,19 @@
+.service {
+  // FORM STYLES
+  &__form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    &-wrapper {
+      padding: 0 0 42px 0;
+    }
+    &-input {
+      width: 100%;
+      padding: 5px 20px;
+      height: 45px;
+      line-height: 24px;
+      border: none;
+      font-style: italic;
+    }
+  }
+}

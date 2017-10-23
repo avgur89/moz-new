@@ -1,0 +1,74 @@
+.accordion__qa {
+  margin-bottom: 70px;
+  &-list {
+
+  }
+  &-item {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 40px;
+    transition: 0.3s;
+    cursor: pointer;
+    &-active {
+      background-color: $white-dark;
+      .accordion__qa-arrow-wrapper {
+        transform: rotate(-180deg);
+      }
+      .accordion__qa-arrow {
+        fill: $blue-light;
+      }
+    }
+    &-text {
+      line-height: 27px;
+    }
+  }
+  &-arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10px;
+    height: 6px;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+  &-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10px;
+    height: 6px;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+  &-panel {
+    display: none;
+    padding: 10px 40px 23px 40px;
+    p {
+      font-family: $HelveticaNeueCyrRoman;
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 5px;
+      color: $black;
+      letter-spacing: 0.05em;
+    }
+    a {
+      font-family: $HelveticaNeueCyrRoman;
+      font-size: 14px;
+      line-height: 24px;
+      color: $blue-light;
+      letter-spacing: 0.05em;
+    }
+  }
+}
+
+// MEDIA QUERIES FOR MOBILE
+@include respond-to($tam) {
+  margin-bottom: 45px;
+}

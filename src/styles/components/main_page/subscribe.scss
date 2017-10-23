@@ -1,0 +1,323 @@
+.subscribe {
+  &__wrapper {
+    background-color: $white-noise;
+    display: flex;
+    margin-bottom: 70px;
+  }
+
+  &__flex-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // EMAIL STYLES
+  &__email {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    min-height: 135px;
+    margin-right: 20px;
+    flex: 1 1 40%;
+    &-content {
+      position: relative;
+      z-index: 2;
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: baseline;
+    }
+    &-heading {
+      display: flex;
+      align-self: flex-start;
+      margin-right: 10px;
+      line-height: 34px;
+      font-size: 30px;
+      letter-spacing: 0;
+      //white-space: nowrap;
+    }
+    &-bg-text {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      font-family: $AkrobatBold;
+      letter-spacing: 0;
+      font-size: 200px;
+      line-height: 112px;
+      left: -12px;
+      letter-spacing: 12px;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      user-select: none;
+    }
+  }
+
+  // HINT STYLES
+  &__hint {
+    display: flex;
+    align-self: center;
+    position: relative;
+    top: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+    &-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 15px;
+      height: 15px;
+      svg {
+        width: 5px;
+        height: 8px;
+      }
+    }
+
+    &-popup {
+      display: none;
+      position: absolute;
+      z-index: 20;
+      width: 370px;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -141px;
+      margin-bottom: 20px;
+      box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.2);
+      &:after {
+        content: " ";
+        position: absolute;
+        top: 99%; /* At the bottom of the tooltip */
+        left: 50%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+      }
+    }
+    &-desc {
+      position: relative;
+      padding: 40px;
+      min-height: 175px;
+    }
+    &-close {
+      position: absolute;
+      z-index: 25;
+      top: 10px;
+      right: 10px;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+      &-icon {
+        transition: 0.3s;
+      }
+    }
+    &-active {
+      background-color: $blue-light;
+    }
+  }
+
+  // POPUP STYLES
+  &__popup {
+    &-container {
+      padding: 40px 70px;
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    &-title {
+      margin-bottom: 20px;
+    }
+    &-desc {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    &-close {
+      line-height: 30px;
+      padding: 8px 40px;
+      border: none;
+      outline: none;
+      transition: 0.3s;
+    }
+    &-close-icon {
+      display: none;
+    }
+  }
+
+  // FORM STYLES
+  &__form {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 1 60%;
+    &-input {
+      height: 52px;
+      flex: 1 1 auto;
+      border: none;
+      padding: 14px 30px 12px 30px;
+      border-bottom: 2px solid $white;
+      font-style: italic;
+      caret-color: $yellow;
+      transition: 0.3s;
+      &:focus {
+        border-bottom-color: $yellow;
+      }
+    }
+    &-btn {
+      position: relative;
+      width: 179px;
+      height: 52px;
+      line-height: 30px;
+      padding: 11px 50px;
+      border: none;
+      outline: none;
+      transition: 0.3s;
+
+      overflow: hidden;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.3s;
+      }
+      &-icon {
+        position: absolute;
+        top: -300%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.3s;
+        &::before {
+          content: '';
+          position: relative;
+          bottom: 7px;
+          right: 9px;
+          display: inline-block;
+          width: 10px;
+          height: 1px;
+          background-color: $white;
+        }
+        &::after {
+          content: '';
+          position: relative;
+          bottom: 7px;
+          left: 9px;
+          display: inline-block;
+          width: 10px;
+          height: 1px;
+          background-color: $white;
+        }
+        svg {
+          width: 18px;
+          height: 14px;
+        }
+      }
+    }
+  }
+}
+
+.invalid {
+  border: 2px solid $red;
+  padding: 12px 28px;
+  &::-webkit-input-placeholder {
+    color: $red;
+  }
+  &:focus {
+    border-bottom: 2px solid $red;
+    padding: 12px 28px;
+  }
+  color: $red;
+  caret-color: $red;
+}
+
+
+// MEDIA QUERIES FOR TABLET
+@include respond-to($tam) {
+  .subscribe {
+    &__wrapper {
+      margin-bottom: 45px;
+    }
+    &__popup {
+      &-content {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}
+
+// MEDIA QUERIES FOR MOBILE
+@include respond-to($mob) {
+  .subscribe {
+    &__flex-wrapper {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 40px;
+    }
+
+    // EMAIL STYLES
+    &__email {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 90px;
+      margin-right: 0;
+      flex: 1;
+      &-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+      }
+      &-heading {
+        margin-right: 20px;
+        font-size: 25px;
+      }
+      &-bg-text {
+        position: relative;
+        font-size: 100px;
+        line-height: 60px;
+        letter-spacing: 0;
+      }
+    }
+
+    // FORM STYLES
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      &-input {
+        flex: 1;
+        margin-bottom: 20px;
+        width: 100%;
+        font-size: 16px;
+      }
+    }
+
+    // HINT STYLES
+    &__hint {
+      top: 3px;
+      &-popup {
+        display: none;
+        width: 250px;
+        bottom: 100%;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5px;
+        white-space: normal;
+      }
+    }
+  }
+}

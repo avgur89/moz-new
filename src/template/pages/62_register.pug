@@ -1,0 +1,349 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    var registerUnits = ['Стан поставок ліків', 'Реєстр оптово-відпускних цін на медвироби', 'Реєстр медичної техніки', 'Реєстр оптово-відпускних цін на ЛЗ', 'Реєстр лікарських засобів', 'Природні лікувальні ресурси', 'Реєстр медико-технічної документації', 'Реєстр медичної техніки', 'Реєстр потужностей', 'Реєстр небезпечних факторів', 'Реєстр харчових та дієтичних добавок', 'Реєстр сан-епід. висновків', 'Реєстр дезинфекційних засобів', 'Реєстр косметичних та лікарських засобів', 'Формуляр ЛЗ', 'Нацперелік ліків', 'Перелік закладів ОЗ, яким надано право ств.  мед комісії з доглядку кандидатів у водії', 'Перелік клінічних випробувань', 'Ліцензії закладів ОЗ', 'Реєстр оптово-відпускних цін на вироби медичного призначення'];
+    
+block main
+  main.main(class="bg_white-to-light-blue" data-page='register')
+    #search__wrapper
+      +search()
+    +disabilities()
+    .container
+      +breadrcrumbs(['Головна', 'Реєстри'], 'Реєстр оптово-відпускних цін на ЛЗ')
+      h1.register__title.h2.font_upper.font_black Реєстри
+      .register__row
+        .accordion__wrapper
+          +accordion(accordion, true, "Реєстри")
+        .register
+          .register__form-wrapper
+            +blockTitle('Розширений пошук по реєстру оптово-відпускних цін на лікарські засоби')
+            form.register__form.bg_white-noise(method='get')
+              .register__form-group.has-error
+                label.register__form-label.regular.font_gray-dark.font_gray-dark-to-black(for="global-name") Міжнародна непатентована або загальноприйнята назва
+                div.form-label.help-block.regular.font_gray-dark.font_gray-dark-to-black Введіть
+                input.form-input.register__form-input.regular.font_gray-light.font_gray-light-to-black(type="text" name="global-name" id="global-name" placeholder="Глюкоза")
+              .register__form-group
+                label.register__form-label.regular.font_gray-dark.font_gray-dark-to-black(for="trade-name") Торговельна назва
+                div.form-label.help-block.regular.font_gray-dark.font_gray-dark-to-black Введіть
+                input.form-input.register__form-input.regular.font_gray-light.font_gray-light-to-black(type="text" name="trade-name" id="trade-name" placeholder="Глюкоза моногідрат")
+              .register__form-group
+                label.register__form-label.regular.font_gray-dark.font_gray-dark-to-black(for="output") Форма випуску
+                div.form-label.help-block.regular.font_gray-dark.font_gray-dark-to-black Введіть
+                input.form-input.register__form-input.regular.font_gray-light.font_gray-light-to-black(type="text" name="output" id="output" placeholder="Розчин для інфузій")
+              .register__form-producer
+                label.register__form-label.regular.font_gray-dark.font_gray-dark-to-black Виробник, країна
+                select.register__form-select.select
+                  option Введіть виробника
+                  option Україна
+                  option Німеччина
+                  option Англія
+                  option Сполучені Штати Америки
+                  option Португалія
+              .register__form-code
+                .register__form-group
+                  label.register__form-label.regular.font_gray-dark.font_gray-dark-to-black(for="code-atx") Код АТХ
+                  input.form-input.register__form-input.regular.font_gray-light.font_gray-light-to-black(type="text" name="code-atx" id="code-atx" placeholder="B05CX01")
+                .register__form-group
+                  label.register__form-label.regular.font_gray-dark.font_gray-dark-to-black(for="register-number") Реєстраційний номер
+                  input.form-input.register__form-input.regular.font_gray-light.font_gray-light-to-black(type="text" name="register-number" id="register-number" placeholder="UA/6411/01/01")
+              .register__form-terms
+                label.register__form-label.regular.font_gray-dark.font_gray-dark-to-black Реєстрація дійсна до [рррр-мм-дд] (з - по)
+                .register__form-terms-flex
+                  span.register__form-terms-text.regular.font_gray-dark.font_gray-dark-to-black З
+                  select.register__form-select.select
+                    option 0000
+                    option 2013
+                    option 2014
+                    option 2015
+                    option 2016
+                    option 2017
+                  select.register__form-select.select.register__form-select-month
+                    option березень
+                    option квітень
+                    option травень
+                    option червень
+                    option липень
+                    option серпень
+                  select.register__form-select.select
+                    option 00
+                    option 01
+                    option 02
+                    option 03
+                    option 04
+                    option 05
+                .register__form-terms-flex
+                  span.register__form-terms-text.regular.font_gray-dark.font_gray-dark-to-black по
+                  select.register__form-select.select
+                    option 0000
+                    option 2013
+                    option 2014
+                    option 2015
+                    option 2016
+                    option 2017
+                  select.register__form-select.select.register__form-select-month
+                    option березень
+                    option квітень
+                    option травень
+                    option червень
+                    option липень
+                    option серпень
+                  select.register__form-select.select
+                    option 00
+                    option 01
+                    option 02
+                    option 03
+                    option 04
+                    option 05
+              input.register__form-submit.form-input.h5.font_upper.font_black-to-white.bg_yellow-to-black.bg_contrast_yellow-to-white(type="submit" value="знайти")
+        
+          //- 60_MOZ_registers
+          .register__units-wrapper
+            +blockTitle('Всі реєстри')
+            .register__units.slider.slider_four_rows
+              each unit in registerUnits     
+                .register__unit
+                  .register__unit-cnt
+                    .register__unit-icon.bg_white-noise-to-black.bg_white-noise-to-white.font_white.font_white-to-light-blue
+                    a.register__unit-text.regular.font_black(href="#")= unit
+                    
+          //- 64_MOZ_online_forms
+          .register__editor
+            h3 Звернення громадян до керівництва Міністерства охорони здоров'я України
+            p Згідно із Наказом МОЗ  № 1247 від 18.11.2016. "Про затвердження Змін до Порядку особистого прийому громадян у Міністерстві охорони здоров’я України" (http://zakon3.rada.gov.ua/laws/show/z1602-16), попередній запис на особистий прийом до керівництва Міністерства охорони здоров’я України здійснюється завідувачем приймальні громадян на підставі письмової заяви, що подається не пізніше ніж за три дні до дня прийому особисто до приймальні громадян або за допомогою онлайн-реєстрації.
+            p Приймальня громадян не пізніше ніж за три дні до особистого прийому керівництвом МОЗ України повідомляють громадян про дату та час, на які запрошено цю особу, або про відмову в записі на особистий прийом за наявності підстав, визначених пунктом 8 цього Порядку, у телефонному режимі.
+            p
+              | Контакти приймальні громадян: 
+              br
+              | вул. Ярославська, 41 
+              br
+              | м. Київ, 04071 
+              br
+              | (044)425-05-26 
+              br
+            a(href="#!") зареєструватись на прийом
+            
+          //- 62_MOZ_regist2
+          .register__header-wrapper
+            +blockTitle('Реєстр оптово-відпускних цін на лікарські засоби')
+            .register__header
+              .register__header-form-wrapper
+                form(class="register__header-form" action="" method="")
+                  input(class="register__header-form-input font_gray regular bg_white-noise-to-dark-blue" type="text" placeholder="Пошук")
+                  +button("search-yellow-input")
+              .register__header-desc
+                a.register__header-desc-link.regular.font_blue-light-to-black.font_contrast_blue-light-to-black(href="#") Розширений пошук
+                .register__header-download
+                  a(href="static/img/Тимчасовий розподіл.doc" class="register__header-download-link" targer="_blank")
+                    i.register__header-download-icon.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                      +svg('document')
+                    .register__header-download-desc.regular.font_blue-light-to-black.font_contrast_blue-light-to-black Урок 12.doc (3.2 mb ),
+                  .register__header-download-date.regular.font_gray-to-black 4 вересня 2017
+          
+          //- 65_MOZ_appeals
+          .appeals__form-wrapper
+            form.appeals__form.bg_white-noise(method='get')
+              h4.h4.appeals__form-title.font_black Реєстрація на прийом громадян із керівництвом Міністерства охорони здоров'я України
+              span.appeals__form-info.regular-small.font_gray-to-black * - поля обовязкові для заповнення
+              .form-group.appeals__form-group.has-error
+                label.appeals__form-label.regular.font_gray-dark.font_gray-dark-to-black(for="firstname") Ім'я*
+                div.form-label.help-block.regular.font_gray-dark.font_gray-dark-to-black Введіть ім'я
+                input.form-input.appeals__form-input.regular.font_gray-light.font_gray-light-to-black(type="text" id="firstname" name="firstname" placeholder="Іван")
+              
+              .form-group.appeals__form-group
+                label.appeals__form-label.regular.font_gray-dark.font_gray-dark-to-black(for="surname") Прізвище*
+                div.form-label.help-block.regular.font_gray-dark.font_gray-dark-to-black Введіть прізвище
+                input.form-input.appeals__form-input.regular.font_gray-light.font_gray-light-to-black(type="text" id="surname" name="surname" placeholder="Козаченко")
+              
+              .form-group.appeals__form-group
+                label.appeals__form-label.regular.font_gray-dark.font_gray-dark-to-black(for="secondname") По-батькові*
+                div.form-label.help-block.regular.font_gray-dark.font_gray-dark-to-black Введіть по-батькові
+                input.form-input.appeals__form-input.regular.font_gray-light.font_gray-light-to-black(type="text" id="secondname" name="secondname" placeholder="Іванович")  
+              
+              .form-group.appeals__form-group
+                label.appeals__form-label.regular.font_gray-dark.font_gray-dark-to-black Рік народження*
+                select.appeals__form-select.select
+                  option 2017
+                  option 2016
+                  option 2015
+                  option 2014
+                  option 2013
+                  option 2012
+                  
+              .form-group.appeals__form-group
+                label.appeals__form-label.regular.font_gray-dark.font_gray-dark-to-black Адреса проживання
+                .appeals__form-group-flex
+                  .appeals__form-group-wrapper.appeals__form-group-address.has-error
+                    div.form-label.help-block.regular.font_gray-dark.font_gray-dark-to-black Введіть населений пункт
+                    input.form-input.appeals__form-input.regular.font_gray-light.font_gray-light-to-black(type="text" name="address" placeholder="Населений пункт*")
+                  .appeals__form-group-wrapper.appeals__form-group-street
+                    div.form-label.help-block.regular.font_gray-dark.font_gray-dark-to-black Введіть вулицю
+                    input.form-input.appeals__form-input.regular.font_gray-light.font_gray-light-to-black(type="text" name="street" placeholder="Вулиця*")
+                  .appeals__form-group-wrapper-num
+                    .appeals__form-group-wrapper
+                      div.form-label.help-block.regular.font_gray-dark.font_gray-dark-to-black Введіть № будинку
+                      input.form-input.appeals__form-input.regular.font_gray-light.font_gray-light-to-black(type="text" name="house-number" placeholder="№ будинку*")
+                    .appeals__form-group-wrapper
+                      div.form-label.help-block.regular.font_gray-dark.font_gray-dark-to-black Введіть № квартири
+                      input.form-input.appeals__form-input.regular.font_gray-light.font_gray-light-to-black(type="text" name="appartment-number" placeholder="№ квартири*")
+              
+              .form-group.appeals__form-group
+                label.appeals__form-label.regular.font_gray-dark.font_gray-dark-to-black(for="job-place") Місце роботи
+                input.form-input.appeals__form-input.regular.font_gray-light.font_gray-light-to-black(type="text" id="job-place" name="job-place" placeholder="Назва компанії")  
+              
+              .form-group.appeals__form-group
+                label.appeals__form-label.regular.font_gray-dark.font_gray-dark-to-black(for="job-position") Посада
+                input.form-input.appeals__form-input.regular.font_gray-light.font_gray-light-to-black(type="text" id="job-position" name="job-position" placeholder="Ваша посада")
+              
+              .appeals__form-group.appeals__form-checkbox-flex.appeals__form-group-checkbox
+                .appeals__form-checkbox-wrapper
+                  label.appeals__form-label.regular.font_gray-dark.font_gray-dark-to-black Категорія (соціальний стан) заявника*
+                  .appeals__form-checkbox.has-error
+                    label
+                      input(type="checkbox")
+                      span.regular.font_gray-dark-to-black Герой України
+                    label
+                      input(type="checkbox" checked)
+                      span.regular.font_gray-dark-to-black Учасник бойових дій
+                    label.checkbox__more
+                      input(type="checkbox")
+                      span.regular.font_gray-dark-to-black Людина с інвалідністю ( I групи, II групи)
+                      .form-group.has-error
+                        .form-label.help-block.regular.font_gray-dark.font_gray-dark-to-black Введiть текст
+                        input.form-input.checkbox__more-input.regular.font_gray-light.font_gray-light-to-black(type="text" placeholder="Інше")
+                    label
+                      input(type="checkbox")
+                      span.regular.font_gray-dark-to-black Потерпілий від аварії на ЧАЕС
+                    label
+                      input(type="checkbox")
+                      span.regular.font_gray-dark-to-black Не належу до жодної з категорій
+                .appeals__form-checkbox-wrapper
+                  label.appeals__form-label.regular.font_gray-dark.font_gray-dark-to-black Структура звернення*
+                  .appeals__form-checkbox
+                    label
+                      input(type="checkbox")
+                      span.regular.font_gray-dark-to-black Заява
+                    label
+                      input(type="checkbox" checked)
+                      span.regular.font_gray-dark-to-black Пропозиція
+                    label
+                      input(type="checkbox")
+                      span.regular.font_gray-dark-to-black Скарга
+                    label
+                      input(type="checkbox")
+                      span.regular.font_gray-dark-to-black Інформаційний запит
+                    label.checkbox__more
+                      input(type="checkbox")
+                      span.regular.font_gray-dark-to-black Інше _________________
+                      input.checkbox__more-input.regular.font_gray-light.font_gray-light-to-black(type="text" placeholder="Інше")
+                      
+              .appeals__form-group.appeals__form-group-checkbox
+                label.appeals__form-label.regular.font_gray-dark.font_gray-dark-to-black Причини звернення*
+                .appeals__form-checkbox
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black Консультація і лікування
+                  label
+                    input(type="checkbox" checked)
+                    span.regular.font_gray-dark-to-black Забезпеченння медичними препаратами
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black Забезпеченння медичним устаткуванням
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black З питань контрольно-експертної комісії
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black З питань лікарсько-консультаційної та медико-соціальної експертної комісій
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black Санаторно-курортне лікування
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black Кадрові питання
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black Пропозиція співпраці
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black З питань незадовільного медичного обслуговування
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black Інше __________________________________________
+                
+              .appeals__form-group.appeals__form-group-radio
+                label.appeals__form-label.regular.font_gray-dark.font_gray-dark-to-black Звернення до Міністерства охорони здоров'я*
+                .appeals__form-checkbox
+                  label
+                    input(type="radio" name="appeal" checked)
+                    span.regular.font_gray-dark-to-black Вперше
+                  label
+                    input(type="radio" name="appeal")
+                    span.regular.font_gray-dark-to-black Повторно
+                    
+              .form-group.appeals__form-group.appeals__form-group-textarea
+                label.appeals__form-label.regular.font_gray-dark.font_gray-dark-to-black(for="textarea-desc") Опис вашого звернення*
+                .form-label.regular.font_gray-dark.font_gray-dark-to-black Введіть опис вашого звернення
+                textarea.appeals__form-textarea.form-input.regular.font_gray-dark.font_gray-dark-to-black(id="textarea-desc" name="textarea-desc" placeholder="Опис")
+                  
+              .appeals__form-group
+                label.appeals__form-label.regular.font_gray-dark.font_gray-dark-to-black Перелік підтверджуючих документів
+                .appeals__form-upload-wrapper
+                  .appeals__form-upload-list
+                  .appeals__form-upload
+                    input.appeals__form-upload-input(type='file', multiple='', size='50')
+                    .appeals__form-download
+                      a(href="#!" class="appeals__form-download-link" targer="_blank")
+                        i.appeals__form-download-link-icon.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                          +svg('clip')
+                        .appeals__form-download-link-desc.regular.font_blue-light-to-black.font_contrast_blue-light-to-black Додати документи
+                        
+              .appeals__form-group
+                label.appeals__form-label.regular.font_gray-dark.font_gray-dark-to-black Я погоджуюсь на збір та обробку моїх персональних даних *
+                .appeals__form-checkbox
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black Так, я погоджуюсь
+              
+              .appeals__form-submit          
+                input.appeals__form-submit-btn.h5.font_upper.font_black-to-white.bg_yellow-to-black.bg_contrast_yellow-to-white(type="submit" value="Надіслати звернення")
+                +blockLink("Відмінити")
+                
+          //- 66_MOZ_request_access
+          .access__form-wrapper
+            form.access__form.bg_white-noise(method='get')
+              h4.h4.access__form-title.font_black Форма запиту на публічну інформацію, розпорядником якої є Міністерство охорони здоров'я України
+              .access__form-group.access__form-group-checkbox
+                label.access__form-label.regular.font_gray-dark.font_gray-dark-to-black Запитувач
+                .access__form-checkbox
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black Фізична особа
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black Юридична особа та об'єднання громадян, що не мають статусу юридичної особи 
+                    
+          .request__form-wrapper
+            +blockTitle("Запит на публічну інформацію")
+            form.request__form.bg_white-noise(method='get')
+              h5.request__form-title.regular.font_black Прошу відповідно до Закону України "Про доступ до публічної інформації" надати
+              .form-group.request__form-group.request__form-group-textarea
+                label.request__form-label.regular.font_gray-dark.font_gray-dark-to-black(for="textarea-request") Загальний опис інформації або вид, назва, реквізити чи зміст документу
+                textarea.textarea.request__form-textarea.form-input.regular.font_gray-dark.font_gray-dark-to-black(id="textarea-request" name="textarea-request" placeholder="Ваш опис")
+              .request__form-group.request__form-group-checkbox
+                label.request__form-label.regular.font_gray-dark.font_gray-dark-to-black Запитувану інформацію прошу надати
+                .request__form-checkbox
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black на поштову адресу
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black на електронну адресу юридичної особи
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black телефаксом
+                  label
+                    input(type="checkbox")
+                    span.regular.font_gray-dark-to-black за телефоном
+              input.request__form-submit-btn.h5.font_upper.font_black-to-white.bg_yellow-to-black.bg_contrast_yellow-to-white(type="submit" value="Надіслати запит")  

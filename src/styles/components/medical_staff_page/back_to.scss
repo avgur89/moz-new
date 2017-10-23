@@ -1,0 +1,35 @@
+.back-to {
+  display: inline-block;
+  margin-top: 33px;
+  &__flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__link {
+    line-height: 30px;
+    font-family: $AkrobatBold;
+    transition: 0.3s;
+  }
+  &__icon {
+    width: 20px;
+    height: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    transition: 0.3s;
+    &-svg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px;
+      height: 14px;
+      transition: 0.3s;
+    }
+  }
+}

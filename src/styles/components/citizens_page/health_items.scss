@@ -1,0 +1,294 @@
+.health__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 70px;
+}
+
+.health__items-no-img {
+  flex-direction: column;
+  .health__no-img {
+    margin-bottom: 70px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// HEALTH ITEM WITH IMAGE STYLES
+.health__item {
+  // flex: 1 1 50%;
+  width: 50%;
+  padding: 0 14px;
+  border-right: 1px solid $gray-medium;
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+    border-right: none;
+  }
+  &-img {
+    transition: 0.5s;
+  }
+  &-img-link {
+    display: block;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+  &-img-overlay {
+    position: relative;
+    transition: 0.3s;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: $blue-dark;
+      opacity: 0;
+      transition: 0.3s;
+    }
+  }
+  &-img-wrapper {
+    height: 160px;
+  }
+
+  &-icon-wrapper {
+    position: absolute;
+    z-index: 30;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-icon-svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 12px;
+  }
+
+  &-desc {
+    &-heading {
+      display: block;
+      margin-top: 8px;
+      margin-bottom: 5px;
+    }
+    &-text {
+      display: block;
+      margin-bottom: 11px;
+    }
+    &-date {
+      display: block;
+    }
+  }
+}
+
+// HEALTH SINGLE ITEM STYLES
+.health__single {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 70px;
+  &-img {
+    transition: 0.5s;
+  }
+  &-img-link {
+    flex: 1 1 270px;
+    position: relative;
+    z-index: 10;
+    margin-right: 30px;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+  &-img-overlay {
+    position: relative;
+    transition: 0.3s;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: $blue-dark;
+      opacity: 0;
+      transition: 0.3s;
+    }
+  }
+  &-img-wrapper {
+    height: 180px;
+  }
+  &-icon-wrapper {
+    position: absolute;
+    z-index: 30;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-icon-svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 12px;
+  }
+  &-desc {
+    flex: 1 1 50%;
+    &-heading {
+      display: block;
+      margin-top: 8px;
+      margin-bottom: 5px;
+    }
+    &-text {
+      display: block;
+      margin-bottom: 11px;
+    }
+    &-date {
+      display: block;
+    }
+  }
+}
+
+// HEALTH ITEM WITHOUT IMAGE STYLES
+.health__items-no-img {
+  margin-bottom: 70px;
+}
+
+.health__no-img {
+  position: relative;
+  &-wrapper {
+    margin-bottom: 70px;
+  }
+  &-desc {
+    padding-left: 27px;
+    &-heading {
+      display: block;
+      margin-top: 8px;
+      margin-bottom: 5px;
+    }
+    &-text {
+      display: block;
+      margin-bottom: 11px;
+    }
+    &-date {
+      display: block;
+    }
+  }
+
+  &-stripe-wrapper {
+    position: absolute;
+    left: 0;
+    top: 8px;
+  }
+  &-stripe {
+    display: block;
+    height: 39px;
+    width: 2px;
+  }
+}
+
+// MEDIA QUERIES FOR TABLET
+@include respond-to($tam) {
+  .health__item {
+    &-img-wrapper {
+      height: 133px;
+    }
+  }
+
+  .health__single {
+    &-img-wrapper {
+      height: 149px;
+    }
+  }
+
+  .health__items-no-img {
+    .health__no-img {
+      margin-bottom: 45px;
+    }
+  }
+
+  .health__single {
+    margin-bottom: 45px;
+  }
+
+  .health__items {
+    margin-bottom: 45px;
+  }
+
+  .health__items-no-img {
+    margin-bottom: 45px;
+  }
+
+  .health__no-img-wrapper {
+    margin-bottom: 45px;
+  }
+}
+
+// MEDIA QUERIES FOR MOBILE
+@include respond-to($mob) {
+  // HEALTH SINGLE ITEM STYLES
+  .health__single {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    &-img-link {
+      flex: 1 1 auto;
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 25px;
+    }
+    &-img-wrapper {
+      height: 202px;
+    }
+    &-desc {
+      flex: 1 1 auto;
+      width: 100%;
+    }
+  }
+
+  // HEALTH ITEMS STYLES
+  .health__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  // HEALTH ITEM WITH IMAGE STYLES
+  .health__item {
+    flex: 1 1 auto;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 35px;
+    border-right: none;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &-img-link {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+    &-img-wrapper {
+      height: 178px;
+    }
+  }
+}

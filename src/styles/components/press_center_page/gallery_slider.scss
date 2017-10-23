@@ -1,0 +1,130 @@
+// SLIDER SECTION
+.sl__gallery {
+  margin-bottom: 70px;
+  //visibility: hidden;
+  //.slick-initialized { visibility: visible; }
+}
+
+.sl__gallery-main {
+  position: relative;
+  display: none;
+  &.slick-initialized {
+    display: block;
+  }
+  &-item {
+    height: 380px;
+  }
+  .slick-prev {
+    left: 0;
+    width: 45px;
+    height: 45px;
+    background-color: $yellow;
+    z-index: 99;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+  }
+  .slick-next {
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background-color: $yellow;
+    transition: 0.3s;
+  }
+  .slick-next:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i0KHQu9C+0LlfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMiAyMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzIgMjI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojMTIxMzEzO308L3N0eWxlPjxwYXRoIGlkPSJBcnJvd19Gb3J3YXJkIiBjbGFzcz0ic3QwIiBkPSJNMzIsMTFjMC0wLjMtMC4xLTAuNS0wLjMtMC43bC05LjktMTBjLTAuNC0wLjQtMS0wLjQtMS40LDBjLTAuNCwwLjQtMC40LDEsMCwxLjRsOC4yLDguM0gxYy0wLjYsMC0xLDAuNS0xLDFzMC40LDEsMSwxaDI3LjZsLTguMiw4LjNjLTAuNCwwLjQtMC40LDEsMCwxLjRjMC40LDAuNCwxLDAuNCwxLjQsMGw5LjktMTBDMzEuOSwxMS41LDMyLDExLjMsMzIsMTF6Ii8+PC9zdmc+") no-repeat;
+    height: 14px;
+    width: 20px;
+    transition: 0.3s;
+  }
+  .slick-prev:before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 7px);
+    right: calc(50% - 10px);
+    backface-visibility: hidden;
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i0KHQu9C+0LlfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMiAyMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzIgMjI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojMTIxMzEzO308L3N0eWxlPjxwYXRoIGlkPSJBcnJvd19Gb3J3YXJkIiBjbGFzcz0ic3QwIiBkPSJNMzIsMTFjMC0wLjMtMC4xLTAuNS0wLjMtMC43bC05LjktMTBjLTAuNC0wLjQtMS0wLjQtMS40LDBjLTAuNCwwLjQtMC40LDEsMCwxLjRsOC4yLDguM0gxYy0wLjYsMC0xLDAuNS0xLDFzMC40LDEsMSwxaDI3LjZsLTguMiw4LjNjLTAuNCwwLjQtMC40LDEsMCwxLjRjMC40LDAuNCwxLDAuNCwxLjQsMGw5LjktMTBDMzEuOSwxMS41LDMyLDExLjMsMzIsMTF6Ii8+PC9zdmc+") no-repeat;
+    height: 14px;
+    width: 20px;
+    transform: rotate(-180deg);
+    transition: 0.3s;
+  }
+  &-img {
+
+  }
+}
+
+.sl__gallery-thumb {
+  margin: 8px 0 0;
+  text-align: center;
+  display: none;
+  &.slick-initialized {
+    display: block;
+  }
+  &-item {
+    opacity: 0.5;
+    margin: 0 3px;
+    padding: 2px;
+    border-radius: 2px;
+    outline: none;
+    text-align: center;
+    transition: background 0.3s;
+    width: 95px;
+    &.slick-current {
+      background-color: $yellow;
+      opacity: 1;
+    }
+  }
+  &-img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+}
+
+
+// MEDIA QUERIES FOR TABLET
+@include respond-to($tam) {
+  .sl__gallery {
+    margin-bottom: 45px;
+  }
+  .sl__gallery-main {
+    &-item {
+      height: 315px;
+    }
+  }
+  .sl__gallery-thumb {
+    &-item {
+      width: 85px;
+      &.slick-current {
+        background-color: $yellow;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// MEDIA QUERIES FOR MOBILE
+@include respond-to($mob) {
+  .sl__gallery-main {
+    &-item {
+      height: 203px;
+    }
+  }
+  .sl__gallery-thumb {
+    &-item {
+      width: 65px;
+      &.slick-current {
+        background-color: $yellow;
+        opacity: 1;
+      }
+    }
+  }
+}

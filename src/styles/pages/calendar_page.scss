@@ -1,0 +1,40 @@
+// Calendar page styles
+
+/* COMPONENTS */
+@import '../components/calendar_page/content/datepicker';
+@import '../components/calendar_page/content/fullcalendar';
+
+//[data-page='calendar'] {
+  .calendar__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 36px 0;
+    position: relative;
+  }
+  .calendar {
+    flex: 1 1 auto;
+    //width: calc(100% - 300px);
+    .border-wrapper {
+      padding: 0;
+    }
+  }
+  .calendar__title {
+    margin-top: 22px;
+  }
+
+  // MEDIA QUERIES FOR MOBILE
+  @include respond-to($mob) {
+    .calendar__row {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      padding: 36px 0;
+    }
+    .calendar {
+      flex: 1 1 auto;
+      width: 100%;
+    }
+  }
+//}

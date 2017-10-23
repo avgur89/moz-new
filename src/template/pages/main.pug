@@ -1,0 +1,24 @@
+extends ../extend/default
+
+block variables
+    -
+        var title = "Міністерство охорони здоров'я України";
+        var bannerContent = {
+            title: "Важливо",
+            desc:  "Моз: до липня українці мають знайти свого лікаря",
+            image: "static/img/banner.jpg"
+        };
+        
+block main
+    main.main(class="bg_white-to-light-blue" data-page='main')
+        +bannerMain(bannerContent)
+        +disabilities()
+        +online_helper()
+        +separateBorder('hide_on_mobile')
+        +prevention()
+        +separateBorder()
+        +articles()
+        +online_form()
+        +media()
+        +subscribe()
+        +news()

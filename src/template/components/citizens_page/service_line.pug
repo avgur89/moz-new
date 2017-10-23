@@ -1,0 +1,14 @@
+//- Variable first line block
+
+mixin service_line(obj)
+  .service__line
+    +blockTitle(obj.heading)
+    .service__line-cnt
+      .service__line-links
+        each link in obj.links
+          a.service__line-link.h5.font_upper.font_gray-to-black(href="#")= link 
+      .service__line-social
+        each icon in obj.social
+          a.service__line-social-icon(href='#')
+            i.service__line-social-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+              +svg(icon)

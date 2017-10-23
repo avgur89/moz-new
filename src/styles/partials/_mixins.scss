@@ -1,0 +1,79 @@
+// Grid mixins
+@mixin respond-to($media) {
+  @if $media == $mob {
+    @media only screen and (max-width: $mobile-max - 1) {
+      @content;
+    }
+  } @else if $media == $tab {
+    @media only screen and ( min-width: $mobile-max) and (max-width: $tablet-max - 1) {
+      @content;
+    }
+  } @else if $media == $tam {
+    @media only screen and ( max-width: $tablet-max - 1) {
+      @content;
+    }
+  } @else if $media == $tab-p {
+    @media only screen and (min-width: $mobile-max) and (max-width: $tablet-max - 1) and (orientation: portrait) {
+      @content;
+    }
+  }@else if $media == $tab-l {
+    @media only screen and (min-width: $mobile-max) and (max-width: $tablet-max - 1) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $media == $tad {
+    @media only screen and (min-width: $mobile-max)  {
+      @content;
+    }
+  }@else if $media == $desk {
+    @media only screen and (min-width: $tablet-max) {
+      @content;
+    }
+  }@else if $media == $mob-p {
+    @media only screen and (max-width: $mobile-max - 1) and (orientation: portrait)  {
+      @content;
+    }
+  }@else if $media == $mob-l {
+    @media only screen and (max-width: $mobile-max - 1) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $media == $desk-hd {
+    @media only screen and (min-width: $desktop-max) {
+      @content;
+    }
+  }
+
+}
+
+// Mixin for psevdo element
+@mixin mask-psevdo {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.3);
+}
+
+@mixin mask-psevdo-blue {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(41,56,75,0.4);
+}
+
+// Clearfix
+%clearfix {
+  *zoom: 1;
+  &:after {
+    display: table;
+    clear: both;
+    line-height: 0;
+    content: '';
+  }
+}

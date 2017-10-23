@@ -1,0 +1,19 @@
+//- Variable for popular categories
+
+-
+  var categoriestTitle = 'Популярні категорії';
+  var categoriesLinks = ['як знайти сімейного лікаря', 'вакцинація', 'міжнародні закупівлі', 'доступні ліки', 'профілактика', 'накази', 'реєстри', 'госпітальні округи']; 
+            
+mixin popular_categories(title, links)
+  - var links = links || categoriesLinks;
+  .categories.bg_white-noise-to-dark-blue
+    .categories__mobile
+      +blockTitle(title || categoriestTitle)
+      .categories__mobile-icon
+        i.categories__mobile-icon-svg.fill_black
+          +svg('arrow_small')
+    ul.categories__list
+      each link in links
+        li.categories__item
+          a(href="#" class="categories__link h5 font_upper font_gray-dark-to-black")= link
+          span.categories__stripe.bg_blue-light-to-black

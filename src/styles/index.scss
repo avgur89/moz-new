@@ -1,0 +1,45 @@
+/* PARTIALS */
+@import 'partials/_mixins';
+@import 'partials/_variables';
+@import 'partials/_fonts';
+@import 'partials/_helpers';
+@import 'partials/_keyframes';
+@import 'partials/_svg';
+
+/* LIBS */
+@import 'libs/vintage-reset-normalize';
+@import 'libs/slick';
+@import 'libs/selectric';
+@import '../../node_modules/vintage-popup/dist/vintage-popup.min';
+@import '../../node_modules/vintage-popup/dist/popup-default-theme.min';
+@import '../../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar';
+@import '//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css';
+@import '//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css';
+@import 'libs/gray.min';
+
+/* COMPONENTS */
+@import 'components/breadcrumbs';
+@import 'components/pagination';
+@import 'components/common';
+@import 'components/other';
+@import 'components/footer';
+@import 'components/header';
+@import 'components/ui-kit';
+@import 'components/no_img';
+@import 'components/3_column_layout';
+
+/* PAGES */
+@import 'pages/main_page';
+@import 'pages/about_ministry_page';
+@import 'pages/citizens_page';
+@import 'pages/education_page';
+@import 'pages/medical_staff_page';
+@import 'pages/press_center_page';
+@import 'pages/register_page';
+@import 'pages/contacts_page';
+@import 'pages/disabilities_page';
+@import 'pages/thank_you_page';
+@import 'pages/calendar_page';
+@import 'pages/search_result_page';
+@import 'pages/404_page';
+@import 'pages/sitemap';

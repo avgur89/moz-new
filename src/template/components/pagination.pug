@@ -1,0 +1,24 @@
+//- Pagination
+
+mixin pagination(className)
+  .pagination__wrapper
+    ul.pagination(class = className || '')
+      li.pagination__arrow.pagination__arrow_prev.pagination__arrow_disabled
+        a(href='#!')
+          span.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+            +svg('arrow_small')
+      li.pagination__active
+        a(href='#!') 1
+      li
+        a(href='#!') 2
+      li
+        a(href='#!') 3
+      li
+        a(href='#!') 4
+      li.pagination__dots
+        a(href='#!')
+          span.font_blue-light-to-black.font_contrast_blue-light-to-black ...
+      li.pagination__arrow.pagination__arrow_next
+        a(href='#!')
+          span.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+            +svg('arrow_small')

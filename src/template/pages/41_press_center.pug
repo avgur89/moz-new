@@ -1,0 +1,358 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    var hintText = "МОЗ обирає для вас найкорисніші новини, пов'язані з найголовнішим у житті - здоров'ям. Тож будьте завжди в курсі важливих новин!";
+    var pressLatest = [
+      {
+        links: [{text: "регіони"}],
+        desc: "МОЗ та регіони визначили план роботи на січень 2017",
+        date: "16:30"
+      },
+      {
+        links: [{text: "Уляна супрун"}, {text: "ліки"}],
+        desc: "МОЗ працює над розробкою нової національної політики щодо забезпечення ліками",
+        date: "15:45"
+      },
+      {
+        links: [{text: "здоров’я"}],
+        desc: "МОЗ та регіони визначили план роботи на січень 2017",
+        date: "31/12"
+      },
+      {
+        links: [{text: "рішення"}, {text: "план роботи"}],
+        desc: "МОЗ та регіони визначили план роботи на січень 2017",
+        date: "29/12",
+        icons: ["photo"]
+      },
+      {
+        links: [{text: "постанова"}, {text: "вся україна"}],
+        desc: "МОЗ та регіони визначили план роботи на січень 2017",
+        date: "16/12",
+        icons: ["photo", "video"]
+      }
+    ];
+    var previewList = [
+      {
+        date: "25",
+        month: "січ",
+        time: "20:00",
+        desc: "МОЗ України наполягає на запровадженні різного рівня фінансування для різних спеціальностей. МОЗ України наполягає на запровадженні різного рівня фінансування для різних спеціальностей."
+      },
+      {
+        date: "07",
+        month: "лют",
+        time: "19:30",
+        desc: "Адже"
+      },
+      {
+        date: "15",
+        month: "лют",
+        time: "15:40",
+        desc: "Для порівняння, Польща витрачає на підготовку лікаря майже у 4 рази більше, ніж на підготовку гуманітарія."
+      }
+    ];
+    var interviewList = [
+      {
+        imgSrc: "static/img/boss_img1.jpg",
+        heading: "Володимир Гройсман На сьогодні є кілька проектів закону про страхову медицину, у тому числі й Міністерства охорони здоров'я. Але їх не розглядають. Чому? З одного боку, є сумніви щодо того, чи на часі страхова медицина..",
+        desc: "На сьогодні є кілька проектів закону про страхову медицину, у тому числі й Міністерства охорони здоров'я. Але їх не розглядають. Чому? З одного боку, є сумніви щодо того, чи на часі страхова медицина.."
+      },
+      {
+        imgSrc: "static/img/boss_img2.jpg",
+        heading: "Петр Порошенко",
+        desc: "Скільки років незалежності України, стільки й ведуться розмови про нагальну потребу впровадження страхової медицини. Кращі фахівці в цій справі."
+      },
+      {
+        imgSrc: "static/img/boss_img3.jpg",
+        heading: "Уляна Супрун",
+        desc: "Застерігає фармацевтичні компанії в Україні від створення штучного дефіциту ліків та завищення цін на них після прийняття Урядом рішень щодо дерегуляції фармацевтичного ринку."
+      }
+    ];
+    var bulletinList = [
+      {
+        desc: "МОЗ України наполягає на запровадженні різного рівня фінансування для різних спеціальностей."
+      },
+      {
+        desc: "Адже"
+      },
+      {
+        desc: "Для порівняння, Польща витрачає на підготовку лікаря майже у 4 рази більше, ніж на підготовку гуманітарія."
+      }
+    ];
+    var statisticsList = [
+      {
+        heading: "Індекс здоров’я. Україна",
+        desc: "Рівень задоволеності роботою дільничних терапевтів у різних областях України помітно відрізняється: найвищий – у Миколаївській (83%), Чернігівській (83%) та Тернопільській (84%) областях, найнижчий рівень – у Кіровоградській області (47% задоволених). Це дані дослідження «Індекс здоров’я. Україна», презентація якого відбулась в Українському кризовому медіа-центрі"
+      },
+      {
+        heading: "Статистика захворювання на рак, 2016",
+        desc: "З 1991 року рівень смертності від раку знизився на 23 % – це більш ніж 1,7 мільйона врятованих життів до 2012 року. Щороку Американське онкологічне товариство оцінює орієнтовну кількість нових випадків захворювання та смертей від раку, які трапляться в Сполучених Штатах у поточному році, і збирає найактуальніші дані про захворювання на рак, смертність і виживання."
+      },
+      {
+        heading: "Захворюваність на кір: статистика у світі та Україні",
+        desc: "Підйом захворюваності на кір в Україні, як і в світі спостерігається кожні п'ять-шість років. За останніми даними Європейського регіонального бюро Всесвітньої організації охорони здоров'я з січня 2011 року у 29 країнах Європейського Регіону зареєстровано понад 30 тисяч випадків кору."
+      }
+    ];
+    var dataMapJSON = {
+      "markers" : [
+        {
+          lat: "50.447481",
+          lng: "30.540269"
+        }
+      ],
+      center: {lat: 50.447481, lng: 30.540269},
+      zoom: 13,
+      infoWindow: false
+    }
+    
+block main
+  main.main(class="bg_white-to-light-blue" data-page='press-center')
+    #search__wrapper
+      +search()
+    +disabilities()
+    .container
+      +breadrcrumbs(['Головна'], 'Прес-центр')
+      h1.press__title.h2.font_upper.font_black Прес-центр
+      .press__row
+        .accordion__wrapper
+          +accordion(accordion, true, "Новини")
+        .press
+          //- News section
+          .press__news-flex
+            .press__news-wrapper
+              .press__news
+                +blockTitle("Новини")
+                .press__news-main
+                  a(href="#" class="press__news-main-img-link")
+                    .h5.more-info.font_upper.font_white Детальніше
+                      span.more-info__stripe.bg_white
+                    .press__news-main-img-overlay
+                      .press__news-main-img-wrapper
+                        img(src="static/img/press_news_img1.jpg" class="press__news-main-img obj-fit")
+                    .press__news-main-icon.bg_white-noise
+                      i.press__news-main-svg.fill_gray
+                        +svg('video')
+                    .press__news-main-desc
+                      p(class="press__news-main-desc-text h4 font_white dot" data-height="180") Міністерство охорони здоров’я затвердило дорожню карту і принципи першого компоненту системи E-Health в Україні міністерство охорони здоров’я затвердило дорожню карту і принципи першого компоненту системи E-Health в Україні
+                      span.press__news-main-desc-date.regular-small.font_white 9 грудня
+                  .press__news-main-desc-mobile
+                    a(href="#" class="press__news-main-desc-mobile-text h4 font_black dot" data-height="180") Міністерство охорони здоров’я затвердило дорожню карту і принципи першого компоненту системи E-Health в Україні міністерство охорони здоров’я затвердило дорожню карту і принципи першого компоненту системи E-Health в Україні
+                    span.press__news-main-desc-mobile-date.regular-small.font_gray-light 9 грудня
+                    
+                .press__news-secondary
+                  .press__news-secondary-item
+                    a(href="#" class="press__news-secondary-img-link")
+                      .press__news-secondary-img-overlay
+                        .press__news-secondary-img-wrapper
+                          img(src="static/img/article_img2.jpg" class="press__news-secondary-img obj-fit")
+                      .press__news-secondary-icon.bg_white-noise
+                        i.press__news-secondary-svg.fill_gray
+                          +svg('photo')
+                    .press__news-secondary-desc
+                      .menu-flex-wrapper(data-parent=".press__news-secondary-desc")
+                        ul(class="menu-flex")
+                          +links({ text: "моз 2017" }, { text: "мiнiстрерство справ" }, { text: "уляна супрун" })
+                      a(href="#" class="press__news-secondary-desc-link regular font_black dot" data-height="115") МОЗ та регіони визначили план роботи на січень 2017
+                      span.press__news-secondary-desc-date.regular-small.font_gray-to-black 18 грудня
+                  .press__news-secondary-item
+                    a(href="#" class="press__news-secondary-img-link")
+                      .press__news-secondary-img-overlay
+                        .press__news-secondary-img-wrapper
+                          img(src="static/img/article_img3.jpg" class="press__news-secondary-img obj-fit")
+                      .press__news-secondary-icon.bg_white-noise
+                        i.press__news-secondary-svg.fill_gray
+                          +svg('video')
+                    .press__news-secondary-desc
+                      .menu-flex-wrapper(data-parent=".press__news-secondary-desc")
+                        ul(class="menu-flex")
+                          +links({ text: "моз 2017" }, { text: "мiнiстрерство справ" }, { text: "уляна супрун" })
+                      a(href="#" class="press__news-secondary-desc-link regular font_black dot" data-height="115") МОЗ працює над розробкою нової національної політики щодо забезпечення лікарськими засобами
+                      span.press__news-secondary-desc-date.regular-small.font_gray-to-black 9 грудня
+                    
+              .press__news-latest
+                +blockTitle("Останні новини")
+                .press__news-latest-list
+                  each item in pressLatest
+                    .press__news-latest-item
+                      .press__news-latest-desc
+                        .menu-flex-wrapper(data-parent=".press__news-latest-item")
+                          ul(class="menu-flex")
+                            each link in item.links
+                              +links(link)
+                        a(href="#" class="press__news-latest-desc-link regular font_black dot" data-height="115")= item.desc
+                      .press__news-latest-icons
+                        if item.icons
+                          .press__news-latest-icons-wrapper
+                            each icon in item.icons
+                              .press__news-latest-icon.bg_white-to-light-blue
+                                i.press__news-latest-svg.fill_gray-to-black
+                                  +svg(`${icon}`)
+                        span(class="regular press__news-latest-desc-date font_yellow-to-black font_contrast_yellow-to-black font_upper")= item.date
+              
+            +blockLink("всі новини")
+          
+          //- Subscribe section
+          .press__subscribe
+            .press__subscribe-wrapper.bg_white-noise
+              .popup.press__subscribe-popup(data-popup-id="press__subscribe" tabindex="-1" role="dialog")
+                .popup__container.press__subscribe-popup-container.bg_white-noise-to-dark-blue
+                  .popup__close.press__subscribe-popup-close-icon
+                    span
+                    span
+                  .popup__content.press__subscribe-popup-content
+                    .popup__title.press__subscribe-popup-title.h4.font_black Дякуємо!
+                    .popup__title.press__subscribe-popup-desc.regular.font_black Підписка на новини успішно оформлена! Приємного дня!
+                    button.btn.press__subscribe-popup-close.bg_yellow-to-black.bg_contrast_yellow-to-white.h5.font_black-to-white.font_upper Закрити
+              .container
+              .press__subscribe-flex
+                .press__subscribe-email
+                  .press__subscribe-email-bg-text.font_upper.font_white-to-light-blue Email
+                  .press__subscribe-email-cnt
+                    span.press__subscribe-email-heading.font_black.font_upper Підписка на новини
+                    .press__subscribe-hint-icon.bg_yellow-to-black.bg_contrast_yellow-to-white
+                      i.press__subscribe-hint-svg.fill_black-to-white
+                        +svg("question")
+                    .press__subscribe-hint-popup.bg_white
+                      .press__subscribe-hint-desc.bg_white-to-dark-blue
+                        +onlineFormItem(false, hintText)
+                        .press__subscribe-hint-close-icon
+                          i.press__subscribe-hint-close-svg.fill_black
+                            +svg("close")
+                form.press__subscribe-form(method="get")
+                  .form-group.press__subscribe-form-wrapper.required.has-error
+                    div.form-label.help-block.press__subscribe-form-label.regular Введіть Ваш Email
+                    input.form-input.press__subscribe-form-input.regular.font_gray-to-black.bg_white-to-light-blue(type="text" placeholder="Введіть Ваш Email")
+                  button.btn.press__subscribe-form-btn.bg_yellow-to-black.bg_contrast_yellow-to-white.h5.font_black-to-white.font_upper(type="submit" data-popup-target="press__subscribe")
+                    span.press__subscribe-form-btn-text Підписатись
+                    i.press__subscribe-form-btn-svg.fill_white
+                      +svg("email")
+          
+          //- Preview section
+          .press__previews
+            +headingTitle("Анонси")
+            +headingLink("Всі анонси")
+            .clearfix
+            .press__previews-list.slider
+              each preview in previewList
+                .press__previews-item
+                  a.press__previews-date.bg_white-noise(href="#")
+                    .press__previews-date-icon
+                      i.press__previews-date-svg.fill_white-to-blue-light
+                        +svg('logo_trezub')
+                    .press__previews-date-cnt
+                      span.press__previews-date-cnt-number.font_upper.font_yellow-to-black.font_contrast_yellow-to-black= preview.date
+                      span.press__previews-date-cnt-month.regular-small.font_black= preview.month
+                      span.press__previews-date-cnt-time.font_upper.regular-small.font_black= preview.time
+                  a.press__previews-desc.regular.font_black.dot(href="#" data-height="100")= preview.desc
+            
+          +separateBorder()
+          
+          //- Interview section
+          .press__interview
+            +headingTitle("Інтерв’ю")
+            +headingLink("Всі інтерв’ю")
+            .clearfix
+            .press__interview-list.slider
+              each interview in interviewList
+                .press__interview-item
+                  a(href="#" class="press__interview-img-link")
+                    .h5.more-info.font_upper.font_white Детальніше
+                      span.more-info__stripe.bg_white
+                    .press__interview-img-overlay
+                      .press__interview-img-wrapper
+                        img(src=`${interview.imgSrc}` class="press__interview-img obj-fit")
+                  a.press__interview-heading.h4.font_black.dot(href="#" data-height="100")= interview.heading
+                  a.press__interview-desc.regular.font_gray-dark-to-black.dot(href="#" data-height="120")= interview.desc
+            
+          +separateBorder()
+          
+          //- Bulletin section
+          .press__bulletin
+            +headingTitle("Інформаційні бюлетені")
+            +headingLink("Всі бюлетені")
+            .clearfix
+            .press__bulletin-list.slider
+              each bulletin in bulletinList
+                .press__bulletin-item
+                  a.press__bulletin-date.bg_white-noise(href="#")
+                    .press__bulletin-date-icon
+                      i.press__bulletin-date-svg.fill_white-to-blue-light
+                        +svg('logo_trezub')
+                  a.press__bulletin-desc.regular.font_black.dot(href="#" data-height="100")= bulletin.desc
+                  
+          +separateBorder()
+          
+          //- Statistics section
+          .press__statistics
+            +headingTitle("Статистика")
+            +headingLink("Вся статистика")
+            .clearfix
+            .press__statistics-list.slider.slider_two_rows
+              each statistics in statisticsList
+                .press__statistics-item
+                  .press__statistics-cnt
+                    h4.press__statistics-heading
+                      a.press__statistics-heading-link.h4.font_black.dot(href="#" data-height="100")= statistics.heading
+                        span.press__statistics-heading-stripe.bg_black
+                    a.press__statistics-desc.regular.font_black.dot(href="#" data-height="120")= statistics.desc
+                  .press__statistics-stripe-wrapper
+                    span.press__statistics-stripe.bg_blue-to-black
+                    span.press__statistics-stripe.bg_yellow-to-gray.bg_contrast_yellow-to-white
+                        
+          +separateBorder()
+          
+          //- Contacts section
+          .press__contacts
+            .press__contacts-desc
+              +blockTitle("Контакти прес-служби")
+              h4.press__contacts-desc-heading.h4.font_black МОЗ України
+              span.press__contacts-desc-address.regular.font_gray-dark-to-black вул. Грушевського 7, м.Кіїв, 01601
+              span.press__contacts-desc-phone.regular.font_gray-dark-to-black тел.:
+                a.press__contacts-desc-tel.regular.font_gray-dark-to-black(href="tel:0442536194") (044) 253-61-94
+              span.press__contacts-desc-fax.regular.font_gray-dark-to-black факс: (044) 253-40-17
+              a.press__contacts-desc-email.regular.font_gray-dark-to-black(href="press@moz.gov.ua") email: press@moz.gov.ua 
+            .press__contacts-map
+              .google-map(data-map=dataMapJSON)
+            
+          +separateBorder()
+          
+          +material()
+
+    //- Subscribe section
+    .press__subscribe
+      .press__subscribe-wrapper.bg_white-noise
+        .popup.press__subscribe-popup(data-popup-id="press__subscribe" tabindex="-1" role="dialog")
+          .popup__container.press__subscribe-popup-container.bg_white-noise-to-dark-blue
+            .popup__close.press__subscribe-popup-close-icon
+              span
+              span
+            .popup__content.press__subscribe-popup-content
+              .popup__title.press__subscribe-popup-title.h4.font_black Дякуємо!
+              .popup__title.press__subscribe-popup-desc.regular.font_black Підписка на новини успішно оформлена! Приємного дня!
+              button.btn.press__subscribe-popup-close.bg_yellow-to-black.bg_contrast_yellow-to-white.h5.font_black-to-white.font_upper Закрити
+        .container
+          .press__subscribe-flex
+            .press__subscribe-email
+              .press__subscribe-email-bg-text.font_upper.font_white-to-light-blue Email
+              .press__subscribe-email-cnt
+                span.press__subscribe-email-heading.font_black.font_upper Підписка на новини
+                .press__subscribe-hint-icon.bg_yellow-to-black.bg_contrast_yellow-to-white
+                  i.press__subscribe-hint-svg.fill_black-to-white
+                    +svg("question")
+                .press__subscribe-hint-popup.bg_white
+                  .press__subscribe-hint-desc.bg_white-to-dark-blue
+                    +onlineFormItem(false, hintText)
+                    .press__subscribe-hint-close-icon
+                      i.press__subscribe-hint-close-svg.fill_black
+                        +svg("close")
+            form.press__subscribe-form(method="get")
+              .form-group.press__subscribe-form-wrapper.required.has-error
+                div.form-label.help-block.press__subscribe-form-label.regular Введіть Ваш Email
+                input.form-input.press__subscribe-form-input.regular.font_gray-to-black.bg_white-to-light-blue(type="text" placeholder="Введіть Ваш Email")
+              button.btn.press__subscribe-form-btn.bg_yellow-to-black.bg_contrast_yellow-to-white.h5.font_black-to-white.font_upper(type="submit" data-popup-target="press__subscribe")
+                span.press__subscribe-form-btn-text Підписатись
+                i.press__subscribe-form-btn-svg.fill_white
+                  +svg("email")
+            

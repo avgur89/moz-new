@@ -1,0 +1,26 @@
+//- Variable for 3_column_layout
+
+-
+  var defaultLineHeight = '100';
+  
+mixin 3_column_layout(title, link, lineHeight, objects)
+ - var height = lineHeight || defaultLineHeight;
+  .container
+    .three_col__row
+      +headingTitle(title)
+      +headingLink(link)
+      div.clearfix
+      ul.three_col__list.slider
+        each item in objects
+          li.three_col__list-item
+            a(href="#" class="three_col__img-link")
+              .h5.more-info.font_upper.font_white Детальніше
+                span.more-info__stripe.bg_white
+              .three_col__img-overlay
+                .three_col__img-wrapper
+                  img(src=`${item.imgSrc}` class="three_col__img obj-fit")
+            .menu-flex-wrapper(data-parent=".three_col__list-item")
+              ul.links.menu-flex
+                each link in item.links
+                  +links(link)
+            a(href="#" class="three_col__desc regular font_black dot" data-height=`${height}`)= item.desc

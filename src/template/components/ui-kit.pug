@@ -1,0 +1,33 @@
+//-
+    Name variable:
+        search-blue-link - for search link - for example to open search block/popup (blue color)
+        search-blue-input - for search submit - for example to submit search form (blue color)
+        search-yellow-link - for search link - for example to open search block/popup (yellow color)
+        search-yellow-input - for search submit - for example to submit search form (yellow color)
+        switch-button - for switching app into black-white view
+
+mixin button(name)
+    case name
+        when "search-blue-link"
+            a(href="#" class="btn btn__search bg_white-noise-to-white")
+                i.btn__search-icon.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                    +svg('search')
+        when "search-blue-input"
+            .form-group.btn.btn__search.bg_white-noise
+                input(type="submit" class="form-control")
+                i.btn__search-icon.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                    +svg('search')
+        when "search-yellow-link"
+            a(href="#" class="btn btn__search bg_yellow-to-black bg_contrast_yellow-to-white")
+                i.btn__search-icon.fill_white.fill_white-to-black
+                    +svg('search')
+        when "search-yellow-input"
+            .form-group.btn.btn__search.bg_yellow-to-black.bg_contrast_yellow-to-white
+                input(type="submit" class="form-control")
+                i.btn__search-icon.fill_white.fill_white-to-black
+                    +svg('search')
+        when "switch-button"
+            a(href="#" class="btn btn__switch bg_white")
+                .h5.font_upper.font_black Для людей з вадами зору
+                i.btn__switch-icon.fill_black
+                    +svg('eye')

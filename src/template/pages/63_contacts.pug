@@ -1,0 +1,95 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    var dataMapJSON = {
+      "markers" : [
+        {
+          lat: "50.447481",
+          lng: "30.540269"
+        },
+        {
+          lat: "50.448670",
+          lng: "30.526950"
+        },
+        {
+          lat: "50.452906",
+          lng: "30.519269"
+        },
+        {
+          lat: "50.451311",
+          lng: "30.531038"
+        },
+        {
+          lat: "50.447769",
+          lng: "30.516093"
+        },
+        {
+          lat: "50.449928",
+          lng: "30.537465"
+        }
+      ],
+      center: {lat: 50.447481, lng: 30.540269},
+      zoom: 13,
+      infoWindow: true
+    }
+    
+block main
+  main.main(class="bg_white-to-light-blue" data-page='contacts')
+    #search__wrapper
+      +search()
+    +disabilities()
+    .container
+      +breadrcrumbs(['Головна'], 'Контакти')
+      h1.contacts__title.h2.font_upper.font_black Контакти
+      .contacts
+        .contacts__wrapper
+          //- Sidebar form
+          .contacts__form.bg_white-noise
+            h5.contacts__form-title.h5.font_upper.font_black Форма зворотнього зв'язку
+            .form-group.contacts__form-group.required
+              div.form-label.help-block.contacts__form-label.regular Введіть ім'я
+              input.form-input.contacts__form-input.font_gray-to-black(type='text' placeholder="Ваше ім'я")
+            .form-group.contacts__form-group.required.has-error
+              div.form-label.help-block.contacts__form-label.regular Введіть E-mail
+              input.form-input.contacts__form-input.font_gray-to-black(type='text' placeholder="Ваш E-mail")
+            .form-group.contacts__form-group.contacts__form-group-textarea.required.has-error
+              div.form-label.help-block.contacts__form-textarea-label.regular Введіть повідомлення
+              textarea.form-input.contacts__form-textarea.font_gray-to-black(placeholder="Ваше повідомлення")
+            button.contacts__form-btn.h5.font_upper.font_black-to-white.bg_yellow-to-black.bg_contrast_yellow-to-white(type="submit") Відправити
+          
+          .contacts__map
+            //- Map header section
+            .contacts__map-header
+              +blockTitle("Карта мед закладів")
+              .contacts__map-phone
+                span.contacts__map-phone-text.regular.font_gray-to-black Гаряча лінія МОЗ
+                a.contacts__map-phone-tel.h3.font_black(href="tel:0800801333") 0-800-801-333
+            //- Map selectric form
+            form.contacts__map-form(method='get')
+              .contacts__map-form-wrapper
+                select.select.contacts__map-form-select
+                  option Категорія
+                  option Категорія1
+                  option Категорія2
+                  option Категорія3
+                  option Категорія4
+                  option Категорія5
+                select.select.contacts__map-form-select
+                  option Регіон
+                  option Регіон1
+                  option Регіон2
+                  option Регіон3
+                  option Регіон4
+                  option Регіон5
+                select.select.contacts__map-form-select
+                  option Місто
+                  option Київ
+                  option Львів
+                  option Одеса
+                  option Харків
+                  option Тернопіль
+            //- Google map section
+            .contacts__map-wrapper
+              .google-map(data-map=dataMapJSON)

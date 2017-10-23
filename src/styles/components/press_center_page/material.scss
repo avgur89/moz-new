@@ -1,0 +1,215 @@
+.material {
+  margin-bottom: 70px;
+  min-height: 150px;
+  // POPUP STYLES
+  &__popup {
+    &-container {
+      padding: 40px 70px;
+      max-width: 570px;
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    &-title {
+      margin-bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
+    &-desc {
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+    &-close {
+      line-height: 30px;
+      padding: 8px 40px;
+      border: none;
+      outline: none;
+      transition: 0.3s;
+    }
+    &-close-icon {
+      display: none;
+    }
+  }
+}
+
+// USEFUL SECTION
+.useful {
+  padding: 30px 40px;
+  &__title {
+    margin-bottom: 13px;
+  }
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 40px;
+    line-height: 29px;
+    height: 45px;
+    transition: 0.3s;
+    &-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    &-yes {
+      margin-right: 10px;
+    }
+    &-no {
+      border: 1px solid #ebe9e9;
+    }
+  }
+}
+
+// USEFUL QA SECTION
+.useful__qa {
+  display: none;
+  padding: 30px 40px;
+  &-title {
+    margin-bottom: 3px;
+  }
+  &-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 40px;
+    line-height: 29px;
+    height: 45px;
+    transition: 0.3s;
+    &-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+  &-textarea {
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    height: 45px;
+    border: none;
+    caret-color: inherit;
+    resize: none;
+  }
+}
+
+// USEFUL SUBMIT SECTION
+.useful__submit {
+  display: none;
+  padding: 30px 40px;
+  &-title {
+    margin-bottom: 14px;
+  }
+  &-btn {
+    padding: 0 40px;
+    line-height: 29px;
+    outline: none;
+    border: none;
+    height: 45px;
+    transition: 0.3s;
+    &-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+  &-textarea {
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    height: 45px;
+    border: none;
+    caret-color: inherit;
+    resize: none;
+  }
+}
+
+// CHECKBOX STYLES
+.useful__qa-checkbox {
+  margin-bottom: 13px;
+  label {
+    display: block;
+    overflow: hidden;
+    user-select: none;
+    padding: 3px 3px 3px 0;
+  }
+
+  label > input[type=checkbox] {
+    position: absolute;
+    left: -100%;
+  }
+
+  label > input[type=checkbox] + span {
+    float: left;
+    padding-top: 2.52px;
+    cursor: pointer;
+  }
+
+  label > input[type=checkbox] + span:before {
+    content: '';
+    float: left;
+    width: 21px;
+    height: 21px;
+    margin-top: 0;
+    border: 1px solid #ebe9e9;
+    background-color: $white;
+  }
+
+  label > input[type=checkbox] + span:not(:empty) {
+    padding-left: 29px;
+  }
+
+  label > input[type=checkbox] + span:not(:empty):before {
+    margin-left: -29px;
+  }
+
+  label > input[type=checkbox]:disabled + span {
+    opacity: .35;
+    cursor: default;
+    pointer-events: none;
+    outline: none;
+  }
+
+  label:active > input[type=checkbox]:not(:disabled) + span:before,
+  label > input[type=checkbox]:focus + span:before {
+    //box-shadow: 0 0 3px $yellow;
+  }
+
+  label > input[type=checkbox]:checked + span:before {
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyNCAxOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjQgMTg7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBkPSJNMjEuNywwLjJjLTAuMy0wLjMtMC44LTAuMy0xLjEsMEw5LjQsMTEuNGMtMC4zLDAuMy0wLjgsMC4zLTEuMSwwbC00LjktNUMzLjMsNi4yLDMuMSw2LjEsMi45LDYuMWMtMC4yLDAtMC40LDAuMS0wLjUsMC4yTDAuMiw4LjNDMC4xLDguNSwwLDguNiwwLDguOEMwLDksMC4xLDkuMiwwLjIsOS40bDQuOSw1LjJjMC4zLDAuMywwLjgsMC44LDEuMSwxLjFsMi4xLDIuMWMwLjMsMC4zLDAuOCwwLjMsMS4xLDBMMjMuOCwzLjRjMC4zLTAuMywwLjMtMC44LDAtMS4xTDIxLjcsMC4yeiIvPjwvc3ZnPg==) center center no-repeat $yellow;
+    background-size: 65%;
+  }
+}
+
+// MEDIA QUERIES FOR TABLET
+@include respond-to($tam) {
+  .material {
+    margin-bottom: 45px;
+    // POPUP STYLES
+    &__popup {
+      &-container {
+        padding: 20px 70px 40px 70px;
+      }
+      &-content {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+// MEDIA QUERIES FOR MOBILE
+@include respond-to($mob) {
+  .material {
+    margin-bottom: 45px;
+    // POPUP STYLES
+    &__popup {
+      &-content {
+        margin-top: 0;
+      }
+    }
+  }
+}

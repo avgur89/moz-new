@@ -1,0 +1,93 @@
+//- Variable for media
+
+mixin media()
+  .container
+    .media
+      +blockTitle('Медіа')
+      .media__row
+        .media__photo-wrapper
+          .media__photo
+            ul.media__photo-list.slider
+              li.media__photo-item
+                a(href="#" class="media__photo-img-link")
+                  .media__photo-img-overlay
+                    .media__photo-img-wrapper
+                      img(src="static/img/media_img1.jpg" class="media__photo-img obj-fit")
+                  div.h5.more-info.font_upper.font_white Детальніше
+                    span.more-info__stripe.bg_white
+                .menu-flex-wrapper(data-parent=".media__photo-item")
+                  ul.links.menu-flex
+                    +links({ text: 'MOZ 2017', href: '/moz' }, { text: 'Мінфін', href: '/minfin' }, { text: 'Лікування', href: '/doc' })  
+                p.media__photo-text
+                  a(href="#" class="media__photo-text-link regular font_black dot" data-height="115") Спільна заява Міністерства охорони здоров’я та Міністерства фінансів щодо відправлення хворих на лікування за кордон
+              li.media__photo-item
+                a(href="#" class="media__photo-img-link")
+                  .media__photo-img-overlay
+                    .media__photo-img-wrapper
+                      img(src="static/img/media_img2.jpg" class="media__photo-img obj-fit")
+                  div.h5.more-info.font_upper.font_white Детальніше
+                    span.more-info__stripe.bg_white
+                .menu-flex-wrapper(data-parent=".media__photo-item")
+                  ul.links.menu-flex
+                    +links({ text: 'ліки', href: '/medicine' })  
+                p.media__photo-text
+                  a(href="#" class="media__photo-text-link regular font_black dot" data-height="115") Уряд вживає заходів щодо запезпечення доступності ліків для українців
+          .block__link-wrapper
+            +blockLink('Всі фотоматеріали')
+        .media__video-wrapper
+          .popup.media__video-popup(data-popup-id="video1" tabindex="-1" role="dialog")
+            .popup__container.media__video-popup-container
+              .popup__close.media__video-popup-close
+                span
+                span
+              .popup__content.media__video-popup-content
+                .popup__title
+                  p(class="media__video-popup-text regular font_black dot" data-height="100") Студенти Донецького та Луганського медичних вузів мають подати заяви на переведення (поновлення) на навчання у майбутньому році
+                .media__video-popup-iframe-wrapper
+                  iframe(class="media__video-popup-iframe" src="" allowfullscreen="true" frameborder="0")
+          
+          .popup.media__video-popup(data-popup-id="video2" tabindex="-1" role="dialog")
+            .popup__container.media__video-popup-container
+              .popup__close.media__video-popup-close
+                span
+                span
+              .popup__content.media__video-popup-content
+                .popup__title
+                  p(class="media__video-popup-text regular font_black dot" data-height="100") Звіт щодо відповідності процедури державної реєстрації лікарських засобів в Україні законодавству та стандартам ЄС
+                .media__video-popup-iframe-wrapper
+                  iframe(class="media__video-popup-iframe" src="" allowfullscreen="true" frameborder="0")
+                    
+          .media__video
+            ul.media__video-list.slider
+              li.media__video-item                     
+                a(class="media__video-img-link" data-popup-target="video1" data-url="//www.youtube.com/embed/3EPG1fsZ-qo")
+                  .media__video-img-overlay
+                    .media__video-img-wrapper
+                      img(src="static/img/media_video1.jpg" class="media__video-img obj-fit")
+                  span.media__video-svg.fill_white
+                    +svg('play')
+                  span.media__video-svg.fill_white
+                    +svg('play_hover')
+                .media__video-desc
+                  .menu-flex-wrapper(data-parent=".media__video-item")
+                    ul.links.menu-flex
+                      +links({ text: 'навчання', href: '/edu' }, { text: 'студенти', href: '/students' })
+                  p.media__video-text
+                    a(class="media__video-text-link regular font_black dot" data-height="100" data-popup-target="video1" data-url="//www.youtube.com/embed/3EPG1fsZ-qo") Студенти Донецького та Луганського медичних вузів мають подати заяви на переведення (поновлення) на навчання у майбутньому році
+              li.media__video-item
+                a(class="media__video-img-link" data-popup-target="video2" data-url="//www.youtube.com/embed/evaN55xnXG4")
+                  .media__video-img-overlay
+                    .media__video-img-wrapper
+                      img(src="static/img/media_video2.jpg" class="media__video-img obj-fit")
+                  span.media__video-svg.fill_white
+                    +svg('play')
+                  span.media__video-svg.fill_white
+                    +svg('play_hover')
+                .media__video-desc
+                  .menu-flex-wrapper(data-parent=".media__video-item")
+                    ul.links.menu-flex
+                      +links({ text: 'ліки', href: '/medicine' }, { text: 'реєстр', href: '/r' }, { text: 'єс', href: '/es' })
+                  p.media__video-text
+                    a(class="media__video-text-link regular font_black dot" data-popup-target="video2" data-url="//www.youtube.com/embed/evaN55xnXG4" data-height="100") Звіт щодо відповідності процедури державної реєстрації лікарських засобів в Україні законодавству та стандартам ЄС
+          .block__link-wrapper
+            +blockLink('Всі відеоматеріали')  

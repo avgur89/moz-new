@@ -1,0 +1,13 @@
+// Search result page styles
+
+/* COMPONENTS */
+@import '../components/search_result_page/content/search_result';
+
+//[data-page='search_result'] {
+  .search-result {
+    padding: 36px 0;
+    &__title {
+      margin-top: 22px;
+    }
+  }
+//}

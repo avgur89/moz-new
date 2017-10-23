@@ -1,0 +1,40 @@
+.breadcrumbs {
+  text-align: left;
+  padding: 20px 0 0;
+  overflow: hidden;
+  color: $grey;
+  text-overflow: ellipsis;
+  li {
+    display: inline;
+    letter-spacing: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &:not(.active) {
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 10px;
+        background-color: $white-dark2;
+        margin: 0 9px;
+      }
+    }
+  }
+  @include respond-to($mob) {
+    li:not(.breadcrumbs__visible) {
+      display: none;
+    }
+    &__visible-list {
+      li {
+        display: block!important;
+        &::after {
+          width: 10px!important;
+          height: 1px!important;
+          background-color: $yellow!important;
+          margin: 3px 8px!important;
+        }
+      }
+    }
+  }
+}

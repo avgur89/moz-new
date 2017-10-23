@@ -1,0 +1,164 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    var headLineHeight = '90';
+    var links = [
+      {
+        href: 'static/img/Тимчасовий розподіл.doc',
+        desc: 'Тимчасовий розподіл.doc (3.2mb)',
+        date: '4 вересня 2016'
+      },
+      {
+        href: 'img/Тимчасовий розподіл.doc',
+        desc: 'Повна інформація про керівництво з усіма департаментами та підрозділами.doc (1.5mb)',
+        date: '24 листопада 2016'
+      }
+    ];
+    var headPersons = [
+      {
+        imgSrc: "static/img/boss_img1.jpg",
+        name: "Супрун Уляна Надія",
+        position: "Виконуюча обов’язки міністра охорони здоров’я",
+        desc: "Формує пропозиції до державного замовлення на підготовку фахівців, наукових, науково-педагогічних кадрів, підвищення кваліфікації та перепідготовку кадрів у сфері охорони здоров'я на відповідні роки та розміщує затверджені обсяги в установленому законодавством порядку.",
+        phones: ['(044) 200-07-94']
+      },
+      {
+        imgSrc: "static/img/boss_img2.jpg",
+        name: "Ілик Роман Романович",
+        position: "Заступник міністра",
+        desc: "Народився 14 листопада 1963 року у місті Борислав Львівської області. Громадянин України. Одружений, має трьох доньок. У 1987 році закінчив Івано-Франківський державний медичний інститут за спеціальністю стоматологія. З 1995 року по 1999 рік навчався в аспірантурі академії. післядипломної освіти імені Шупика. Доктор медичних наук. Автор понад 50 наукових праць, 6 раціоналізаторських пропозицій, 2 патентів України про винаходи. Державний службовець І рангу.",
+        phones: ['(044) 200-07-83 ']
+      },
+      {
+        imgSrc: "static/img/boss_img3.jpg",
+        name: "Лінчевський Олександр Володимирович",
+        position: "Заступник міністра",
+        desc: "Курс легеневої хірургії рівень 1, Європейська школа кардіоторакальної хірургії (Бергамо, Італія). Тренінг з онкології, Laboratoires Perouse (Париж, Франція). Семінар європейської спілки кардіо-торакальної хірургії (Прага, Чехія). Зальцбурзький семінар травми та невідкладної хірургії (Зальцбург, Австрія).",
+        phones: ['(044) 200-08-16']
+      },
+      {
+        imgSrc: "static/img/boss_img4.jpg",
+        name: "Ковтонюк Павло Анатолійович",
+        position: "Заступник міністра",
+        desc: "2001 - 2008 рр. – навчався в Національному університеті 'Києво - Могилянська академія' (НаУКМА); 2016 р. курс Всесвітньої організації охорони здоров'я (ВООЗ) з фінансування охорони. здоров'я (Барселона, Іспанія); 2016 р. – завершив Флагманський курс з фінансування охорони здоров'я (Вашингтон, США); 2014 – 2015 рр. – навчання та викладання  в Літній школі з питань політики, економіки і управління в охороні здоров'я",
+        phones: ['(044) 200-07-92', '(044) 200-07-82']
+      },
+      {
+        imgSrc: "static/img/boss_img5.jpg",
+        name: "Сивак Оксана Василівна",
+        position: "Заступник міністра з питань європейської інтеграції",
+        desc: "11-річний досвід роботи в галузі клінічних дослідженнях і 17 років роботи як лікар акушер-гінеколог, протягом яких отримала значну клінічну практику у цій галузі. Фаховий керівник проектів і клінічних центрів в призначених країнах – до 500 лікарень в 19 країнах ЄС, США, Канади, Азіатсько-Тихоокеанського регіону і Австралії.",
+        phones: ['(044) 200-06-73']
+      },
+    ];
+    
+block main
+  main.main(class="bg_white-to-light-blue" data-page='about-ministry')
+    #search__wrapper
+      +search()
+    +disabilities()
+    .container
+      +breadrcrumbs(['Головна', 'Про міністерство'], 'Керiвництво')
+      h1.about__title.h2.font_upper.font_black Керiвництво
+      .about__row
+        .accordion__wrapper
+          +accordion(accordion, true)
+        .about__ministry
+          //- 45_anouncement heading
+          .announce__heading
+            .announce__heading-desc
+              a(href="#" class="announce__heading-desc-title h4 font_black dot" data-height="80") Медична реформа у 2017 році буде тепер відбуватися в чотири етапи
+              span.announce__heading-desc-date.regular.font_gray-to-black 28 лютого, 21:00
+              span.announce__heading-desc-address.regular.font_gray-to-black вул. Богдана Хмельніцького, 56, офіс 302, м. Київ, 01601
+              span.announce__heading-desc-phone.regular.font_gray-to-black тел.:
+                a(href="tel:+380448880432" class="announce__heading-desc-tel regular font_black") +380 (44) 888-04-32
+            .announce__date
+              .announce__date-icon
+                i.announce__date-svg.fill_white-noise
+                  +svg('logo_trezub')
+              .announce__date-cnt
+                span.announce__date-cnt-number.font_upper.font_yellow-to-black.font_contrast_yellow-to-black 28
+                span.announce__date-cnt-month.regular.font_black лютого
+                span.announce__date-cnt-time.font_black.h6 15:30
+          
+          ul.head
+            each person in headPersons
+              li.head__person
+                .head__person-img-wrapper
+                  img(class="head__person-img obj-fit" src=`${person.imgSrc}`)
+                .head__person-desc
+                  a(href="#" class="head__person-desc-name h4 font_black")= person.name
+                  p.head__person-desc-position.regular.font_gray-to-black= person.position
+                  p(data-height=`${headLineHeight}` class="head__person-desc-text regular font_black dot")= person.desc
+                  div.h5.head__person-desc-tel
+                    span.head__person-desc-tel-text.h5.font_gray-to-black.font_upper телефон приймальнi
+                    .head__person-desc-phones
+                      each phone in person.phones
+                        a(href=`tel:${phone}` class="h5 font_black head__person-desc-phone")= phone
+          .head__documents
+            +blockTitle("Документи")
+            +downloadLink(links)
+          
+          //- 44_anouncement page
+          .announce
+            a(href="#" class="announce__img-link")
+              .h5.more-info.font_upper.font_white Детальніше
+                span.more-info__stripe.bg_white
+              .announce__img-overlay
+                .announce__img-wrapper
+                  img(src="static/img/health_img1.jpg" class="announce__img obj-fit")
+              .announce__icon.bg_white-noise
+                i.announce__svg.fill_gray
+                  +svg('photo')
+            .announce__cnt
+              .announce__desc
+                .menu-flex-wrapper(data-parent=".announce__desc")
+                  ul.menu-flex
+                    +links({text: 'застереження'}, {text: 'моз'}, {text: 'зима'})
+                a(href="#" class="announce__desc-heading h4 font_black dot" data-height="80") МОЗ звертається до населення: остерігайтесь переохолоджень та обморожень МОЗ звертається до населення: остерігайтесь переохолоджень та обморожень
+                a(href="#" class="announce__desc-text regular font_gray-dark-to-black dot" data-height="80") У зв'язку зі зниженням добової температури Міністерство охорони здоров'я України звертається до населення з проханням дотримуватися порад медиків, як уникнути шкідливого впливу низьких температур на організм. У зв'язку зі зниженням добової температури Міністерство охорони здоров'я України звертається до населення з проханням дотримуватися порад медиків, як уникнути шкідливого впливу
+                .announce__desc-date
+                  span.announce__desc-date-text.font_gray-to-black.regular 22 лютого, 21:00
+                  .announce__desc-date-icon.bg_white-noise-to-light-blue
+                    i.announce__desc-date-svg.fill_gray-to-black
+                      +svg('photo')
+                  .announce__desc-date-icon.bg_white-noise-to-light-blue
+                    i.announce__desc-date-svg.fill_gray-to-black
+                      +svg('video')
+              .announce__date
+                .announce__date-icon
+                  i.announce__date-svg.fill_white-noise
+                    +svg('logo_trezub')
+                .announce__date-cnt
+                  span.announce__date-cnt-number.font_upper.font_yellow-to-black.font_contrast_yellow-to-black 8
+                  span.announce__date-cnt-month.regular.font_black березня
+                  span.announce__date-cnt-time.font_black.h6 21:00
+                  
+                                  
+          //- 44_anouncement no img
+          .announce__no-img
+            .announce__desc
+              .menu-flex-wrapper(data-parent=".announce__desc")
+                ul.menu-flex
+                  +links({text: 'здорове довкілля'}, {text: 'система'}, {text: 'система'}, {text: 'система'}, {text: 'здорове довкілля'}, {text: 'система'}, {text: 'здорове довкілля'}, {text: 'система'})
+              a(href="#" class="announce__desc-heading h4 font_black dot" data-height="80") Міністерство охорони здоров’я затвердило дорожню карту і принципи першого компоненту системи E-Health в Україні
+              a(href="#" class="announce__desc-text regular font_gray-dark-to-black dot" data-height="80") 25 січня Кабінет Міністрів України погодив укладення Мирової угоди з американською біофармацевтичною компанією Gilead. Сьогодні, 22 лютого відбулося офіційне підписання Угоди, яка дозволяє забезпечити українців доступнішими лікарськими препаратами для лікування гепатиту С.
+              .announce__desc-date
+                span.announce__desc-date-text.font_gray-to-black.regular 22 лютого, 15:30
+                .announce__desc-date-icon.bg_white-noise-to-light-blue
+                  i.announce__desc-date-svg.fill_gray-to-black
+                    +svg('photo')
+            .announce__date
+              .announce__date-icon
+                i.announce__date-svg.fill_white-noise
+                  +svg('logo_trezub')
+              .announce__date-cnt
+                span.announce__date-cnt-number.font_upper.font_yellow-to-black.font_contrast_yellow-to-black 28
+                span.announce__date-cnt-month.regular.font_black березня
+                span.announce__date-cnt-time.font_black.h6 21:00       
+            .announce__no-img-stripe-wrapper
+              span.announce__no-img-stripe.bg_blue-to-black
+              span.announce__no-img-stripe.bg_yellow-to-gray.bg_contrast_yellow-to-white
+              

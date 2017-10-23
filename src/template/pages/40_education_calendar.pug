@@ -1,0 +1,38 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    var calendarLineHeight = '100';
+    var calendar = {
+        title: "дізнайтеся про події",
+        heading: "Календар для фахівців",
+        links: ["Перейти в календар для фахівців"],
+        desc:  "Міністерство охорони здоров’я України пильно пільгує за усіма подіями у світі, і намагається не відставати від сьогодення. У нашій країні майже щодня відбуваються різноманітні конференції, тренінги, стажування, наукові форуми за різноманітними спеціальностями, у тому числі з їх підвищенням. Ми зібрали всі ці події в один зручний календар, за допомогою якого ви зможете швідко знайти, що вас цікавить.",
+        image: "static/img/no_img.jpg"
+    };
+    
+block main
+  main.main(class="bg_white-to-light-blue" data-page='education')
+    #search__wrapper
+      +search()
+    +disabilities()
+    .container
+      +breadrcrumbs(['Головна', 'Освіта'], 'Календар')
+      h1.education__title.h2.font_upper.font_black Календар
+      .education__row
+        .accordion__wrapper
+          +accordion(accordion, true)
+        .education.education__calendar
+          .calendar
+            if calendar.title
+              +blockTitle(calendar.title)
+            .calendar__cnt
+              .calendar__cnt-img-flex
+                .calendar__cnt-img-wrapper
+                  img(class="calendar__cnt-img obj-fit" src=`${calendar.image}`)
+              .calendar__cnt-desc
+                p(data-height=`${calendarLineHeight}`)= calendar.desc
+                each link in calendar.links
+                  a(href="#")= link
+              

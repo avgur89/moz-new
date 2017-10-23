@@ -1,0 +1,100 @@
+// 404 page styles
+
+/* COMPONENTS */
+
+//[data-page='404'] {
+  ._404 {
+    position: relative;
+    max-width: 779px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 128px 0 208px 0;
+    &__bg-text {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      font-family: $AkrobatBold;
+      color: $white-noise;
+      font-size: 558px;
+      letter-spacing: 17.08px;
+      font-weight: 700;
+      text-transform: uppercase;
+      user-select: none;
+    }
+    &__desc {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 11;
+    }
+    &__title {
+      margin-bottom: 38px;
+      line-height: 30px;
+    }
+    &__text {
+      width: 100%;
+      margin-bottom: 55px;
+    }
+    &__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 30px;
+      border: none;
+      outline: none;
+      padding: 5px 10px;
+      height: 45px;
+      max-width: 275px;
+      width: 100%;
+      transition: 0.3s;
+    }
+  }
+
+  // MEDIA QUERIES FOR MOBILE
+  @include respond-to($tam) {
+    ._404 {
+      padding: 128px 0 208px 0;
+      &__bg-text {
+        top: 45%;
+        left: 50%;
+        font-size: 519px;
+        letter-spacing: 17.08px;
+      }
+      &__title {
+        margin-bottom: 38px;
+        line-height: 30px;
+      }
+      &__text {
+        width: 100%;
+        margin-bottom: 55px;
+      }
+    }
+  }
+
+  // MEDIA QUERIES FOR MOBILE
+  @include respond-to($mob) {
+    ._404 {
+      padding: 65px 0 95px 0;
+      &__bg-text {
+        top: 40%;
+        left: 52%;
+        font-size: 207px;
+        letter-spacing: 17.08px;
+      }
+      &__title {
+        margin-bottom: 25px;
+        line-height: 30px;
+      }
+      &__text {
+        width: 100%;
+        margin-bottom: 45px;
+      }
+    }
+  }
+//}

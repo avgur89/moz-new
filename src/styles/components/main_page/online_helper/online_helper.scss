@@ -1,0 +1,58 @@
+.online-helper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 40px;
+  padding-bottom: 70px;
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    margin-bottom: 34px;
+    &-input {
+      flex: 1;
+      padding: 5px 20px;
+      border: none;
+      font-style: italic;
+      line-height: 24px;
+    }
+    &-switch-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 45px;
+      height: 45px;
+      margin-right: 10px;
+      border: 1px solid $white-noise;
+      line-height: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      &--active {
+        background-color: $blue-light;
+        color: $white;
+        border-color: $blue-light;
+      }
+    }
+  }
+}
+
+.search__wrapper {
+  flex: 1;
+}
+
+// MEDIA QUERIES FOR TABLET
+@include respond-to($mob) {
+  .online-helper {
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: none;
+    padding-bottom: 48px;
+    &__form {
+      margin-bottom: 26px;
+    }
+  }
+
+  .search__wrapper {
+    margin-bottom: 50px;
+  }
+}

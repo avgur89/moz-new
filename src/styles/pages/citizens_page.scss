@@ -1,0 +1,47 @@
+// Citizens page styles
+
+/* COMPONENTS */
+@import '../components/accordion';
+@import '../components/citizens_page/health_items';
+@import '../components/citizens_page/table';
+@import '../components/citizens_page/service_line';
+@import '../components/citizens_page/content/health';
+@import '../components/citizens_page/content/services';
+@import '../components/citizens_page/content/contacts';
+
+
+//[data-page='citizens'] {
+  .citizens__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 36px 0;
+    position: relative;
+  }
+  .citizens {
+    flex: 1 1 auto;
+    width: calc(100% - 300px);
+    .border-wrapper {
+      padding: 0;
+    }
+  }
+  .citizens__title {
+    margin-top: 22px;
+  }
+
+  // MEDIA QUERIES FOR MOBILE
+  @include respond-to($mob) {
+    .citizens__row {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      padding: 36px 0;
+    }
+    .citizens {
+      flex: 1 1 auto;
+      width: 100%;
+      //margin-top: 30px;
+    }
+  }
+//}

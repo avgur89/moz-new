@@ -1,0 +1,160 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    var careerItems = [
+      {
+        title: "Директор Медичного департаменту",
+        desc: "Відділ організації та забезпечення державних закупівель Департаменту економіки і фінансової політики.",
+        department: "Медичний департамент",
+        region: "Київська обл.,",
+        city: "м.Сквира",
+        hospital: "Лікарня №1"
+      },
+      {
+        title: "Головний спеціаліст відділу фінансово – економічного супроводу централізованих заходів і державних програм",
+        desc: "Відділ організації та забезпечення державних закупівель Департаменту економіки і фінансової політики відділ організації та забезпечення державних закупівель Департаменту економіки і фінансової політики.",
+        department: "Департамент фінансово – ресурсного забезпечення",
+        region: "Київська обл.,",
+        city: "м.Сквира",
+        hospital: "Лікарня №2"
+      },
+      {
+        title: "Директор Медичного департаменту (конкурс)",
+        desc: "Відділ організації та забезпечення державних закупівель Департаменту економіки і фінансової політики.",
+        department: "Медичний департамент",
+        region: "Київська обл.,",
+        city: "м.Сквира",
+        hospital: "Лікарня №3"
+      },
+      {
+        title: "Голова відділу",
+        desc: "Відділ забезпечення взаємодії з державними органами та громадськістю і соціального діалогу",
+        department: "Фінансовий департамент",
+        region: "Івано-Франківська обл.,",
+        city: "м.Івано-франківськ",
+        hospital: "Лікарня №4"
+      },
+      {
+        title: "Помічник юриста",
+        desc: "Управління ліцензування та контролю якості надання медичної допомоги",
+        department: "Юридичний департамент",
+        region: "Київська обл.,",
+        city: "м.Київ",
+        hospital: "Лікарня №5"
+      }
+    ];
+    var departmentItems = ["Медичний департамент", "Фінансовий департамент", "Юридичний департамент"];
+    
+block main
+  main.main(class="bg_white-to-light-blue" data-page='about-ministry')
+    #search__wrapper
+      +search()
+    +disabilities()
+    .container
+      +breadrcrumbs(['Головна', 'Про міністерство'], 'Вакансії')
+      h1.about__title.h2.font_upper.font_black Вакансії
+      .about__row
+        .accordion__wrapper
+          +accordion(accordion, true)
+        .about__ministry.about__ministry-career
+          .career
+            ul.career__list
+              each career in careerItems
+                li.career__item        
+                  .career__item-wrapper
+                    h5.career__item-heading
+                      a(href="#" class="h4 font_black career__item-heading-link")= career.title
+                        span.career__item-heading-stripe.bg_black
+                    p(class="career__item-text regular font_gray-dark-to-black")= career.desc
+                    .career__address
+                      a(href="#" class="career__address-department regular-small font_blue-light-to-black font_contrast_blue-light-to-black")= career.department
+                      span.career__address-region.regular-small.font_gray-to-black= career.region
+                      span.career__address-city.regular-small.font_gray-to-black= career.city
+                      span.career__address-hospital.regular-small.font_gray-to-black= career.hospital
+                  .career__item-stripe-wrapper
+                    span.career__item-stripe.bg_blue-to-black
+                    span.career__item-stripe.bg_yellow-to-gray.bg_contrast_yellow-to-white
+            .editor-table
+              div
+              table
+                caption Таблиця №1
+                thead
+                  tr
+                    th №
+                    th Назва
+                    th Опис
+                    th Назва
+                    th Опис
+                    th Назва
+                    th Опис
+                    th №
+                    th Назва
+                    th Опис
+                    th Назва
+                    th Опис
+                    th Назва
+                    th Опис
+                tbody
+                  tr
+                    td №302
+                    td Медичний огляд
+                    td Медичний огляд
+                    td Медичний огляд
+                    td Медичний огляд
+                    td Медичний огляд
+                    td Медичний огляд
+                    td №302
+                    td Медичний огляд
+                    td Медичний огляд
+                    td Медичний огляд
+                    td Медичний огляд
+                    td Медичний огляд
+                    td Медичний огляд
+                  tr
+                    td №1045
+                    td Обстеження
+                    td Повне обстеження організму
+                    td Обстеження
+                    td Повне обстеження організму
+                    td Обстеження
+                    td Повне обстеження організму
+                    td №1045
+                    td Обстеження
+                    td Повне обстеження організму
+                    td Обстеження
+                    td Повне обстеження організму
+                    td Обстеження
+                    td Повне обстеження організму
+                  tr
+                    td №621
+                    td Аналіз лейкоцитів
+                    td Абсолютно повний аналіз кількості лейкоцитів в крові (дорослим, дітям) від 12-ти років, а також людям у віці)
+                    td Аналіз лейкоцитів
+                    td Абсолютно повний аналіз кількості лейкоцитів в крові (дорослим, дітям) від 12-ти років, а також людям у віці)
+                    td Аналіз лейкоцитів
+                    td Абсолютно повний аналіз кількості лейкоцитів в крові (дорослим, дітям) від 12-ти років, а також людям у віці)
+                    td №621
+                    td Аналіз лейкоцитів
+                    td Абсолютно повний аналіз кількості лейкоцитів в крові (дорослим, дітям) від 12-ти років, а також людям у віці)
+                    td Аналіз лейкоцитів
+                    td Абсолютно повний аналіз кількості лейкоцитів в крові (дорослим, дітям) від 12-ти років, а також людям у віці)
+                    td Аналіз лейкоцитів
+                    td Абсолютно повний аналіз кількості лейкоцитів в крові (дорослим, дітям) від 12-ти років, а також людям у віці)
+            +separateBorder()
+            
+            +loadMore()
+            
+          .career__filter.bg_white-noise
+            select.career__filter-select.select
+              option Медичний департамент
+              option Фінансовий департамент
+              option Юридичний департамент
+              option Медичний департамент
+              option Фінансовий департамент
+              option Юридичний департамент
+            form.career__form(method="get")
+              .form-group.career__form-wrapper
+                input.form-input.career__form-input.regular.font_gray(type="text" placeholder="Пошук за назвою")
+                +button("search-blue-input")                 

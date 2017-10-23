@@ -1,0 +1,80 @@
+// TABLE STYLES
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  &-wrapper {
+    margin-bottom: 70px;
+    position: relative;
+    .hidden-table {
+      display: none;
+      position: absolute;
+      pointer-events: none;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0, #fff 100%);
+    }
+  }
+  td, th {
+    border-bottom: 1px solid $white-dark2;
+    text-align: left;
+    padding: 12px 24px 12px 0;
+  }
+  th {
+    line-height: 24px;
+    white-space: nowrap;
+    padding-top: 0;
+  }
+  td:last-child {
+    width: 15%;
+  }
+}
+
+// MEDIA QUERIES FOR TABLET
+@include respond-to($tam) {
+  // TABLE STYLES
+  .table {
+    &-wrapper {
+      margin-bottom: 45px;
+      overflow-x: scroll;
+      .hidden-table {
+        display: block;
+      }
+    }
+    td, th {
+      min-width: 200px;
+    }
+    // hide all columns except first 3
+    // td:nth-child(n + 4),
+    // th:nth-child(n + 4) {
+    //   display: none;
+    // }
+    td:first-child,
+    th:first-child {
+      width: 100%;
+      min-width: 100%;
+    }
+    td:last-child {
+      width: auto;
+    }
+  }
+}
+
+// MEDIA QUERIES FOR MOBILE
+@include respond-to($mob) {
+  // TABLE STYLES
+  .table {
+    td,th {
+      min-width: 220px;
+    }
+    // hide all columns except first 2
+    // td:nth-child(n + 3),
+    // th:nth-child(n + 3) {
+    //   display: none;
+    // }
+    // td:last-child {
+    //   width: auto;
+    // }
+  }
+}

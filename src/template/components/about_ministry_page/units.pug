@@ -1,0 +1,28 @@
+//- Units
+
+- let idCounter = 0;
+
+mixin units(nameArray, className)
+  - className = className || ''
+  div(class=`units ${className}`)
+    each unit in nameArray
+      .unit
+        .unit__cnt
+          div(class="unit__hint bg_white-to-dark-blue" id=`popup-${idCounter}`)
+            - idCounter++;
+              .unit__hint-desc-wrapper
+                .unit__hint-desc.bg_white-to-dark-blue
+                  .unit__hint-text-wrapper
+                    p(class="unit__hint-tel regular font_black") тел.: 
+                      a(href="tel:+380443000000" class="unit__hint-phone regular font_black") +380 (44) 300-00-00
+                    p(class="unit__hint-adress regular font_black") адреса: вул. Богдана Хмельницького, 50, будинок 3, офiс 102
+                    a(href="#" class="unit__hint-link regular font_blue-light-to-black font_contrast_blue-light-to-black") www.department.name.com.ua
+                  .unit__hint-stripe-wrapper
+                    span.unit__hint-stripe.bg_blue-to-black
+                    span.unit__hint-stripe.bg_yellow-to-gray.bg_contrast_yellow-to-white
+                .unit__hint-close
+                  i.unit__hint-close-icon.fill_black
+                    +svg('close')
+          
+          .unit__icon.bg_white-noise-to-black.bg_white-noise-to-white.font_white.font_white-to-light-blue
+          a(href="#!" class="unit__text regular font_black")= unit

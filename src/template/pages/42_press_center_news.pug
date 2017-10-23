@@ -1,0 +1,339 @@
+extends ../extend/default
+
+block variables
+    -
+        var title = "Міністерство охорони здоров'я України";
+
+block main
+    main.main(class="bg_white-to-light-blue" data-page='press-center')
+        #search__wrapper
+            +search()
+        +disabilities()
+        .container
+            +breadrcrumbs(['Головна', 'Прес-центр'], 'Новини')
+            h1.press__title.h2.font_upper.font_black Прес-центр
+            .press__row
+                .accordion__wrapper
+                    +accordion(accordion, true, "Новини")
+                .press
+                    //- News section
+                    .press__news-items
+                        .press__news-item
+                            a(href="#" class="press__news-item-img-link")
+                                .h5.more-info.font_upper.font_white Детальніше
+                                    span.more-info__stripe.bg_white
+                                .press__news-item-img-overlay
+                                    .press__news-item-img-wrapper
+                                        img(src="static/img/health_img1.jpg" class="press__news-item-img obj-fit")
+                                .press__news-item-icon-wrapper.bg_white-noise
+                                    i.press__news-item-icon-svg.fill_gray
+                                        +svg("photo")
+                            .press__news-item-desc
+                                .menu-flex-wrapper(data-parent=".press__news-item-desc")
+                                    ul.menu-flex
+                                        +links({text: 'підтримка', href: '/moz'})
+                                a(href="#" class="press__news-item-desc-heading h4 font_black dot" data-height="100") Українців просять підтримати пацієнтів із рідкісними хворобами
+                                a(href="#" class="press__news-item-desc-text regular font_gray-dark-to-black dot" data-height="100") Щороку в останній день лютого у світі відзначають Міжнародний день.
+                                span.press__news-item-desc-date.font_gray-to-black.regular 16 січня
+
+                        .press__news-item
+                            a(href="#" class="press__news-item-img-link")
+                                .h5.more-info.font_upper.font_white Детальніше
+                                    span.more-info__stripe.bg_white
+                                .press__news-item-img-overlay
+                                    .press__news-item-img-wrapper
+                                        img(src="static/img/health_img1.jpg" class="press__news-item-img obj-fit")
+                                .press__news-item-icon-wrapper.bg_white-noise
+                                    i.press__news-item-icon-svg.fill_gray
+                                        +svg("photo")
+                            .press__news-item-desc
+                                .menu-flex-wrapper(data-parent=".press__news-item-desc")
+                                    ul.menu-flex
+                                        +links({text: 'підтримка', href: '/moz'})
+                                a(href="#" class="press__news-item-desc-heading h4 font_black dot" data-height="100") Українців просять підтримати пацієнтів із рідкісними хворобами
+                                a(href="#" class="press__news-item-desc-text regular font_gray-dark-to-black dot" data-height="100") Щороку в останній день лютого у світі відзначають Міжнародний день.
+                                span.press__news-item-desc-date.font_gray-to-black.regular 16 січня
+
+                        .press__news-item
+                            a(href="#" class="press__news-item-img-link")
+                                .h5.more-info.font_upper.font_white Детальніше
+                                    span.more-info__stripe.bg_white
+                                .press__news-item-img-overlay
+                                    .press__news-item-img-wrapper
+                                        img(src="static/img/health_img1.jpg" class="press__news-item-img obj-fit")
+                                .press__news-item-icon-wrapper.bg_white-noise
+                                    i.press__news-item-icon-svg.fill_gray
+                                        +svg("photo")
+                            .press__news-item-desc
+                                .menu-flex-wrapper(data-parent=".press__news-item-desc")
+                                    ul.menu-flex
+                                        +links({text: 'підтримка', href: '/moz'})
+                                a(href="#" class="press__news-item-desc-heading h4 font_black dot" data-height="100") Українців просять підтримати пацієнтів із рідкісними хворобами
+                                a(href="#" class="press__news-item-desc-text regular font_gray-dark-to-black dot" data-height="100") Щороку в останній день лютого у світі відзначають Міжнародний день.
+                                span.press__news-item-desc-date.font_gray-to-black.regular 16 січня
+
+                        .press__news-item
+                            a(href="#" class="press__news-item-img-link")
+                                .h5.more-info.font_upper.font_white Детальніше
+                                    span.more-info__stripe.bg_white
+                                .press__news-item-img-overlay
+                                    .press__news-item-img-wrapper
+                                        img(src="static/img/health_img1.jpg" class="press__news-item-img obj-fit")
+                                .press__news-item-icon-wrapper.bg_white-noise
+                                    i.press__news-item-icon-svg.fill_gray
+                                        +svg("photo")
+                            .press__news-item-desc
+                                .menu-flex-wrapper(data-parent=".press__news-item-desc")
+                                    ul.menu-flex
+                                        +links({text: 'підтримка', href: '/moz'})
+                                a(href="#" class="press__news-item-desc-heading h4 font_black dot" data-height="100") Українців просять підтримати пацієнтів із рідкісними хворобами
+                                a(href="#" class="press__news-item-desc-text regular font_gray-dark-to-black dot" data-height="100") Щороку в останній день лютого у світі відзначають Міжнародний день.
+                                span.press__news-item-desc-date.font_gray-to-black.regular 16 січня
+
+                        .press__news-item
+                            a(href="#" class="press__news-item-img-link")
+                                .h5.more-info.font_upper.font_white Детальніше
+                                    span.more-info__stripe.bg_white
+                                .press__news-item-img-overlay
+                                    .press__news-item-img-wrapper
+                                        img(src="static/img/health_img1.jpg" class="press__news-item-img obj-fit")
+                                .press__news-item-icon-wrapper.bg_white-noise
+                                    i.press__news-item-icon-svg.fill_gray
+                                        +svg("photo")
+                            .press__news-item-desc
+                                .menu-flex-wrapper(data-parent=".press__news-item-desc")
+                                    ul.menu-flex
+                                        +links({text: 'підтримка', href: '/moz'})
+                                a(href="#" class="press__news-item-desc-heading h4 font_black dot" data-height="100") Українців просять підтримати пацієнтів із рідкісними хворобами
+                                a(href="#" class="press__news-item-desc-text regular font_gray-dark-to-black dot" data-height="100") Щороку в останній день лютого у світі відзначають Міжнародний день.
+                                span.press__news-item-desc-date.font_gray-to-black.regular 16 січня
+
+                        .press__news-item
+                            a(href="#" class="press__news-item-img-link")
+                                .h5.more-info.font_upper.font_white Детальніше
+                                    span.more-info__stripe.bg_white
+                                .press__news-item-img-overlay
+                                    .press__news-item-img-wrapper
+                                        img(src="static/img/health_img1.jpg" class="press__news-item-img obj-fit")
+                                .press__news-item-icon-wrapper.bg_white-noise
+                                    i.press__news-item-icon-svg.fill_gray
+                                        +svg("photo")
+                            .press__news-item-desc
+                                .menu-flex-wrapper(data-parent=".press__news-item-desc")
+                                    ul.menu-flex
+                                        +links({text: 'підтримка', href: '/moz'})
+                                a(href="#" class="press__news-item-desc-heading h4 font_black dot" data-height="100") Українців просять підтримати пацієнтів із рідкісними хворобами
+                                a(href="#" class="press__news-item-desc-text regular font_gray-dark-to-black dot" data-height="100") Щороку в останній день лютого у світі відзначають Міжнародний день.
+                                span.press__news-item-desc-date.font_gray-to-black.regular 16 січня
+
+                        .press__news-item
+                            a(href="#" class="press__news-item-img-link")
+                                .h5.more-info.font_upper.font_white Детальніше
+                                    span.more-info__stripe.bg_white
+                                .press__news-item-img-overlay
+                                    .press__news-item-img-wrapper
+                                        img(src="static/img/health_img2.jpg" class="press__news-item-img obj-fit")
+                                .press__news-item-icon-wrapper.bg_white-noise
+                                    i.press__news-item-icon-svg.fill_gray
+                                        +svg("photo")
+                            .press__news-item-desc
+                                .menu-flex-wrapper(data-parent=".press__news-item-desc")
+                                    ul.menu-flex
+                                        +links({text: 'медицина', href: '/moz'}, {text: 'реформи', href: '/moz'})
+                                a(href="#" class="press__news-item-desc-heading h4 font_black dot" data-height="100") Медична реформа - складова реформи децентралізації
+                                a(href="#" class="press__news-item-desc-text regular font_gray-dark-to-black dot" data-height="100") Медична реформа є важливою складовою децентралізації влади. Стара модель функціонування медзакладів, особливо в селах.
+                                span.press__news-item-desc-date.font_gray-to-black.regular 5 січня
+
+                        .press__news-item
+                            a(href="#" class="press__news-item-img-link")
+                                .h5.more-info.font_upper.font_white Детальніше
+                                    span.more-info__stripe.bg_white
+                                .press__news-item-img-overlay
+                                    .press__news-item-img-wrapper
+                                        img(src="static/img/health_img3.jpg" class="press__news-item-img obj-fit")
+                                .press__news-item-icon-wrapper.bg_white-noise
+                                    i.press__news-item-icon-svg.fill_gray
+                                        +svg("photo")
+                            .press__news-item-desc
+                                .menu-flex-wrapper(data-parent=".press__news-item-desc")
+                                    ul.menu-flex
+                                        +links({text: 'підтримка', href: '/moz'})
+                                a(href="#" class="press__news-item-desc-heading h4 font_black dot" data-height="100") Українців просять підтримати пацієнтів із рідкісними хворобами
+                                a(href="#" class="press__news-item-desc-text regular font_gray-dark-to-black dot" data-height="100") Щороку в останній день лютого у світі відзначають Міжнародний день.
+                                span.press__news-item-desc-date.font_gray-to-black.regular 16 січня
+
+                    //- Slider section
+                    +gallery_slider()
+
+                    //- Photo licence section
+                    .popup.photo__licence-popup(data-popup-id="licence-popup" tabindex="-1" role="dialog")
+                        .popup__container.photo__licence-popup-container.bg_white-noise
+                            .popup__close.photo__licence-popup-close-icon
+                                span
+                                span
+                            .popup__content.photo__licence-popup-content
+                                h4 Умови використання фото
+                                p Ці рекомендації пропонуються набір суб'єктивних виключних прав, які дозволяють авторам літературних, мистецьких та наукових творів отримати соціальні блага від результатів своєї творчої діяльності. Ці рекомендації пропонуються набір суб'єктивних виключних прав, які дозволяють авторам літературних, мистецьких та наукових творів отримати соціальні блага від результатів своєї творчої діяльності. Ці рекомендації пропонуються набір суб'єктивних виключних прав, які дозволяють авторам літературних, мистецьких та наукових творів отримати соціальні блага від результатів своєї творчої діяльності.
+                                p Ці рекомендації пропонуються набір суб'єктивних виключних прав, які дозволяють авторам літературних, мистецьких та наукових творів отримати соціальні блага від результатів своєї творчої діяльності. Ці рекомендації пропонуються набір суб'єктивних виключних прав, які дозволяють авторам літературних, мистецьких та наукових творів отримати соціальні блага від результатів своєї творчої діяльності. Ці рекомендації пропонуються набір суб'єктивних виключних прав, які дозволяють авторам літературних, мистецьких та наукових творів отримати соціальні блага від результатів своєї творчої діяльності.
+                                p Ці рекомендації пропонуються набір суб'єктивних виключних прав, які дозволяють авторам літературних, мистецьких та наукових творів отримати соціальні блага від результатів своєї творчої діяльності. Ці рекомендації пропонуються набір суб'єктивних виключних прав, які дозволяють авторам літературних, мистецьких та наукових творів отримати соціальні блага від результатів своєї творчої діяльності. Ці рекомендації пропонуються набір суб'єктивних виключних прав, які дозволяють авторам літературних, мистецьких та наукових творів отримати соціальні блага від результатів своєї творчої діяльності.
+
+                    .photo__licence
+                        a(href="#" class="photo__licence-btn bg_yellow-to-black bg_contrast_yellow-to-white regular font_black-to-white font_upper") завантажити ще
+                        +pagination()
+                    a(href="#!" class="photo__licence-link font_blue-light-to-black font_contrast_blue-light-to-black regular-small" data-popup-target="licence-popup") Умови використання фото
+
+                    //- Photogallery section
+                    .popup.photogallery__popup(data-popup-id="photogallery-popup" tabindex="-1" role="dialog")
+                        .popup__container.photogallery__popup-container.bg_white-noise
+                            .popup__close.photogallery__popup-close-icon
+                                span
+                                span
+                            .popup__content.photogallery__popup-content
+                                .popup__title.photogallery__popup-title.h4.font_black Медична реформа у 2017 році відбуватиметься поетапно
+                                +gallery_slider()
+
+                    .photogallery
+                        .photogallery__item
+                            .photogallery__img-wrapper
+                                img.photogallery__img.obj-fit(src="static/img/photogallery_img.jpg" data-popup-target="photogallery-popup" alt="")
+                        .photogallery__item
+                            .photogallery__img-wrapper
+                                img.photogallery__img.obj-fit(src="static/img/photogallery_img.jpg" data-popup-target="photogallery-popup" alt="")
+                        .photogallery__item
+                            .photogallery__img-wrapper
+                                img.photogallery__img.obj-fit(src="static/img/photogallery_img.jpg" data-popup-target="photogallery-popup" alt="")
+                        .photogallery__item
+                            .photogallery__img-wrapper
+                                img.photogallery__img.obj-fit(src="static/img/photogallery_img.jpg" data-popup-target="photogallery-popup" alt="")
+
+                    //- Video section
+                    .press__video-wrapper
+                        .popup.press__video-popup(data-popup-id="press-video" tabindex="-1" role="dialog")
+                            .popup__container.press__video-popup-container
+                                .popup__close.press__video-popup-close
+                                    span
+                                    span
+                                .popup__content.press__video-popup-content
+                                    .popup__title.press__video-popup-title.h4.font_black МОЗ звертається до населення: остерігайтесь переохолодженнь та обморожень
+                                    .press__video-popup-iframe-wrapper
+                                        iframe(class="press__video-popup-iframe" src="" allowfullscreen="true" frameborder="0")
+
+                        .press__video-items
+                            .press__video-item(id="popup-1")
+                                a(href="#" class="press__video-item-img-link" data-popup-target="press-video" data-url="//www.youtube.com/embed/3EPG1fsZ-qo")
+                                    .h5.more-info.font_upper.font_white Детальніше
+                                        span.more-info__stripe.bg_white
+                                    .press__video-item-img-overlay
+                                        .press__video-item-img-wrapper
+                                            img(src="static/img/press_video_img.jpg" class="press__video-item-img obj-fit")
+                                    .press__video-item-icon-wrapper.bg_white-noise
+                                        i.press__video-item-icon-svg.fill_gray
+                                            +svg("video")
+                                .press__video-item-desc
+                                    .menu-flex-wrapper(data-parent=".press__video-item-desc")
+                                        ul.menu-flex
+                                            +links({text: 'Уляна супрун', href: '/moz'}, {text: 'Лікар', href: '/moz'})
+                                    a(href="#" class="press__video-item-desc-text regular font_gray-dark-to-black dot" data-height="100") МОЗ звертається до населення: остерігайтесь переохолодженнь та обморожень
+                                    span.press__video-item-desc-date.font_gray-to-black.regular 16 січня
+
+                            .press__video-item(id="popup-2")
+                                a(href="#" class="press__video-item-img-link" data-popup-target="press-video" data-url="//www.youtube.com/embed/5LYrN_cAJoA?list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa")
+                                    .h5.more-info.font_upper.font_white Детальніше
+                                        span.more-info__stripe.bg_white
+                                    .press__video-item-img-overlay
+                                        .press__video-item-img-wrapper
+                                            img(src="static/img/press_video_img.jpg" class="press__video-item-img obj-fit")
+                                    .press__video-item-icon-wrapper.bg_white-noise
+                                        i.press__video-item-icon-svg.fill_gray
+                                            +svg("video")
+                                .press__video-item-desc
+                                    .menu-flex-wrapper(data-parent=".press__video-item-desc")
+                                        ul.menu-flex
+                                            +links({text: 'Уляна супрун', href: '/moz'}, {text: 'Лікар', href: '/moz'})
+                                    a(href="#" class="press__video-item-desc-text regular font_gray-dark-to-black dot" data-height="100") МОЗ звертається до населення: остерігайтесь переохолодженнь та обморожень
+                                    span.press__video-item-desc-date.font_gray-to-black.regular 5 січня
+
+                            .press__video-item(id="popup-3")
+                                a(href="#" class="press__video-item-img-link" data-popup-target="press-video" data-url="//www.youtube.com/embed/B0ZG3Mhzml4?list=PLillGF-RfqbbN1Iqlg5-bM1r50GLntJ8g")
+                                    .h5.more-info.font_upper.font_white Детальніше
+                                        span.more-info__stripe.bg_white
+                                    .press__video-item-img-overlay
+                                        .press__video-item-img-wrapper
+                                            img(src="static/img/press_video_img.jpg" class="press__video-item-img obj-fit")
+                                    .press__video-item-icon-wrapper.bg_white-noise
+                                        i.press__video-item-icon-svg.fill_gray
+                                            +svg("video")
+                                .press__video-item-desc
+                                    .menu-flex-wrapper(data-parent=".press__video-item-desc")
+                                        ul.menu-flex
+                                            +links({text: 'Уляна супрун', href: '/moz'}, {text: 'Лікар', href: '/moz'})
+                                    a(href="#" class="press__video-item-desc-text regular font_gray-dark-to-black dot" data-height="100") МОЗ звертається до населення: остерігайтесь переохолодженнь та обморожень
+                                    span.press__video-item-desc-date.font_gray-to-black.regular 16 січня
+
+                            .press__video-item(id="popup-4")
+                                a(href="#" class="press__video-item-img-link" data-popup-target="press-video" data-url="//www.youtube.com/embed/3EPG1fsZ-qo")
+                                    .h5.more-info.font_upper.font_white Детальніше
+                                        span.more-info__stripe.bg_white
+                                    .press__video-item-img-overlay
+                                        .press__video-item-img-wrapper
+                                            img(src="static/img/press_video_img.jpg" class="press__video-item-img obj-fit")
+                                    .press__video-item-icon-wrapper.bg_white-noise
+                                        i.press__video-item-icon-svg.fill_gray
+                                            +svg("video")
+                                .press__video-item-desc
+                                    .menu-flex-wrapper(data-parent=".press__video-item-desc")
+                                        ul.menu-flex
+                                            +links({text: 'Уляна супрун', href: '/moz'}, {text: 'Лікар', href: '/moz'})
+                                    a(href="#" class="press__video-item-desc-text regular font_gray-dark-to-black dot" data-height="100") МОЗ звертається до населення: остерігайтесь переохолодженнь та обморожень
+                                    span.press__video-item-desc-date.font_gray-to-black.regular 16 січня
+
+                            .press__video-item(id="popup-5")
+                                a(href="#" class="press__video-item-img-link" data-popup-target="press-video" data-url="//www.youtube.com/embed/3EPG1fsZ-qo")
+                                    .h5.more-info.font_upper.font_white Детальніше
+                                        span.more-info__stripe.bg_white
+                                    .press__video-item-img-overlay
+                                        .press__video-item-img-wrapper
+                                            img(src="static/img/press_video_img.jpg" class="press__video-item-img obj-fit")
+                                    .press__video-item-icon-wrapper.bg_white-noise
+                                        i.press__video-item-icon-svg.fill_gray
+                                            +svg("video")
+                                .press__video-item-desc
+                                    .menu-flex-wrapper(data-parent=".press__video-item-desc")
+                                        ul.menu-flex
+                                            +links({text: 'Уляна супрун', href: '/moz'}, {text: 'Лікар', href: '/moz'})
+                                    a(href="#" class="press__video-item-desc-text regular font_gray-dark-to-black dot" data-height="100") МОЗ звертається до населення: остерігайтесь переохолодженнь та обморожень
+                                    span.press__video-item-desc-date.font_gray-to-black.regular 16 січня
+
+                            .press__video-item(id="popup-6")
+                                a(href="#" class="press__video-item-img-link" data-popup-target="press-video" data-url="//www.youtube.com/embed/3EPG1fsZ-qo")
+                                    .h5.more-info.font_upper.font_white Детальніше
+                                        span.more-info__stripe.bg_white
+                                    .press__video-item-img-overlay
+                                        .press__video-item-img-wrapper
+                                            img(src="static/img/press_video_img.jpg" class="press__video-item-img obj-fit")
+                                    .press__video-item-icon-wrapper.bg_white-noise
+                                        i.press__video-item-icon-svg.fill_gray
+                                            +svg("video")
+                                .press__video-item-desc
+                                    .menu-flex-wrapper(data-parent=".press__video-item-desc")
+                                        ul.menu-flex
+                                            +links({text: 'Уляна супрун', href: '/moz'}, {text: 'Лікар', href: '/moz'})
+                                    a(href="#" class="press__video-item-desc-text regular font_gray-dark-to-black dot" data-height="100") МОЗ звертається до населення: остерігайтесь переохолодженнь та обморожень
+                                    span.press__video-item-desc-date.font_gray-to-black.regular 16 січня
+
+                            .press__video-item(id="popup-7")
+                                a(href="#" class="press__video-item-img-link" data-popup-target="press-video" data-url="//www.youtube.com/embed/3EPG1fsZ-qo")
+                                    .h5.more-info.font_upper.font_white Детальніше
+                                        span.more-info__stripe.bg_white
+                                    .press__video-item-img-overlay
+                                        .press__video-item-img-wrapper
+                                            img(src="static/img/press_video_img.jpg" class="press__video-item-img obj-fit")
+                                    .press__video-item-icon-wrapper.bg_white-noise
+                                        i.press__video-item-icon-svg.fill_gray
+                                            +svg("video")
+                                .press__video-item-desc
+                                    .menu-flex-wrapper(data-parent=".press__video-item-desc")
+                                        ul.menu-flex
+                                            +links({text: 'Уляна супрун', href: '/moz'}, {text: 'Лікар', href: '/moz'})
+                                    a(href="#" class="press__video-item-desc-text regular font_gray-dark-to-black dot" data-height="100") МОЗ звертається до населення: остерігайтесь переохолодженнь та обморожень
+                                    span.press__video-item-desc-date.font_gray-to-black.regular 16 січня

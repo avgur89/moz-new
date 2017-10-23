@@ -1,0 +1,291 @@
+extends ../extend/default
+
+block variables
+    -
+        var title = "Міністерство охорони здоров'я України";
+        var bannerLineHeight = '120';
+        var contestLinks = [
+            {
+                href: 'static/img/Тимчасовий розподіл.doc',
+                desc: 'Декларація (doc 3.2 mb)',
+            },
+            {
+                href: 'static/img/Тимчасовий розподіл.doc',
+                desc: 'Анкета (doc 3.2 mb)',
+            },
+            {
+                href: 'static/img/Тимчасовий розподіл.doc',
+                desc: 'Документ  (doc 3.2 mb)',
+            }
+        ];
+
+block main
+    main.main(class="bg_white-to-light-blue" data-page='medical-staff')
+        #search__wrapper
+            +search()
+        +disabilities()
+        .container
+            +breadrcrumbs(['Головна', 'Медичним працівникам', 'Вакансії лікарень'], 'Загальний хірург')
+            +back_to("Назад до вакансій")
+            .medical__row
+                .accordion__wrapper
+                    +accordion(accordion, true)
+                .medical
+                    .medical__wrapper
+                        //- 23_first_line component
+                        .first__line
+                            +blockTitle("первинна ланка")
+                            ul.first__line-links
+                                li.first__line-item.first__line-item-active
+                                    a.first__line-link.h5.font_upper.font_gray-to-black(href="#") Як укласти договір з лікарем?
+                                li.first__line-item
+                                    a.first__line-link.h5.font_upper.font_gray-to-black(href="#") гарантовані послуги та інші важливі речі
+                                li.first__line-item
+                                    a.first__line-link.h5.font_upper.font_gray-to-black(href="#") Контакти сімейних лікарів
+
+                        h4.medical__title.h4.font_black Загальний хірург
+                        .medical__vacancy
+                            a(href="#" class="medical__vacancy-link regular-small font_blue-light-to-black font_contrast_blue-light-to-black") Хірургія
+                            .medical__vacancy-address
+                                span.medical__vacancy-address-region.regular-small.font_gray-to-black Київська обл.,
+                                span.medical__vacancy-address-city.regular-small.font_gray-to-black м.Київ,
+                                span.medical__vacancy-address-hospital.regular-small.font_gray-to-black Лікарня №2
+
+                        //- 43_article heading
+                        .article__views
+                            h4.article__views-heading.h4.font_black Медична реформа у 2017 році відбуватиметься поетапно
+                            .article__views-cnt.font_gray-to-black.regular
+                                .article__views-cnt-date 22 лютого, 19:30
+                                .article__views-cnt-amount
+                                    .article__views-cnt-amount-icon
+                                        i.article__views-cnt-amount-svg.fill_gray-to-black
+                                            +svg('eye')
+                                    .article__views-cnt-amount-number 142
+                                .article__views-cnt-icons
+                                    .article__views-cnt-icons-icon
+                                        i.article__views-cnt-icons-svg.fill_gray-to-black
+                                            +svg('photo')
+                                    .article__views-cnt-icons-icon
+                                        i.article__views-cnt-icons-svg.fill_gray-to-black
+                                            +svg('video')
+
+                        //- 43_article banner
+                        .article__banner
+                            div(class="article__banner-img" style="background-image:url('static/img/article_banner.jpg')")
+                            .article__banner-desc
+                                p.article__banner-desc-text.regular.font_white.dot(data-height=`${bannerLineHeight}`) Список ліків, які були получені до Міністерства охороні здоров’я задля забечпечення ними інвалідів, що їх потребують та не мають власних коштів, щоб їх купити. Кількість ліків обмежена. Список ліків, які були получені до Міністерства охороні здоров’я задля забечпечення ними інвалідів, що їх потребують та не мають власних коштів, щоб їх купити. Кількість ліків обмежена.
+
+                        //- 15_vacancy
+                        .download__contest
+                            +blockTitle("для участі в конкурсі необхідно подати")
+                            +downloadLink(contestLinks)
+                        +separateBorder()
+
+                        .medical__vacancy-desc
+                            .editor
+                                img(src="static/img/health_img2.jpg" alt="")
+                                .img__wrapper
+                                    img(src="static/img/health_img1.jpg" alt="")
+                                figure
+                                    img(src="static/img/health_img2.jpg" alt="")
+                                    figcaption Читабельний зміст
+
+                                h1 Н1 Заголовок, що виглядає найкраще
+                                h2 H2 моз буде проводити щось важливе
+                                h3 Н3 Заголовок, що виглядає найкраще - тут
+                                h4 Н4 а також заголовок може виглядати саме так
+                                h5 H5 ще такий малюсенький заголовок принципи здорового харчування:
+                                a(href="#" alt="") деякі випадково
+                                span зміст буде заважати
+                                strong що читабельний зміст буде
+                                | Н
+                                sub 2
+                                | О
+                                | 21
+                                sup 19
+                                blockquote Багато програм верстування та веб-дизайну використовують Lorem Ipsum як зразок і пошук за терміном "lorem ipsum" відкриє багато веб-сайтів, які знаходяться ще в зародковому стані. Різні версії Lorem Ipsum з'явились за минулі роки, деякі випадково, деякі було створено зумисно (зокрема, жартівливі).
+                                iframe(src='https://www.youtube.com/embed/-kBhum7f4rI', frameborder='0', allowfullscreen='')
+                                p Вже давно відомо, що читабельний зміст буде заважати зосередитись людині, яка оцінює композицію сторінки. Сенс використання Lorem Ipsum полягає в тому, що цей текст має більш-менш нормальне розподілення літер на відміну від, наприклад, "Тут іде текст. Тут іде текст." Це робить текст схожим на оповідний. Багато програм верстування та веб-дизайну використовують Lorem Ipsum як зразок і пошук за терміном "lorem ipsum" відкриє багато веб-сайтів, які знаходяться ще в зародковому стані. Різні версії Lorem Ipsum з'явились за минулі роки, деякі випадково, деякі було створено зумисно (зокрема, жартівливі).
+                                p Вже давно відомо, що читабельний зміст буде заважати зосередитись людині, яка оцінює композицію сторінки. Сенс використання Lorem Ipsum полягає в тому, що цей текст має більш-менш нормальне розподілення літер на відміну від. vнаприклад, "Тут іде текст. Тут іде текст." Це робить текст схожим на оповідний. Багато програм верстування та веб-дизайну використовують Lorem Ipsum як зразок і пошук за терміном "lorem ipsum" відкриє багато веб-сайтів, які знаходяться ще в зародковому стані. Різні версії Lorem Ipsum з'явились за минулі роки, деякі випадково, деякі було створено зумисно (зокрема, жартівливі).
+                                ul
+                                    div Основні зони відповідальності:
+                                    li Розробка і реалізація дорожньої карти реформи управління житловим сектором;
+                                    li Розробка і реалізація дорожньої карти реформи енергоефективності;
+                                    li Просування необхідних законодавчих змін для впровадження реформ управління житловим сектором та енергоефективності;
+                                ul
+                                    div Вимоги:
+                                    li 10 років загального стажу роботи;
+                                    li 5 років досвіду управління проектами (бажано у сфері ЖКГ);
+                                    li Досвід впровадження реформ в Україні (бажано);
+                                    li Володіння ПК (PowerPoint, Project, Excel, Word);
+                                    li Вища освіта (економіка, фінанси, право, бізнес адміністрування);
+                                    li Знання української та англійської мов.
+                                ol
+                                    li Розробка і реалізація дорожньої карти реформи управління житловим сектором;
+                                    li Розробка і реалізація дорожньої карти реформи енергоефективності;
+                                    li Володіння ПК (PowerPoint, Project, Excel, Word);
+                                    li Вища освіта (економіка, фінанси, право, бізнес адміністрування);
+                                    li Знання української та англійської мов.
+                                p Вже давно відомо, що читабельний зміст буде заважати зосередитись людині, яка оцінює композицію сторінки. Сенс використання Lorem Ipsum полягає в тому, що цей текст має більш-менш нормальне розподілення літер на відміну від.
+
+                            .editor-table
+                                div
+                                table
+                                    caption Таблиця №1
+                                    thead
+                                        tr
+                                            th №
+                                            th Назва
+                                            th Опис
+                                            th Назва
+                                            th Опис
+                                            th Назва
+                                            th Опис
+                                            th №
+                                            th Назва
+                                            th Опис
+                                            th Назва
+                                            th Опис
+                                            th Назва
+                                            th Опис
+                                    tbody
+                                        tr
+                                            td №302
+                                            td Медичний огляд
+                                            td Медичний огляд
+                                            td Медичний огляд
+                                            td Медичний огляд
+                                            td Медичний огляд
+                                            td Медичний огляд
+                                            td №302
+                                            td Медичний огляд
+                                            td Медичний огляд
+                                            td Медичний огляд
+                                            td Медичний огляд
+                                            td Медичний огляд
+                                            td Медичний огляд
+                                        tr
+                                            td №1045
+                                            td Обстеження
+                                            td Повне обстеження організму
+                                            td Обстеження
+                                            td Повне обстеження організму
+                                            td Обстеження
+                                            td Повне обстеження організму
+                                            td №1045
+                                            td Обстеження
+                                            td Повне обстеження організму
+                                            td Обстеження
+                                            td Повне обстеження організму
+                                            td Обстеження
+                                            td Повне обстеження організму
+                                        tr
+                                            td №621
+                                            td Аналіз лейкоцитів
+                                            td Абсолютно повний аналіз кількості лейкоцитів в крові (дорослим, дітям) від 12-ти років, а також людям у віці)
+                                            td Аналіз лейкоцитів
+                                            td Абсолютно повний аналіз кількості лейкоцитів в крові (дорослим, дітям) від 12-ти років, а також людям у віці)
+                                            td Аналіз лейкоцитів
+                                            td Абсолютно повний аналіз кількості лейкоцитів в крові (дорослим, дітям) від 12-ти років, а також людям у віці)
+                                            td №621
+                                            td Аналіз лейкоцитів
+                                            td Абсолютно повний аналіз кількості лейкоцитів в крові (дорослим, дітям) від 12-ти років, а також людям у віці)
+                                            td Аналіз лейкоцитів
+                                            td Абсолютно повний аналіз кількості лейкоцитів в крові (дорослим, дітям) від 12-ти років, а також людям у віці)
+                                            td Аналіз лейкоцитів
+                                            td Абсолютно повний аналіз кількості лейкоцитів в крові (дорослим, дітям) від 12-ти років, а також людям у віці)
+
+                            //- 43_article page
+                            .article__links
+                                .menu-flex-wrapper(data-parent=".article__links")
+                                    ul.menu-flex
+                                        +links({text: "реформи"}, {text: "медицина"}, {text: "суспільство"}, {text: "суспільство"}, {text: "суспільство"}, {text: "суспільство"}, {text: "суспільство"}, {text: "суспільство"}, {text: "суспільство"}, {text: "суспільство"}, {text: "суспільство"})
+                                .article__links-social
+                                    a(href='#' class="article__links-social-icon")
+                                        i.article__links-social-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                                            +svg('fb')
+                                    a(href='#' class="article__links-social-icon")
+                                        i.article__links-social-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                                            +svg('fb')
+                                    a(href='#' class="article__links-social-icon")
+                                        i.article__links-social-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                                            +svg('fb')
+                                    a(href='#' class="article__links-social-icon")
+                                        i.article__links-social-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                                            +svg('fb')
+
+                            //- 15_vacancy
+                            .vacancy-respond
+                                a(href="#" class="vacancy-respond__btn bg_yellow-to-black bg_contrast_yellow-to-white regular font_black-to-white font_upper") відгукнутись на вакансію
+                                .vacancy-respond__social
+                                    a(href='#' class="vacancy-respond__social-icon")
+                                        i.vacancy-respond__social-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                                            +svg('fb')
+                                    a(href='#' class="vacancy-respond__social-icon")
+                                        i.vacancy-respond__social-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                                            +svg('fb')
+                                    a(href='#' class="vacancy-respond__social-icon")
+                                        i.vacancy-respond__social-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                                            +svg('fb')
+                                    a(href='#' class="vacancy-respond__social-icon")
+                                        i.vacancy-respond__social-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                                            +svg('fb')
+
+                            .vacancy__form-wrapper.bg_white-noise
+                                h5.vacancy__form-title.h5.font_upper.font_black відгукнутися на вакансію
+                                form(method='get' class="vacancy__form")
+                                    .form-group.vacancy__form-group.vacancy__form-group--name.required
+                                        div.form-label.help-block.vacancy__form-label.regular Введіть ім'я
+                                        input.form-input.vacancy__form-input.font_gray-to-black(type='text' placeholder="ПІБ")
+                                    .vacancy__form-contacts
+                                        .form-group.vacancy__form-group.vacancy__form-group--tel.required
+                                            div.form-label.help-block.vacancy__form-label.regular Введіть телефон
+                                            input.form-input.vacancy__form-input.font_gray-to-black(type='text' placeholder="Телефон")
+                                        .form-group.vacancy__form-group.vacancy__form-group--email.required.has-error
+                                            div.form-label.help-block.vacancy__form-label.regular Введіть email
+                                            input.form-input.vacancy__form-input.font_gray-to-black(type='text' placeholder="Email")
+                                    .upload__files
+                                        .upload__list
+                                        .upload
+                                            input.upload__input(type='file', multiple='', size='50')
+                                            +downloadLink([{href: "#", desc: "Завантажити документи"}])
+                                    button(type="submit" class="h5 vacancy__form-btn font_upper bg_yellow-to-black bg_contrast_yellow-to-white font_black-to-white") відправити
+                                .vacancy__form-close
+                                    i.vacancy__form-close-icon.fill_black
+                                        +svg("close")
+                    //- remove flex-wrapper div on back
+                    .flex-wrapper
+                        .share__social
+                            +blockTitle("поділіться")
+                            .share__social-wrapper
+                                a(href='#' class="share__social-icon")
+                                    i.share__social-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                                        +svg('fb')
+                                a(href='#' class="share__social-icon")
+                                    i.share__social-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                                        +svg('fb')
+                                a(href='#' class="share__social-icon")
+                                    i.share__social-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                                        +svg('fb')
+                                a(href='#' class="share__social-icon")
+                                    i.share__social-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                                        +svg('fb')
+
+                        .vacancy__form-sidebar-wrapper.bg_white-noise
+                            h5.vacancy__form-sidebar-title.h5.font_upper.font_black відгукнутися на вакансію
+                            form(method='get' class="vacancy__form")
+                                .form-group.vacancy__form-sidebar-group.required
+                                    div.form-label.help-block.vacancy__form-sidebar-label.regular Введіть ім'я
+                                    input.form-input.vacancy__form-sidebar-input.font_gray-to-black.regular(type='text' placeholder="ПІБ")
+                                .form-group.vacancy__form-sidebar-group.required
+                                    div.form-label.help-block.vacancy__form-sidebar-label.regular Введіть телефон
+                                    input.form-input.vacancy__form-sidebar-input.font_gray-to-black.regular(type='text' placeholder="Телефон")
+                                .form-group.vacancy__form-sidebar-group.required.has-error
+                                    div.form-label.help-block.vacancy__form-sidebar-label.regular Введіть email
+                                    input.form-input.vacancy__form-sidebar-input.font_gray-to-black.regular(type='text' placeholder="Email")
+                                .upload__files
+                                    .upload__list
+                                    .upload
+                                        input.upload__input(type='file', multiple='', size='50')
+                                        +downloadLink([{href: "#", desc: "Завантажити документи"}])
+                                button(type="submit" class="h5 vacancy__form-sidebar-btn font_upper bg_yellow-to-black bg_contrast_yellow-to-white font_black-to-white") відправити

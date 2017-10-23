@@ -1,0 +1,132 @@
+.categories {
+  flex: 0 0 270px;
+  padding: 40px;
+  padding-bottom: 30px;
+  margin-left: 130px;
+  &__list {
+
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
+    cursor: pointer;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__link {
+    flex: 1 1 auto;
+    padding-right: 10px;
+    position: relative;
+    line-height: 30px;
+    transition: 0.3s;
+  }
+  &__stripe {
+    opacity: 0;
+    flex: 0 0 15px;
+    height: 2px;
+    transition: 0.3s;
+  }
+  .block__title {
+    position: relative;
+    left: -10px;
+    margin-bottom: 12px;
+  }
+  &__mobile {
+    &-icon {
+      display: none;
+      &-svg {
+
+      }
+    }
+  }
+}
+
+// MEDIA QUERIES FOR TABLET
+@include respond-to($tam) {
+  .categories {
+    margin-left: 24px;
+    flex: 0 1 224px;
+    .block__title {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+// MEDIA QUERIES FOR MOBILE
+@include respond-to($mob) {
+  .categories {
+    flex: 1 1 auto;
+    max-width: 300px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    .block__title {
+      margin-bottom: 0;
+      left: 0;
+      transition: 0.3s;
+    }
+    &__list {
+      padding-left: 0;
+      max-height: 288px;
+      display: none;
+    }
+    &__item {
+      display: block;
+      margin-bottom: 1px;
+    }
+    &__link {
+      display: block;
+      position: relative;
+      padding: 25px;
+      margin-bottom: 1px;
+      line-height: 30px;
+      background-color: $white-noise;
+      &:after {
+        display: none;
+      }
+    }
+    &__mobile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      padding: 25px;
+      margin-bottom: 1px;
+      background-color: $white-noise;
+      transition: 0.3s;
+      cursor: pointer;
+      &-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10px;
+        height: 6px;
+        transition: 0.3s;
+        &-svg {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 10px;
+          height: 6px;
+          transition: 0.3s;
+        }
+      }
+      &-active {
+        .categories__mobile-icon {
+          transform: rotate(-180deg);
+          transition: 0.3s;
+        }
+        .categories__mobile-icon-svg {
+          fill: $yellow;
+        }
+      }
+    }
+    &__stripe {
+      display: none;
+    }
+  }
+}

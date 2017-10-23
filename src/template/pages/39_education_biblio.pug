@@ -1,0 +1,54 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    var headingLineHeight = "100";
+    var descLineHeight = "100";
+    var links = [
+      {
+        href: 'static/img/Тимчасовий розподіл.doc',
+        desc: 'Завантажити (pdf 3.2mb)',
+      }
+    ];
+    var biblioItems = [
+      {
+        imgSrc: "static/img/biblio_img1.jpg",
+        title: "Догляд за хворими і медична техніка Догляд за хворими і медична техніка Догляд за хворими і медична техніка Догляд за хворими і медична техніка Догляд за хворими і медична техніка Догляд за хворими і медична техніка Догляд за хворими і медична техніка",
+        desc: "У навчальному виданні вміщено інструкції для проведення занять з догляду за хворими і медичної маніпуляційної техніки, алгоритми практичних навичок відповідно до розділів і тем дисципліни. Описано спостереження медичного працівника за станом пацієнта під час проведення процедури і після неї. У посібнику наведено нормативні документи Управління охорони здоров’я МОЗ України."
+      },
+      {
+        imgSrc: "static/img/biblio_img2.jpg",
+        title: "Латинська мова і основи медичної термінології",
+        desc: "Навчальний посібник складається з нормативного курсу латинської мови для медичних навчальних закладів і додаткових матеріалів, що містять зразки контрольних робіт, списки латинських назв захворювань тощо. Наприкінці книги подано латинсько-український та українсько-латинський алфавітні словники. Термінологічна спрямованість посібника допоможе учням упевнено користуватися медичною термінологією. Доповнено текстові завдання у зв’язку з вимогою декридетації."
+      }
+    ];
+    
+block main
+  main.main(class="bg_white-to-light-blue" data-page='education')
+    #search__wrapper
+      +search()
+    +disabilities()
+    .container
+      +breadrcrumbs(['Головна', 'Освіта'], 'Бібліотека')
+      h1.education__title.h2.font_upper.font_black Бібліотека      
+      .education__row
+        .accordion__wrapper
+          +accordion(accordion, true)
+        .education.education__calendar
+          .education__list
+            each item in biblioItems
+              .education__item
+                a(href="#" class="education__item-img-link")
+                  .h5.more-info.font_upper.font_white Детальніше
+                    span.more-info__stripe.bg_white
+                  .education__item-img-overlay
+                  .education__item-img-wrapper
+                    img(src=`${item.imgSrc}` class="education__item-img obj-fit")
+                .education__item-desc
+                  a(href="#" class="education__item-desc-heading h4 font_black dot" data-height=`${headingLineHeight}`)= item.title 
+                  p(class="education__item-desc-text regular font_gray-dark-to-black dot" data-height=`${descLineHeight}`)= item.desc
+                  +downloadLink(links)
+              +separateBorder()
+          
+          +loadMore()    

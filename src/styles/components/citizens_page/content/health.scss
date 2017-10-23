@@ -1,0 +1,192 @@
+.citizens__health {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.health {
+  width: calc(100% - 300px);
+  padding-right: 27px;
+}
+
+.health__icons {
+  position: absolute;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  width: 55px;
+  height: 45px;
+  &-wrapper {
+    position: relative;
+    width: 55px;
+    height: 45px;
+  }
+  &-border {
+    position: absolute;
+    width: 27px;
+    height: 1px;
+    background-color: #d8d8d8;
+    left: 27%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transform: rotate(-60deg);
+  }
+  &-svg {
+    width: 16px;
+    height: 12px;
+  }
+  &-svg-photo {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+  }
+  &-svg-video {
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+  }
+}
+
+// HEALTH CATEGORIES STYLES
+.health__categories {
+  width: 270px;
+  padding-left: 26px;
+  border-left: 1px solid $gray-medium;
+  .block__title {
+    margin-bottom: 13px;
+  }
+  &-list {
+    padding-left: 9px;
+  }
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  &-link {
+    flex: 1 1 auto;
+    position: relative;
+    line-height: 30px;
+    letter-spacing: 0;
+    margin-bottom: 3px;
+    padding-right: 20px;
+  }
+  &-stripe {
+    opacity: 0;
+    flex: 0 0 15px;
+    height: 2px;
+    transition: 0.3s;
+  }
+  &-mobile {
+    &-icon {
+      display: none;
+      &-svg {
+
+      }
+    }
+  }
+}
+
+
+// MEDIA QUERIES FOR TABLET
+@include respond-to($tam) {
+  .citizens__health {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  // HEALTH CATEGORIES STYLES
+  .health__categories {
+    flex: 1 1 auto;
+    width: 100%;
+    order: 1;
+    padding-left: 0;
+    margin-bottom: 30px;
+    border-left: none;
+    .block__title {
+      margin-bottom: 0;
+      transition: 0.3s;
+    }
+    &-list {
+      padding-left: 0;
+      max-height: 408px;
+      display: none;
+    }
+    &-item {
+      display: block;
+      margin-bottom: 1px;
+    }
+    &-link {
+      display: block;
+      position: relative;
+      padding: 10px 40px;
+      margin-bottom: 1px;
+      line-height: 30px;
+      letter-spacing: 0;
+      background-color: $white-noise;
+    }
+    &-mobile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+      padding: 20px 40px;
+      margin-bottom: 1px;
+      background-color: $yellow;
+      transition: 0.3s;
+      cursor: pointer;
+      &-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10px;
+        height: 6px;
+        transition: 0.3s;
+        &-svg {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 10px;
+          height: 6px;
+          transition: 0.3s;
+        }
+      }
+      &-active {
+        background-color: $blue-light;
+        .block__title {
+          color: $white;
+        }
+        .health__categories-mobile-icon {
+          transform: rotate(-180deg);
+          transition: 0.3s;
+        }
+        .health__categories-mobile-icon-svg {
+          fill: $white;
+        }
+      }
+    }
+    &-stripe {
+      display: none;
+    }
+  }
+
+  .health {
+    width: 100%;
+    order: 2;
+    padding-right: 0;
+  }
+}
+
+// MEDIA QUERIES FOR MOBILE
+@include respond-to($mob) {
+
+}
+
+
+// SCROLL BAR PLUGIN STYLES
+.mCSB_inside > .mCSB_container {
+  margin-right: 0;
+}

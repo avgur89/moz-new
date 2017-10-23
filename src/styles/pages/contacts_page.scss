@@ -1,0 +1,14 @@
+// Contacts page styles
+
+/* COMPONENTS */
+@import '../components/contacts_page/content/contacts';
+
+
+//[data-page='contacts'] {
+  .contacts {
+    padding: 36px 0;
+  }
+  .contacts__title {
+    margin-top: 22px;
+  }
+//}

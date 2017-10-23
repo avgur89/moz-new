@@ -1,0 +1,13 @@
+//- Variable for online helper
+
+mixin online_helper()
+  .container
+    .online-helper
+      .search__wrapper
+        form(class="online-helper__form" action="" method="")
+          input(class="online-helper__form-input font_gray regular bg_white-noise-to-dark-blue" type="text" placeholder="Пошук по сайту")
+          span.online-helper__form-switch-btn.h5.bg_white.font_upper.font_black а-я
+          +button("search-yellow-input")
+        +alphabet_search()
+        +helper()
+      +popular_categories()

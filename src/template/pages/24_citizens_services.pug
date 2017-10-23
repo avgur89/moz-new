@@ -1,0 +1,116 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    var serviceContent = {
+      heading: "Первинна ланка",
+      links: ['Як укласти договір з лікарем?', 'гарантовані послуги та інші важливі речі', 'Контакти сімейних лікарів'],
+      social: ['linkedin', 'fb', 'google', 'twitter']
+    };
+    var tableContent = [
+      {
+        th: ['№ Послуги', 'Назва', 'Опис', 'Місто', 'Район']
+      },
+      {
+        td: ['№302', 'Медичний огляд', 'Медичний огляд', 'Київ', 'Святошинський']
+      },
+      {
+        td: ['№1045', 'Обстеження', 'Повне обстеження організму', 'Тернопіль', 'Городецький']
+      },
+      {
+        td: ['№621', 'Аналіз лейкоцитів', 'Абсолютно повний аналіз кількості лейкоцитів в крові (дорослим, дітям від 12-ти років, а також людям у віці)', 'Черкаси', 'Шевченківський']
+      },
+      {
+        td: ['№002', 'Стоматологія', 'Стоматологічне обстеження, включно чистка та лікування', 'Чернігів', 'Химки']
+      },
+      {
+        td: ['№461', 'Ліки', 'Безкоштовна видача ліків залежно від діагнозу', 'Львів', 'Лук’янівський']
+      },
+      {
+        td: ['№299', 'Імунітет', 'Обстеження імунної системи', 'Донецьк', 'Ленінський']
+      },
+      {
+        td: ['№620', 'Авітаміноз, обстеження, лікування, спостерігання у лікарні під наглядом', 'Лікування авітамінозу та видача вітамінів за необхідністю', 'Івано-Франківськ', 'Молдавський']
+      },
+      {
+        td: ['№746', 'Імунізація', 'Імунізація', 'Харків', 'Дніпровський']
+      }
+    ];
+    
+    
+block main
+  main.main(class="bg_white-to-light-blue" data-page='citizens')
+    +disabilities()
+    .container
+      +breadrcrumbs(['Головна', 'Громадянам'], 'Медична опіка')
+      h1.citizens__title.h2.font_upper.font_black Медична опіка
+      .citizens__row
+        .accordion__wrapper
+          +accordion(accordion, true, "Первинна ланка")
+        .citizens.citizens__service
+          .service
+            //- first line section
+            +service_line(serviceContent)
+                      
+            +separateBorder()
+            
+            //- form section  
+            .service__form-wrapper
+              form(class="service__form" action="" method="")
+                input(class="service__form-input font_gray regular bg_white-noise-to-dark-blue" type="text" placeholder="Пошук")
+                +button("search-yellow-input")
+            
+            //- table section
+            +table(tableContent)
+
+            .editor-table
+              div
+              table
+                caption Таблиця №1
+                thead
+                  tr
+                    th №
+                    th Назва
+                    th Опис
+                tbody
+                  tr
+                    td №302
+                    td Медичний огляд
+                    td Медичний огляд
+                  tr
+                    td №1045
+                    td Обстеження
+                    td Повне обстеження організму
+                  tr
+                    td №621
+                    td Аналіз лейкоцитів
+                    td Абсолютно повний аналіз кількості лейкоцитів в крові (дорослим, дітям) від 12-ти років, а також людям у віці)
+            
+            //- table link
+            .table-wrapper
+              +blockTitle('Результат пошуку')
+              .hidden-table
+              table.table
+                tr
+                  th.regular-small.font_gray-to-black №
+                  th.regular-small.font_gray-to-black Назва
+                  th.regular-small.font_gray-to-black Веб сайт
+                tr
+                  td.regular.font_black 343
+                  td.regular.font_black НМУ ім. О. О. Богомольця
+                  td.regular.font_black
+                    a.table__link.regular.font_blue-light-to-black.font_contrast_blue-light-to-black(href="#") nmu.ua
+                tr
+                  td.regular.font_black 343
+                  td.regular.font_black НМУ ім. О. О. Богомольця
+                  td.regular.font_black
+                    a.table__link.regular.font_blue-light-to-black.font_contrast_blue-light-to-black(href="#") nmu.ua
+                tr
+                  td.regular.font_black 343
+                  td.regular.font_black НМУ ім. О. О. Богомольця
+                  td.regular.font_black
+                    a.table__link.regular.font_blue-light-to-black.font_contrast_blue-light-to-black(href="#") nmu.ua
+            
+            //- load more section
+            +loadMore()    

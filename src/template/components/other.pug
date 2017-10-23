@@ -1,0 +1,180 @@
+//- blocks separate border
+mixin separateBorder(className)
+  if className
+    div(class=`container border-wrapper ${className}`)
+      .border
+  else
+    div(class="container border-wrapper")
+      .border
+
+
+//- main banner item
+mixin bannerMain(item)
+  .banner
+    .banner__open-wrap
+      .container
+        a(href='#' class="banner__open")
+          .banner__open-text.h5.font_upper.font_blue-light-to-black.font_contrast_blue-light-to-black Розгорнути
+          i.banner__arrow.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+            +svg('arrow_small')
+    a(href="#" class="banner__link")
+      .banner__cnt
+        div(class="banner__img" style="background-image:url('" + item.image + "')")
+        .container
+          h2.banner__title.font_white.font_upper= item.title
+          .banner__desc.font_white.font_upper= item.desc
+          a(href='#' class="banner__close")
+            i.banner__svg.fill_white
+                +svg('close')
+
+//- banner item
+mixin bannerSecondary(item, breadcrumbsArray, breadcrumbsActiveItem, breadcrumbsClass)
+  .banner-secondary
+    .banner-secondary__cnt
+      div(class="banner-secondary__img" style="background-image:url('" + item.image + "')")
+      .container
+        .banner-secondary__desc-scroll
+          .banner-secondary__desc-wrapper
+            +breadrcrumbs(breadcrumbsArray, breadcrumbsActiveItem, breadcrumbsClass)
+            h2.banner-secondary__title.font_white.font_upper= item.title
+            p.banner-secondary__desc.regular.font_white= item.desc
+
+//- banner item
+mixin banner(item)
+  .banner-btn
+    .banner-btn__cnt
+      div(class="banner-btn__img" style="background-image:url('" + item.image + "')")
+      .banner-btn__desc-wrapper
+        h2.banner-btn__title.font_white.font_upper= item.title
+        p.banner-btn__desc.regular.font_white= item.desc
+        .banner-btn__button-wrapper
+          a(href="#" class="banner-btn__button h5 font_upper font_black-to-white bg_white-to-black")= item.button
+
+//- interactive search
+mixin search()
+  .search
+    .container
+      .search__text.font_contrast_white-noise-to-black.font_upper Пошук
+      form(class="search__form" action="" method="")
+        input(class="search__form-input font_gray-to-black regular bg_white-noise-to-dark-blue" type="text" placeholder="Шукайте, наприклад, новини для студентів")
+        +button("search-yellow-input")
+
+
+//- dropdown item
+mixin dropdown(title, items, className)
+  .dropdown
+    .dropdown__title
+      if className
+        div(class=`dropdown__title-text h5 font_upper font_gray-dark-to-black js-dropdown-open ${className}`)= title
+      else
+        .dropdown__title-text.h5.font_upper.font_gray-dark-to-black.js-dropdown-open= title
+      i.dropdown__arrow.fill_gray-to-black
+        +svg('arrow_small')
+    ul.dropdown__list
+      each item in items
+        li(class=`dropdown__item ${className}`)
+          a(class='dropdown__link h5 font_upper font_gray-dark-to-black' href='#')= item
+
+//- block heading title
+mixin headingTitle(title)
+  h5(class="h5 heading__title font_upper font_black")= title
+    span.heading__title-stripe.bg_yellow-to-black.bg_contrast_yellow-to-white
+
+//- block heading link
+mixin headingLink(link)
+  a(class="h5 heading__link font_upper font_blue-light-to-black font_contrast_blue-light-to-black")= link
+    span.heading__stripe.bg_blue-light-to-black.bg_contrast_blue-light-to-black
+
+//- block heading title
+mixin blockTitle(title)
+  h5(class="h5 block__title font_upper font_black")= title
+    span.block__title-stripe.bg_yellow-to-black.bg_contrast_yellow-to-white
+
+//- block heading link
+mixin blockLink(link)
+  a(class="h5 block__link font_upper font_blue-light-to-black font_contrast_blue-light-to-black")= link
+    span.block__stripe.bg_blue-light-to-black.bg_contrast_blue-light-to-black
+
+//- download link
+mixin downloadLink(links)
+  each link in links
+    if link.date === undefined
+      .download
+        a(href=`${link.href}` class="download__link" targer="_blank")
+          i.download__link-icon.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+            +svg('document')
+          .download__link-desc.regular.font_blue-light-to-black.font_contrast_blue-light-to-black= link.desc
+    else
+      .download
+        a(href=`${link.href}` class="download__link" targer="_blank")
+          i.download__link-icon.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+            +svg('document')
+          .download__link-desc.regular.font_blue-light-to-black.font_contrast_blue-light-to-black= link.desc
+        .download__date.regular-small.font_gray-to-black= link.date
+
+//- disabilities button block
+mixin disabilities()
+  .disabilities__wrapper
+    .disabilities
+      .disabilities__item-wrapper
+        a(href="#" class="disabilities__item disabilities__item-text bg_white-noise-to-black bg_white-noise-to-dark-blue")
+          i.disabilities__item-icon.fill_black-to-white.fill_contrast_black-to-white
+            +svg('text')
+        span.disabilities__desc.disabilities__desc-text.disabilities__desc-disabled.font_upper.h5.font_black.bg_white-noise Збільшити шрифт
+      .disabilities__item-wrapper
+        a(href="#" class="disabilities__item disabilities__item-contrast bg_white-noise-to-black bg_white-noise-to-dark-blue")
+          i.disabilities__item-icon.fill_black-to-white.fill_contrast_black-to-white
+            +svg('drop')
+        span.disabilities__desc.disabilities__desc-contrast.disabilities__desc-disabled.font_upper.h5.font_black.bg_white-noise Змiнити на синiй
+      .disabilities__item-wrapper
+        a(href="#" class="disabilities__item disabilities__item-black bg_white-noise-to-black bg_white-noise-to-dark-blue")
+          i.disabilities__item-icon.fill_black-to-white.fill_contrast_black-to-white
+            +svg('contrast')
+        span.disabilities__desc.disabilities__desc-black.disabilities__desc-disabled.font_upper.h5.font_black.bg_white-noise Змiнити на чорно-бiлий
+
+//- online form block
+mixin onlineFormItem(title, desc)
+  if (!title)
+    section.online-form
+      .online-form__content-wrapper
+        p(class="online-form__text regular font_gray-dark-to-black")= desc
+      .online-form__stripe-wrapper
+        span.online-form__stripe.bg_blue-to-black
+        span.online-form__stripe.bg_yellow-to-gray.bg_contrast_yellow-to-white
+  else
+    section.online-form
+      .online-form__content-wrapper
+        h5.online-form__heading
+          a(href="#" class="h4 font_black online-form__heading-link")= title
+            span.online-form__heading-stripe.bg_black
+        p(class="online-form__text regular font_gray-dark-to-black")= desc
+      .online-form__stripe-wrapper
+        span.online-form__stripe.bg_blue-to-black
+        span.online-form__stripe.bg_yellow-to-gray.bg_contrast_yellow-to-white
+
+//- navigation
+mixin navigation(items)
+  nav.nav.bg_white-noise-to-dark-blue
+    each item in items
+      if item.active
+        a.nav__item.nav__item-active.regular.font_upper.font_gray-dark-to-black(href='#')= item.text
+      else
+        a.nav__item.regular.font_upper.font_gray-dark-to-black(href='#')= item.text
+
+
+//- links
+mixin links(...links)
+  each item in links
+    if item.href
+      li.links__item
+        a(href=`${item.href}` class="h6 links__link font_gray-light-to-black font_upper")= item.text
+    else
+      li.links__item
+        a(href="#" class="h6 links__link font_gray-light-to-black font_upper")= item.text
+//- load more
+mixin loadMore()
+  .load__more
+    .load__more-wrapper
+      a(href="#" class="load__more-btn bg_yellow-to-black bg_contrast_yellow-to-white regular font_black-to-white font_upper") завантажити ще
+      +pagination()
+

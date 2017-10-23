@@ -1,0 +1,60 @@
+//- Accordion:
+
+-
+  var accordion = [{
+  title: 'стратегія'
+  },{
+  title: 'керівництво'
+  },{
+  title: 'структура',
+  active: true,
+  items: ['структура', 'радники', 'очищення влади']
+  },{
+  title: 'положення про міністерство'
+  },{
+  title: 'плани реформ'
+  },{
+  title: 'міжнародна співпраця'
+  },{
+  title: 'вакансії'
+  },{
+  title: 'партнери'
+  },{
+  title: 'Боротьба з корупцією'
+  },{
+  title: 'Видача направлень на проходження атестації і експертизи цілительських здібностей'
+  }];
+
+mixin accordion (array, arrow, title)
+  - title = title || 'Категорії'
+  a(href ="#!").accordion__show-mobile.bg_white-noise
+    +blockTitle(title)
+    i.accordion__show-mobile-arrow: +svg('arrow_small')
+  ul.accordion
+    for obj in array
+      if obj.active
+        li.accordion__title.accordion__title-active.h5.bg_white-noise-to-white
+          if !obj.items
+            a.accordion__title-link.font_gray-dark-to-black(href="main.html")= obj.title
+          else
+            a.accordion__title-link.font_gray-dark-to-black.accordion__link_disable(href="05_about_ministry_structures.html")= obj.title
+              if arrow && obj.items
+                i.accordion__arrow.fill_gray-to-black: +svg('arrow_small')
+          if obj.items
+            ul.accordion__submenu
+              each item in obj.items
+                li.bg_white
+                  a.font_gray-dark-to-black.accordion__link(href="http://raganwald.com/2017/04/30/transducers.html")= item
+      else
+        li.accordion__title.h5.bg_white-noise-to-white
+          if !obj.items
+            a.accordion__title-link.font_gray-dark-to-black(href="main.html")= obj.title
+          else
+            a.accordion__title-link.font_gray-dark-to-black.accordion__link_disable(href="05_about_ministry_structures.html")= obj.title
+              if arrow && obj.items
+                i.accordion__arrow.fill_gray-to-black: +svg('arrow_small')
+          if obj.items
+            ul.accordion__submenu
+              each item in obj.items
+                li.bg_white
+                  a.font_gray-dark-to-black.accordion__link(href="http://raganwald.com/2017/04/30/transducers.html")= item

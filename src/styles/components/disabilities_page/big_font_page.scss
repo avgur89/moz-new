@@ -1,0 +1,241 @@
+// BIG FONT SIZE PAGE STYLES
+
+.switch-to-big {
+  // NAVIGATION SECTION
+  .nav__item {
+    font-size: 18px;
+    padding: 0 22px;
+    &.hidden {
+      &:after {
+        display: none !important;
+      }
+    }
+    &-active {
+      padding: 19px 30px 20px 30px;
+      background-color: $blue-light;
+      color: $white;
+      &:hover {
+        color: $white !important;
+      }
+      &:after {
+        display: none !important;
+      }
+      &:first-child {
+        &:before {
+          display: none !important;
+        }
+      }
+    }
+    &:after {
+      width: 1px;
+      height: 14px;
+      top: 8px;
+    }
+    &:first-child {
+      &:before {
+        top: 8px;
+        height: 14px;
+      }
+    }
+  }
+
+  // FOOTER SECTION
+  .footer__nav-stripe {
+    top: 8px;
+  }
+  .footer__ref-stripe {
+    top: 15px;
+  }
+
+  // DISABILITIES ICONS SECTION
+  .disabilities__item-current {
+    background-color: $white-noise;
+    .disabilities__item-icon {
+      fill: $black;
+    }
+  }
+
+  // ONLINE FORM SECTION
+  .online-form__docs-heading {
+    font-size: 40px;
+  }
+
+  // SUBSCRIBE SECTION
+  .subscribe__email-heading {
+    font-size: 40px;
+  }
+
+  // HIDDEN LINKS SECTION
+  .links__link {
+    line-height: 12px;
+    &::after {
+      height: 12px;
+    }
+  }
+
+  // BLOCK TITLE COMPONENT
+  .block__title {
+    &-stripe {
+      display: inline-block;
+      position: absolute;
+      top: 8px;
+      left: 0;
+    }
+  }
+
+  // HEADING TITLE COMPONENT
+ .heading__title {
+   &-stripe {
+     top: 7px;
+     height: 18px;
+   }
+ }
+
+  // BLOCK TITLE COMPONENT
+ .block__title {
+   &-stripe {
+     top: 7px;
+     height: 18px;
+   }
+ }
+
+  // NO IMG COMPONENT
+  .no-img__cnt-disabled-desc,
+  .no-img__cnt-active-wrapper {
+    a, p {
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.05em;
+    }
+  }
+  .no-img__cnt-active-wrapper h5 a {
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: 0.05em;
+  }
+
+  // ACCORDION SECTION
+  .accordion__qa {
+    &-panel {
+      p {
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 0.05em;
+      }
+      a {
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+
+  // CALENDAR SECTION
+  .calendar__cnt-desc {
+    a, p {
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  // EDITOR SECTION
+  .editor  a {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .editor > h2 {
+    font-size: 30px;
+    line-height: 53px;
+  }
+  .editor > h3,
+  .register__editor > h3 {
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: 0.05em;
+  }
+  .editor > h4,
+  .register__editor > a {
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: 0;
+  }
+  .editor > h5 {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.05em;
+  }
+  .editor > span {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.05em;
+  }
+  .editor > strong {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.05em;
+  }
+  .editor > p,
+  .register__editor > p {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.05em;
+  }
+  .editor > ol {
+    li {
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.05em;
+      border-left: none;
+      &:before {
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 0.05em;
+        border-left: 2px solid $yellow;
+      }
+    }
+  }
+  .editor > ul {
+    div {
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.05em;
+    }
+    li {
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.05em;
+      &:before {
+        position: relative;
+        top: -3px;
+      }
+    }
+  }
+  .editor > blockquote {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.05em;
+  }
+
+  // PHOTO POPUP EDITOR SECTION
+  .photo__licence-popup-content > h4 {
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: 0;
+  }
+  .photo__licence-popup-content > p {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.05em;
+  }
+
+  // DROPDOWN SECTION
+  .dropdown__title-text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .dropdown__link {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}

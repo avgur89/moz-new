@@ -1,0 +1,255 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    var headingLineHeight = "100";
+    var descLineHeight = "100";
+    var bannerContent = {
+      title: "освіта",
+      desc:  "Життя людини – найвища цінність. Усі причетні до системи екстреної медичної допомоги, як ніхто інший, розуміють, що для збереження життя важливою є кожна хвилина. Міністерство охорони здоров'я України, у свою чергу, усвідомлює, що для ефективного функціонування екстреної медичної допомоги необхідно.",
+      image: "static/img/education_banner.jpg"
+    };
+    var noImgEducation = {
+      title: "Навчальні заклади",
+      heading: "Карта навчальних закладів",
+      links: ["всі навчальні заклади"],
+      desc:  "Керівництво Міністерства усвідомлює необхідність модернізації системи вищої медичної та фармацевтичної освіти, приведення її якості у відповідність до міжнародних стандартів. Досягнення цієї мети є запорукою успішної реалізації медичної реформи в Україні, яка наразі здійснюється.",
+      image: "static/img/education_building.jpg"
+    };
+    var traineeItems = [
+      {
+        imgSrc: 'static/img/trainee_img1.jpg',
+        links: [{ text: 'стажування', href: '/link1' }, { text: 'студентам', href: '/link1' }, { text: 'європа', href: '/link1' }],
+        desc: 'Пакет нормативно-правових документів, у тому числі зміни до законодавства, для запровадження '
+      },
+      {
+        imgSrc: 'static/img/trainee_img2.jpg',
+        links: [{ text: 'навчання за кордоном', href: '/link2' }],
+        desc: 'Міністерство розробило проекти розпоряджень щодо формування округів у 12 областях.'
+      },
+      {
+        imgSrc: 'static/img/trainee_img3.jpg',
+        links: [{ text: 'навчання за кордоном', href: '/link4' }, { text: 'германія', href: '/link5' }],
+        desc: 'Проекти ще 2 областей проходять узгодження зацікавлених сторін.'
+      }
+    ];
+    var translateItems = [
+      {
+        imgSrc: 'static/img/translate_img1.jpg',
+        links: [{ text: 'переклади', href: '/link1' }, { text: 'студентам', href: '/link1' }],
+        desc: 'Хоч українські реалії не найкращі, ми не можемо дозволити собі підлаштовувати під них зміни.'
+      },
+      {
+        imgSrc: 'static/img/translate_img2.jpg',
+        links: [{ text: 'навчання', href: '/link2' }],
+        desc: 'Ми повинні змінити реальність, у якій ця система функціонує.'
+      },
+      {
+        imgSrc: 'static/img/translate_img3.jpg',
+        links: [{ text: 'англійська', href: '/link4' }, { text: 'німецька', href: '/link5' }],
+        desc: 'Щоб забезпечити високі стандарти надання медичної допомоги кожному пацієнту, чи то з села, чи з міста.'
+      }
+    ];
+    var internItems = [
+      {
+        imgSrc: 'static/img/intern_img1.jpg',
+        links: [{ text: 'інтернам', href: '/link1' }, { text: 'медицина', href: '/link1' }],
+        desc: 'МОЗ України наполягає на запровадженні різного рівня.'
+      },
+      {
+        imgSrc: 'static/img/intern_img2.jpg',
+        links: [{ text: 'ліки', href: '/link2' }],
+        desc: 'Адже зараз підготовка студентів гуманітарних спеціальностей в країні.'
+      },
+      {
+        imgSrc: 'static/img/intern_img3.jpg',
+        links: [{ text: 'лікарні', href: '/link4' }, { text: 'інтернам', href: '/link5' }, { text: 'інновації', href: '/link5' }],
+        desc: 'Для порівняння, Польща витрачає на підготовку лікаря у 4 рази більше.'
+      }
+    ];
+    var grantItems = [
+      {
+        links: [{ text: 'гранти', href: '/link4' }, { text: 'молодь', href: '/link4' }],
+        title: "Раїса Богатирьова вручила гранти Президента України для обдарованої молоді"
+      },
+      {
+        links: [{ text: 'гранти', href: '/link4' }, { text: 'глобальний фонд', href: '/link4' }],
+        title: "Парламент затвердив зміни, які звільняють від податків гранти Глобального фонду"
+      },
+      {
+        links: [{ text: 'гранти', href: '/link4' }, { text: 'медицина', href: '/link4' }],
+        title: "Міністерство виділлило гранти для обдарованих студентів медзакладу"
+      },
+      {
+        links: [{ text: 'гранти', href: '/link4' }, { text: 'навчання за кордоном', href: '/link4' }],
+        title: "Українські студенти отримали можливість вчитися за кордоном"
+      },
+      {
+        links: [{ text: 'гранти', href: '/link4' }, { text: 'учні', href: '/link4' }, { text: 'школа', href: '/link4' }],
+        title: "Введені нові гранти для учнів загальних шкіл"
+      },
+      {
+        links: [{ text: 'гранти', href: '/link4' }, { text: 'медицина', href: '/link4' }],
+        title: "Гранти на стажування до міських лікарень"
+      }
+    ];
+    var biblioList = [
+      {
+        imgSrc: "static/img/book_img1.jpg",
+        title: "Догляд за хворими і медична техніка",
+        desc: "У навчальному виданні вміщено інструкції для проведення занять з догляду за хворими і медичної маніпуляційної техніки, алгоритми"
+      },
+      {
+        imgSrc: "static/img/book_img2.jpg",
+        title: "Клінічні лабораторні дослідження",
+        desc: "Матеріал підручника відповідає новій програмі навчання студентів за спеціальністю “Лабораторна діагностика”."
+      }
+    ];
+    var innovationList = [
+      {
+        imgSrc: "static/img/innovation_img1.jpg",
+        links: [{ text: 'здоров’я', href: '/link4' }, { text: 'пам’ятка', href: '/link4' }],
+        title: "Профилактика різноманітних інфекцій: пам’ятка для населення"
+      },
+      {
+        imgSrc: "static/img/innovation_img2.jpg",
+        links: [{ text: 'гепатіт', href: '/link4' }, { text: 'лікування', href: '/link4' }, { text: 'імунітет', href: '/link4' }],
+        title: "Імунопрофілактика проти гепатиту є найбільш ефективним способом боротьби з хворобою"
+      }
+    ];
+    
+    
+block main
+  main.main(class="bg_white-to-light-blue" data-page='education')
+    +disabilities()
+    +bannerSecondary(bannerContent, ['Головна'], 'Освіта', 'font_white')
+    +search()
+    .container      
+      .education__row
+        .accordion__wrapper
+          +accordion(accordion, true)
+        .education
+          +no_img(noImgEducation)
+          +separateBorder()
+          
+          .trainee__row
+            +headingTitle("Стажування")
+            +headingLink("Всі стажування")
+            div.clearfix
+            ul.trainee__list.slider
+              each item in traineeItems
+                li.trainee__list-item
+                  a(href="#" class="trainee__img-link")
+                    .h5.more-info.font_upper.font_white Детальніше
+                      span.more-info__stripe.bg_white
+                    .trainee__img-overlay
+                      .trainee__img-wrapper
+                        img(src=`${item.imgSrc}` class="trainee__img obj-fit")
+                  .menu-flex-wrapper(data-parent=".trainee__list-item")
+                    ul.links.menu-flex
+                      each link in item.links
+                        +links(link)
+                  a(href="#" class="trainee__desc regular font_black dot" data-height="100")= item.desc
+                  
+          +separateBorder()
+          
+          .grants
+            +headingTitle("гранти на навчання")
+            +headingLink("всі гранти")
+            div.clearfix
+            ul.grants__list.slider.slider_row
+              each grant in grantItems
+                li.grants__item
+                  .grants__item-wrapper
+                    .menu-flex-wrapper(data-parent=".grants__item-wrapper")
+                      ul.links.menu-flex
+                        each link in grant.links
+                          +links(link)    
+                    a(href="#" class="h4 font_black grants__item-heading dot" data-height=`${headingLineHeight}`)= grant.title
+                  .grants__item-stripe-wrapper
+                    span.grants__item-stripe.bg_blue-to-black
+                    span.grants__item-stripe.bg_yellow-to-gray.bg_contrast_yellow-to-white
+          
+          +separateBorder()
+          
+          .trainee__row
+            +headingTitle("Переклади")
+            +headingLink("Всі переклади")
+            div.clearfix
+            ul.trainee__list.slider
+              each item in translateItems
+                li.trainee__list-item
+                  a(href="#" class="trainee__img-link")
+                    .h5.more-info.font_upper.font_white Детальніше
+                      span.more-info__stripe.bg_white
+                    .trainee__img-overlay
+                      .trainee__img-wrapper
+                        img(src=`${item.imgSrc}` class="trainee__img obj-fit")
+                  .menu-flex-wrapper(data-parent=".trainee__list-item")
+                    ul.links.menu-flex
+                      each link in item.links
+                        +links(link)
+                  a(href="#" class="trainee__desc regular font_black dot" data-height="100")= item.desc
+                  
+          +separateBorder()
+          
+          .biblio__latest
+            +headingTitle("бібліотека: останні надходження")
+            +headingLink("в бібліотеку")
+            div.clearfix
+            .biblio__latest-list
+              each book in biblioList
+                .biblio__latest-item
+                  a(href="#" class="biblio__latest-img-link")
+                    .h5.more-info.font_upper.font_white Детальніше
+                      span.more-info__stripe.bg_white
+                    .biblio__latest-img-overlay
+                    .biblio__latest-img-wrapper
+                      img(src=`${book.imgSrc}` class="biblio__latest-img obj-fit")
+                  .biblio__latest-desc
+                    a(href="#" class="biblio__latest-desc-heading h4 font_black dot" data-height=`${headingLineHeight}`)= book.title 
+                    a(href="#" class="biblio__latest-desc-text regular font_gray-dark-to-black dot" data-height=`${descLineHeight}`)= book.desc
+          
+          +separateBorder()
+          
+          .trainee__row
+            +headingTitle("Інтернатура")
+            +headingLink("Вся інформація про інтернатуру")
+            div.clearfix
+            ul.trainee__list.slider
+              each item in internItems
+                li.trainee__list-item
+                  a(href="#" class="trainee__img-link")
+                    .h5.more-info.font_upper.font_white Детальніше
+                      span.more-info__stripe.bg_white
+                    .trainee__img-overlay
+                      .trainee__img-wrapper
+                        img(src=`${item.imgSrc}` class="trainee__img obj-fit")
+                  .menu-flex-wrapper(data-parent=".trainee__list-item")
+                    ul.links.menu-flex
+                      each link in item.links
+                        +links(link)
+                  a(href="#" class="trainee__desc regular font_black dot" data-height="100")= item.desc
+          
+          +separateBorder()
+          
+          .innovation
+            +headingTitle("Інновації в медицині")
+            +headingLink("більше про інновації")
+            div.clearfix
+            .innovation__list
+              each innovation in innovationList
+                .innovation__item
+                  a(href="#" class="innovation__img-link")
+                    .h5.more-info.font_upper.font_white Детальніше
+                      span.more-info__stripe.bg_white
+                    .innovation__img-overlay
+                      .innovation__img-wrapper
+                        img(src=`${innovation.imgSrc}` class="innovation__img obj-fit")
+                  .innovation__desc
+                    .menu-flex-wrapper(data-parent=".innovation__item")
+                      ul.menu-flex
+                        each link in innovation.links
+                          +links(link)    
+                    a(href="#" class="innovation__desc-heading h4 font_black dot" data-height=`${headingLineHeight}`)= innovation.title

@@ -1,0 +1,47 @@
+//- Variable for prevention
+
+-
+  var defaultTitle = 'Профілактика';
+  var defaultLink = 'Читати більше';
+  var defaultLineHeight = '100';
+  var preventionItems = [
+    {
+      imgSrc: 'static/img/prevention_img1.jpg',
+      links: [{ text: 'епідемічна ситуація', href: '/link1' }],
+      desc: 'Оперативна інформація про епідемічну ситуацію з грипу та гострої респіраторно вірусної інфекції Оперативна інформація про епідемічну ситуацію з грипу та гострої респіраторно вірусної інфекції'
+    },
+    {
+      imgSrc: 'static/img/prevention_img2.jpg',
+      links: [{ text: 'здоров’я', href: '/link2' }, { text: 'пам’ятка', href: '/link3' }],
+      desc: 'Профилактика різноманітних інфекцій: пам’ятка для населення'
+    },
+    {
+      imgSrc: 'static/img/prevention_img3.jpg',
+      links: [{ text: 'гепатіт', href: '/link4' }, { text: 'лікування', href: '/link5' }, { text: 'імунітет', href: '/link6' }, { text: 'гепатіт', href: '/link4' }, { text: 'лікування', href: '/link5' }],
+      desc: 'Імунопрофілактика проти гепатиту є найбільш ефективним способом боротьби з хворобою.'
+    }
+  ];
+  
+mixin prevention(title, link, lineHeight, objects)
+ - var objects = objects || preventionItems;
+ - var height = lineHeight || defaultLineHeight;
+  .container
+    .prevention__row
+      +headingTitle(title || defaultTitle)
+      +headingLink(link || defaultLink)
+      div.clearfix
+      ul.prevention__list.slider
+        each item in objects
+          li.prevention__list-item
+            a(href="#" class="prevention__img-link")
+              div.h5.more-info.font_upper.font_white Детальніше
+                span.more-info__stripe.bg_white
+              .prevention__img-overlay
+                .prevention__img-wrapper
+                  img(src=`${item.imgSrc}` class="prevention__img obj-fit")
+            .menu-flex-wrapper(data-parent=".prevention__list-item")
+              ul.links.menu-flex    
+                each link in item.links
+                  +links(link)
+            a(href="#" class="h4 prevention__desc font_black dot" data-height=`${height}`)= item.desc 
+              

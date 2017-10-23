@@ -1,0 +1,36 @@
+//- Variable for alphabet_search
+
+//- Variable for alphabet
+- var alphabet = ['а', 'б', 'в', 'г/ґ', 'д', 'е', 'є', 'ж', 'з', 'и', 'і', 'ї/й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ь', 'ю', 'я'];
+- var tabContent = ['вакцинація', 'реєстр ліків', 'новини', 'анонси', 'освітні заклади', 'вакцинація і профілактика повязані з нею', 'реєстр ліків', 'новини', 'анонси', 'освітні заклади', 'вакцинація', 'реєстр ліків', 'новини', 'анонси', 'освітні заклади', 'вакцинація', 'реєстр ліків', 'новини', 'анонси', 'освітні заклади', 'вакцинація', 'реєстр ліків', 'новини', 'анонси', 'освітні заклади', 'вакцинація', 'реєстр ліків', 'новини', 'анонси', 'освітні заклади', 'вакцинація', 'реєстр ліків', 'новини', 'анонси', 'освітні заклади', 'вакцинація', 'реєстр ліків', 'новини', 'анонси', 'освітні заклади', 'вакцинація', 'реєстр ліків', 'новини', 'анонси', 'освітні заклади'];
+- var tabCounter = 0;
+
+mixin alphabet_search()
+  .alphabet
+    div(class="popup alphabet__popup" data-popup-id="alphabet" tabindex="-1" role="dialog")
+      div(class="popup__container bg_blue-light-to-black bg_blue-light-to-dark-blue")
+        div(class="popup__close popup__close-alphabet bg_white-noise-to-white")
+          span.bg_black
+          span.bg_black
+        div(class="popup__content")
+          div(class="popup__body")
+            ul.alphabet__list-mobile
+              each tab, index in alphabet
+                li(class="alphabet__tab-mobile h5 font_upper font_blue-light-to-black font_contrast_blue-light-to-black bg_white-noise-to-white" data-tab=`tab-${index}` data-letter=`${tab}`)= tab
+          
+    ul.alphabet__list
+      div(class="alphabet__current-tab-mobile bg_white-noise-to-dark-blue h5 font_upper font_black ")
+      div(class="alphabet__choose-letter h5 font_upper font_white-to-black bg_blue-light-to-black bg_blue-light-to-dark-blue" data-popup-target="alphabet") Оберіть іншу букву 
+        span.alphabet__choose-letter-dot.h5.font_upper.font_white-to-black ...
+      each tab, index in alphabet
+        li(class="alphabet__tab h5 font_upper font_blue-light-to-black font_contrast_blue-light-to-black" data-tab=`tab-${index}` data-letter=`${tab}`)= tab
+        - tabCounter++;
+      .alphabet__close
+        i.alphabet__close-icon.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+          +svg('close')
+    - for(var i = 0; i < tabCounter; i++)
+      div(id=`tab-${i}` class="alphabet__tab-content bg_white-noise-to-dark-blue")
+        ul(class="alphabet__tab-content-flex")
+          each item in tabContent
+            li.alphabet__tab-content-item
+              a(href="#" class="alphabet__tab-content-link h5 font_upper font_gray-dark-to-black" data-tablink=`${item}`)= item

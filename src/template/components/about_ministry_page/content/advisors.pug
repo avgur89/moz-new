@@ -1,0 +1,9 @@
+//- Advisors
+
+mixin advisors(nameArray, className)
+  - className = className || ''
+  div(class=`advisors ${className}`)
+    each name in nameArray
+      .advisors__wrap
+        i.advisors__icon.fill_gray-to-black: +svg('human')
+        span.advisors__text.regular.font_upper.font_gray.font_gray-to-black= name

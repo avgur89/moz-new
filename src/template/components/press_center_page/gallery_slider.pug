@@ -1,0 +1,93 @@
+//- Variable for gallery slider block
+
+-
+  var mainSliderItems = [
+    {
+      imgSrc: "static/img/trainee_img1.jpg"
+    },
+    {
+      imgSrc: "static/img/trainee_img2.jpg"
+    },
+    {
+      imgSrc: "static/img/trainee_img3.jpg"
+    },
+    {
+      imgSrc: "static/img/translate_img1.jpg"
+    },
+    {
+      imgSrc: "static/img/translate_img2.jpg"
+    },
+    {
+      imgSrc: "static/img/translate_img3.jpg"
+    },
+    {
+      imgSrc: "static/img/trainee_img1.jpg"
+    },
+    {
+      imgSrc: "static/img/trainee_img2.jpg"
+    },
+    {
+      imgSrc: "static/img/trainee_img3.jpg"
+    },
+    {
+      imgSrc: "static/img/translate_img1.jpg"
+    },
+    {
+      imgSrc: "static/img/translate_img2.jpg"
+    },
+    {
+      imgSrc: "static/img/translate_img3.jpg"
+    }
+  ];
+  
+  var thumbSliderItems = [
+    {
+      imgSrc: "static/img/trainee_thumb-img1.jpg"
+    },
+    {
+      imgSrc: "static/img/trainee_thumb-img2.jpg"
+    },
+    {
+      imgSrc: "static/img/trainee_thumb-img3.jpg"
+    },
+    {
+      imgSrc: "static/img/translate_thumb-img1.jpg"
+    },
+    {
+      imgSrc: "static/img/translate_thumb-img2.jpg"
+    },
+    {
+      imgSrc: "static/img/translate_thumb-img3.jpg"
+    },
+    {
+      imgSrc: "static/img/trainee_thumb-img1.jpg"
+    },
+    {
+      imgSrc: "static/img/trainee_thumb-img2.jpg"
+    },
+    {
+      imgSrc: "static/img/trainee_thumb-img3.jpg"
+    },
+    {
+      imgSrc: "static/img/translate_thumb-img1.jpg"
+    },
+    {
+      imgSrc: "static/img/translate_thumb-img2.jpg"
+    },
+    {
+      imgSrc: "static/img/translate_thumb-img3.jpg"
+    }
+  ]; 
+
+
+mixin gallery_slider()
+  .sl__gallery
+    .sl__gallery-main
+      each slider in mainSliderItems
+        .sl__gallery-main-item
+          img(class="sl__gallery-main-img obj-fit" src=`${slider.imgSrc}` alt="")
+            
+    .sl__gallery-thumb
+      each slider in thumbSliderItems
+        .sl__gallery-thumb-item
+          img(class="sl__gallery-thumb-img" src=`${slider.imgSrc}` alt="")

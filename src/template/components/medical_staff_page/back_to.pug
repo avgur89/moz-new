@@ -1,0 +1,9 @@
+//- Back to link:
+
+mixin back_to(text)
+  a(href="#" class="back-to")
+    .back-to__flex
+      .back-to__icon
+        i.back-to__icon-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+          +svg('arrow_goto')
+      span.back-to__link.regular.font_upper.font_blue-light-to-black.font_contrast_blue-light-to-black= text

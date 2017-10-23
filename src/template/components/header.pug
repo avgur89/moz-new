@@ -1,0 +1,179 @@
+//- Variable for navigation
+
+-
+    var navItems = [
+    {
+    text: "Про міністерство",
+    active: true
+    },
+    {
+    text: "Громадянам"
+    },
+    {
+    text: "Медичним працівникам"
+    },
+    {
+    text: "Освіта"
+    },
+    {
+    text: "Прес центр"
+    },
+    {
+    text: "Адмінпослуги"
+    },
+    {
+    text: "Контакти"
+    }
+    ];
+
+//- Variable for dropdown
+- var languageTitle = "Ukr";
+- var languageItems = ["Eng"];
+
+mixin header()
+    header.header
+        #search__wrapper
+            +search()
+        .header__row.header__row_top.bg_white-to-light-blue
+            .container
+                .header__logo
+                    a(href='#' class="header__logo-link")
+                        .header__logo-svg.fill_black
+                            //.header__logo-svg-big.header__logo-svg-eu
+                            //    svg(class="header__logo-svg-icon" xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', viewbox='0 0 370.9 229.8')
+                            //        style(type='text/css').
+                            //            .header__logo-svg-icon-st0 {
+                            //                fill: #2B2B2B;
+                            //            }
+                            //
+                            //            .header__logo-svg-icon-st1 {
+                            //                font-family: 'BebasNeueRegular';
+                            //            }
+                            //
+                            //            .header__logo-svg-icon-st2 {
+                            //                font-size: 62.6044px;
+                            //            }
+                            //
+                            //            .header__logo-svg-icon-st3 {
+                            //                fill: #FFCB04;
+                            //            }
+                            //
+                            //            .header__logo-svg-icon-st4 {
+                            //                fill: #2E368E;
+                            //            }
+                            //        g
+                            //            text.header__logo-svg-icon-st0.header__logo-svg-icon-st1.header__logo-svg-icon-st2(transform='matrix(1 0 0 1 105.0788 43.8436)') МIнIстерство
+                            //            text.header__logo-svg-icon-st0.header__logo-svg-icon-st1.header__logo-svg-icon-st2(transform='matrix(1 0 0 1 105.0788 105.8436)') охорони
+                            //            text.header__logo-svg-icon-st0.header__logo-svg-icon-st1.header__logo-svg-icon-st2(transform='matrix(1 0 0 1 105.0788 167.8436)') здоров’я
+                            //            text.header__logo-svg-icon-st0.header__logo-svg-icon-st1.header__logo-svg-icon-st2(transform='matrix(1 0 0 1 105.0788 229.8436)') УкраIни
+                            //        g
+                            //            path.header__logo-svg-icon-st0(d='M37.6,25.4c-1.5,13.4-2.2,19.4-2.2,19.4s0.3-0.1,1-0.1s4.3,0.9,4.3,4.2s-2.9,4.4-4.3,4.4s-1.5-0.2-1.5-0.2\
+                            //    s-6.7-9.2-6.7-23.1c0-8.9,0.6-17,0.6-21.5c0-0.8,0-5.1-3.1-8.5c-3.1,3.4-3.1,7.7-3.1,8.5c0,4.6,0.6,12.7,0.6,21.5\
+                            //    c0,13.9-6.7,23.1-6.7,23.1s-0.1,0.2-1.5,0.2s-4.3-1.1-4.3-4.4c0-3.3,3.6-4.2,4.3-4.2s1,0.1,1,0.1s-0.7-5.9-2.2-19.4\
+                            //    C10.8,11,0,6,0,6v62.1h14.4c0,0,1,8.7,8.7,14.3c0,0,2.4,2.1,2.5,2.8c0.1-0.7,2.5-2.8,2.5-2.8c7.7-5.6,8.7-14.3,8.7-14.3h14.4V6\
+                            //    C51.3,6,40.5,11,37.6,25.4z M4.4,15.2c0,0,3.9,4.9,5,10.6c0.6,5.3,1.9,15.5,1.9,15.5s-3.7,1.6-4.6,5.5c-0.7,0-2.3,0-2.3,0L4.4,15.2\
+                            //    L4.4,15.2z M13.9,63.9H4.4V51h2.3c1.2,5.6,7.2,6.5,8.1,6.5C13.9,60.4,13.9,63.9,13.9,63.9z M23.5,76.9c-3.9-3.7-4.4-8.8-4.4-8.8\
+                            //    h4.4C23.5,68.1,23.5,74.6,23.5,76.9z M18.3,63.9c0-2.6,0.3-4.1,0.7-5.3c4.3,0.7,4.5,5.3,4.5,5.3H18.3z M25.7,57.7\
+                            //    c0,0-3.8-2.6-4.9-3.3c3-4.6,4.9-11.6,4.9-11.6s1.9,7,4.9,11.6C29.5,55.1,25.7,57.7,25.7,57.7z M27.9,76.9c0-2.3,0-8.8,0-8.8h4.4\
+                            //    C32.3,68.1,31.8,73.2,27.9,76.9z M27.8,63.9c0,0,0.2-4.6,4.5-5.3c0.4,1.2,0.7,2.6,0.7,5.3H27.8z M47,63.9h-9.5c0,0,0-3.5-0.9-6.4\
+                            //    c0.9,0,6.9-0.9,8.1-6.5H47V63.9z M47,46.8c0,0-1.6,0-2.3,0c-0.8-3.9-4.6-5.5-4.6-5.5s1.2-10.2,1.9-15.5c1.1-5.7,5-10.6,5-10.6V46.8\
+                            //    z')
+                            //        g
+                            //            path.header__logo-svg-icon-st0(d='M216.1,179.8v3.3h-3.2v-3.3H216.1z')
+                            //        g
+                            //            path.header__logo-svg-icon-st0(d='M210,179.8v3.3h-3.4v-3.3H210z')
+                            //        rect.header__logo-svg-icon-st3(x='76.6', y='114.7', width='5.1', height='115.2')
+                            //        rect.header__logo-svg-icon-st4(x='76.6', y='0.3', width='5.1', height='114.6')
+
+                            .header__logo-svg-big.header__logo-svg-en
+                                svg(class="header__logo-svg-icon" xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', viewbox='0 0 117 61.5')
+                                    style(type='text/css').
+                                        .header__logo-svg-en-st0 {
+                                            fill: #FFCB05;
+                                        }
+
+                                        .header__logo-svg-en-st1 {
+                                            fill: #2E3192;
+                                        }
+
+                                        .header__logo-svg-en-st2 {
+                                            fill: #2B2B2B;
+                                        }
+
+                                        .header__logo-svg-en-st3 {
+                                            font-family: 'BebasNeueRegular';
+                                        }
+
+                                        .header__logo-svg-en-st4 {
+                                            font-size: 22.9597px;
+                                        }
+                                    g
+                                        g
+                                            g
+                                                rect.header__logo-svg-en-st0(x='28.5', y='30', width='1.8', height='31.4')
+                                            g
+                                                rect.header__logo-svg-en-st1(x='28.5', y='0', width='1.8', height='30.8')
+                                        g
+                                            text.header__logo-svg-en-st2.header__logo-svg-en-st3.header__logo-svg-en-st4(transform='matrix(1 0 0 1 39.0986 16.0783)') Ministry
+                                            text.header__logo-svg-en-st2.header__logo-svg-en-st3.header__logo-svg-en-st4(transform='matrix(1 0 0 1 39.0986 38.818)') of health
+                                            text.header__logo-svg-en-st2.header__logo-svg-en-st3.header__logo-svg-en-st4(transform='matrix(1 0 0 1 39.0986 61.5582)') of Ukraine
+                                        g
+                                            path.header__logo-svg-en-st2(d='M13.8,9.4c-0.6,4.9-0.8,7.1-0.8,7.1s0.1,0,0.4,0c0.3,0,1.6,0.3,1.6,1.5c0,1.2-1.1,1.6-1.6,1.6\
+                                    c-0.5,0-0.5-0.1-0.5-0.1s-2.4-3.4-2.4-8.5c0-3.2,0.2-6.2,0.2-7.9c0-0.3,0-1.9-1.2-3.1C8.3,1.2,8.2,2.8,8.2,3.1\
+                                    c0,1.7,0.2,4.6,0.2,7.9c0,5.1-2.4,8.5-2.4,8.5s0,0.1-0.5,0.1S3.9,19.2,3.9,18c0-1.2,1.3-1.5,1.6-1.5c0.3,0,0.4,0,0.4,0\
+                                    S5.6,14.3,5,9.4C4,4.1,0,2.3,0,2.3V25h5.3c0,0,0.4,3.2,3.2,5.3c0,0,0.9,0.8,0.9,1c0-0.3,0.9-1,0.9-1c2.8-2,3.2-5.3,3.2-5.3h5.3\
+                                    V2.3C18.8,2.3,14.9,4.1,13.8,9.4z M1.6,5.6c0,0,1.4,1.8,1.8,3.9c0.2,1.9,0.7,5.7,0.7,5.7s-1.4,0.6-1.7,2c-0.3,0-0.9,0-0.9,0\
+                                    L1.6,5.6L1.6,5.6z M5.1,23.5H1.6v-4.7h0.9c0.4,2,2.6,2.4,3,2.4C5.1,22.2,5.1,23.5,5.1,23.5z M8.6,28.3C7.1,26.9,7,25,7,25h1.6\
+                                    C8.6,25,8.6,27.4,8.6,28.3z M6.7,23.5c0-1,0.1-1.5,0.3-1.9c1.6,0.3,1.7,1.9,1.7,1.9H6.7z M9.4,21.2c0,0-1.4-0.9-1.8-1.2\
+                                    c1.1-1.7,1.8-4.3,1.8-4.3s0.7,2.6,1.8,4.3C10.8,20.3,9.4,21.2,9.4,21.2z M10.2,28.3c0-0.9,0-3.2,0-3.2h1.6\
+                                    C11.8,25,11.7,26.9,10.2,28.3z M10.2,23.5c0,0,0.1-1.7,1.7-1.9c0.1,0.4,0.3,1,0.3,1.9H10.2z M17.2,23.5h-3.5c0,0,0-1.3-0.3-2.4\
+                                    c0.3,0,2.5-0.3,3-2.4h0.9L17.2,23.5L17.2,23.5z M17.2,17.2c0,0-0.6,0-0.9,0c-0.3-1.4-1.7-2-1.7-2s0.5-3.8,0.7-5.7\
+                                    c0.4-2.1,1.8-3.9,1.8-3.9L17.2,17.2L17.2,17.2z')
+
+                            .header__logo-small
+                            i.header__logo-svg-small.fill_black
+                                +svg('logo_trezub')
+                            .header__logo-stripe-wrap
+                                .header__logo-stripe.bg_blue-to-black
+                                .header__logo-stripe.bg_yellow-to-gray.bg_contrast_yellow-to-white
+                .header__tel
+                    span.regular.font_gray-to-black телефон гарячої лінії
+                    a(href="tel:0800801333" class="h3 font_black header__phone") 0-800-801-333
+                +button("switch-button")
+                .header__social
+                    a(href='#' class="header__social-logo")
+                        i.header__social-logo-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                            +svg('fb')
+                    a(href='#' class="header__social-logo")
+                        i.header__social-logo-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                            +svg('youtube')
+                    a(href='#' class="header__social-logo")
+                        i.header__social-logo-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                            +svg('twitter')
+                .header__search-wrapper
+                    +button("search-blue-link")
+                    a(href='#' class="header__search-close bg_white")
+                        i.header__search-close-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                            +svg('close')
+        .header__row.header__row_bottom.bg_white-noise-to-dark-blue
+            .container
+                a(href='#' class="header__hamburger bg_yellow-to-black bg_contrast_yellow-to-white")
+                    i.header__hamburger-svg.fill_white-to-black
+                        +svg('menu')
+                .header__overlay.bg_white-noise-to-dark-blue
+                    .header__overlay-flex
+                        a(href='#' class="header__overlay-close bg_white")
+                            i.header__overlay-close-svg.fill_black
+                                +svg('close')
+                        +navigation(navItems)
+                        .header__social-mobile
+                            a(href='#' class="header__social-mobile-logo")
+                                i.header__social-mobile-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                                    +svg('fb')
+                            a(href='#' class="header__social-mobile-logo")
+                                i.header__social-mobile-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                                    +svg('youtube')
+                            a(href='#' class="header__social-mobile-logo")
+                                i.header__social-mobile-svg.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                                    +svg('twitter')
+                +dropdown(languageTitle, languageItems, "bg_white-noise-to-dark-blue")

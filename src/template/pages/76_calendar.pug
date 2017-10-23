@@ -1,0 +1,52 @@
+extends ../extend/default
+
+block variables
+    -
+        var title = "Міністерство охорони здоров'я України";
+
+
+block main
+    main.main(class="bg_white-to-light-blue" data-page='calendar')
+        #search__wrapper
+            +search()
+        +disabilities()
+        .container
+            +breadrcrumbs(['Головна'], 'Календар')
+            h1.calendar__title.h2.font_upper.font_black Календар
+            .calendar__row
+                .accordion__wrapper
+                    +accordion(accordion, true, "Календар")
+                .calendar
+                    .datepicker
+                        +blockTitle('Законодавство')
+                        form.datepicker__form(method="" action="")
+                            .datepicker__wrapper
+                                .datepicker__items
+                                    span.datepicker__text.regular-small.font_gray-to-black Показати з
+                                    .datepicker__items-wrapper
+                                        .form-group.has-error
+                                            label.form-label.regular.font_gray-dark.font_gray-dark-to-black Введіть дату
+                                            input(type="text" class="datepicker__item form-input bg_white-noise font_black regular-small" id="datepicker-from" placeholder="дд/мм/гггг")
+                                        .form-group
+                                            label.form-label.regular.font_gray-dark.font_gray-dark-to-black Введіть дату
+                                            input(type="text" class="datepicker__item form-input bg_white-noise font_black regular-small" id="datepicker-to" placeholder="дд/мм/гггг")
+                                .datepicker__search
+                                    .datepicker__form-wrapper
+                                        input(class="datepicker__form-input font_gray regular bg_white-noise-to-dark-blue" type="text" placeholder="Пошук")
+                                        +button("search-yellow-input")
+
+                    //- fullcalendar section
+                    .fullcalendar__wrapper
+                        .fullcalendar__filter
+                            ul.fullcalendar__filter-list
+                                li.fullcalendar__filter-item
+                                    a.fullcalendar__filter-link.h4.font_gray-to-black.font_upper(href="#") Всі
+                                li.fullcalendar__filter-item
+                                    a.fullcalendar__filter-link.h4.font_gray-to-black.font_upper(href="#") наукові форуми
+                                li.fullcalendar__filter-item.fullcalendar__filter-item-active
+                                    a.fullcalendar__filter-link.h4.font_gray-to-black.font_upper(href="#") конференції
+                                li.fullcalendar__filter-item
+                                    a.fullcalendar__filter-link.h4.font_gray-to-black.font_upper(href="#") тренінги
+                                li.fullcalendar__filter-item
+                                    a.fullcalendar__filter-link.h4.font_gray-to-black.font_upper(href="#") стажування
+                        #fullcalendar

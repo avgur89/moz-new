@@ -1,0 +1,47 @@
+//- Variable for material block
+
+mixin material()
+  .material
+    .popup.material__popup(data-popup-id="useful__popup" tabindex="-1" role="dialog")
+      .popup__container.material__popup-container.bg_white-noise
+        .popup__close.material__popup-close-icon
+          span
+          span
+        .popup__content.material__popup-content
+          .popup__title.material__popup-title.h4.font_black Дякуємо!
+          .popup__title.material__popup-desc.regular.font_black Ваш запит був успішно надісланий! Ми намагаємось буди ще кращими для вас! Бажаємо Вам приємного дня!
+          button.btn.material__popup-close.bg_yellow-to-black.bg_contrast_yellow-to-white.h5.font_black-to-white.font_upper Закрити
+            
+    //- yes/no section
+    .useful.bg_white-noise
+      p.useful__title.h4.font_black Чи був для вас данний матеріал корисним?
+      .useful__btn-wrapper
+        a.useful__btn.useful__btn-yes.h5.font_upper.font_black-to-white.bg_yellow-to-black.bg_contrast_yellow-to-white(href="#!" data-popup-target="useful__popup") Так
+        a.useful__btn.useful__btn-no.h5.font_upper.font_black.bg_white(href="#!") Ні
+    
+    //- questions section
+    .useful__qa.bg_white-noise
+      p.useful__qa-title.h4.font_black Я не знайшов нічого корисного на цієї сторінці, тому що контент (оберіть варіанти відповідей)
+      .useful__qa-checkbox
+        label
+          input(type="checkbox" checked)
+          span.regular.font_gray-dark-to-black Дуже мало інформації
+        label
+          input(type="checkbox")
+          span.regular.font_gray-dark-to-black Забагато інформації
+        label
+          input(type="checkbox")
+          span.regular.font_gray-dark-to-black Я нічого не зрозумів з тої інформації, що подана на сторінці
+        label
+          input(type="checkbox")
+          span.regular.font_gray-dark-to-black Інформація не відповідає заданій темі
+      textarea.useful__qa-textarea.form-input.material__textarea.regular.font_gray-to-black(placeholder="Інше")
+      .useful__qa-btn-wrapper
+        a.useful__qa-btn.h5.font_upper.font_black-to-white.bg_yellow-to-black.bg_contrast_yellow-to-white(href="#!") Далі
+    
+    //- submit section  
+    .useful__submit.bg_white-noise
+      p.useful__submit-title.h4.font_black Як ми можемо поліпшити цю сторінку?
+      textarea.useful__submit-textarea.material__textarea.form-input.regular.font_gray-to-black(placeholder="Ваша пропозиція")
+      .useful__submit-btn-wrapper
+        input.useful__submit-btn.form-input.h5.font_upper.font_black-to-white.bg_yellow-to-black.bg_contrast_yellow-to-white(type="submit" value="Надіслати" data-popup-target="useful__popup")

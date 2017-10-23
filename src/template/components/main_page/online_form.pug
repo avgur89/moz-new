@@ -1,0 +1,35 @@
+//- Variable for Online Form
+
+-
+  var defaultTitle = "default title";
+  var defaultDesc = "default description";
+  var onlineFormItems = [
+    {
+      title: 'Звернення громадян',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum t amet, consectetur adipiscing' 
+    },
+    {
+      title: 'Доступ до публічної інформації',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum t amet, consectetur adipiscing'
+    },
+    {
+      title: 'Реєстрація на зустріч',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum t amet, consectetur adipiscing'
+    },
+    {
+      title: 'Подати документи',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum t amet, consectetur adipiscing'
+    }
+  ];
+
+mixin online_form(formItems)
+  - formItems = formItems || onlineFormItems;
+  .online-form__wrapper.bg_white-noise-to-dark-blue
+    .container
+      .online-form__docs
+        .online-form__docs-bg-text.font_upper.font_white-to-light-blue Документи
+        h5.online-form__docs-heading.h5.font_black.font_upper Онлайн форми
+      ul.online-form__list
+        each item in formItems
+          li.online-form__item
+            +onlineFormItem(item.title, item.desc)

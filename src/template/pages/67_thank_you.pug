@@ -1,0 +1,16 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    
+block main
+  main.main(class="bg_white-to-light-blue" data-page='thank_you')
+    #search__wrapper
+      +search()
+    .container
+      .thanks
+        h2.thanks__title.h2.font_black.font_upper Дякуємо!
+        h4.thanks__text.h4.font_black Нам потрібен час, щоб опрацювати всі запити та підготувати документи. Чекайте на лист на Вашій електронній скриньці.
+        a.thanks__btn.h5.font_upper.font_black-to-white.bg_yellow-to-black.bg_contrast_yellow-to-white(href="#") повернутись до онлайн форми
+        a.thanks__btn.h5.font_upper.font_black-to-white.bg_yellow-to-black.bg_contrast_yellow-to-white(href="#") перейти на головну

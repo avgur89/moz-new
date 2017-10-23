@@ -1,0 +1,7 @@
+//- Breadcrumbs
+
+mixin breadrcrumbs(breadCaption, activeCaption, className)
+  ul.breadcrumbs
+    each caption in breadCaption
+      li.regular-small: a(href='#!' class= className || 'font_yellow-to-black font_contrast_yellow-to-black')= caption
+    li.regular-small.font_grey.active= activeCaption

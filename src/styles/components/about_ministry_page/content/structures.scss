@@ -1,0 +1,19 @@
+// MEDIA QUERIES FOR TABLET
+@include respond-to($tam) {
+  // ADVISERS STYLES
+  .advisers {
+    .heading__link {
+      display: none;
+    }
+  }
+}
+
+// MEDIA QUERIES FOR MOBILE
+@include respond-to($mob) {
+  // ADVISERS STYLES
+  .advisers {
+    .advisors__wrap {
+      padding: 0 0 22px 30px;
+    }
+  }
+}

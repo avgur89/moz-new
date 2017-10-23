@@ -1,0 +1,43 @@
+// Medical staff page styles
+
+/* COMPONENTS */
+@import '../components/accordion';
+@import '../components/medical_staff_page/back_to';
+@import '../components/medical_staff_page/content/vacancy';
+
+
+//[data-page='medical-staff'] {
+  .medical__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 36px 0;
+    position: relative;
+  }
+  .medical {
+    flex: 1 1 auto;
+    width: calc(100% - 300px);
+    .border-wrapper {
+      padding: 0;
+    }
+  }
+  .medical__title {
+    margin-top: 0;
+  }
+
+  // MEDIA QUERIES FOR MOBILE
+  @include respond-to($mob) {
+    .medical__row {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      padding: 36px 0;
+    }
+    .medical {
+      flex: 1 1 auto;
+      width: 100%;
+      //margin-top: 30px;
+    }
+  }
+//}

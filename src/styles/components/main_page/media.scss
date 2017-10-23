@@ -1,0 +1,344 @@
+.media {
+  margin-bottom: 70px;
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__photo-wrapper {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .block__link-wrapper {
+      .block__link {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__photo {
+    padding-bottom: 29px;
+    &-list {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 15px;
+    }
+    &-item {
+      flex: 1 1 50%;
+      padding: 0 15px;
+      border-right: 1px solid $gray-medium;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+        border-right: none;
+      }
+      .links {
+        margin-bottom: 13px;
+      }
+    }
+    &-img-link {
+      position: relative;
+      z-index: 10;
+      display: inline-block;
+      margin-bottom: 25px;
+      overflow: hidden;
+    }
+    &-img {
+      transition: 0.5s;
+      &-wrapper {
+        height: 180px;
+      }
+      &-overlay {
+        position: relative;
+        transition: 0.3s;
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          z-index: 2;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: $blue-dark;
+          opacity: 0;
+          transition: 0.3s;
+        }
+      }
+    }
+    &-text {
+
+    }
+    &-text-link {
+      display: inline-block;
+    }
+  }
+
+  &__video-wrapper {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .block__link-wrapper {
+      .block__link {
+        margin-bottom: 0;
+        margin-left: 15px;
+      }
+    }
+  }
+  // VIDEO POPUP SECTION
+  .media__video-popup {
+    &-container {
+      padding: 0 100px 40px 100px;
+      width: 770px;
+    }
+    &-content {
+      margin-top: 40px;
+    }
+    &-text {
+      margin-bottom: 22px;
+    }
+    &-iframe {
+      &-wrapper {
+        height: 352px;
+      }
+      height: 352px;
+      border: none;
+      display: none;
+      min-width: 570px;
+      min-height: 352px;
+    }
+  }
+  &__video {
+    padding-bottom: 29px;
+    &-list {
+      display: flex;
+      flex-direction: column;
+      padding-left: 15px;
+      border-left: 1px solid $gray-medium;
+    }
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid $gray-medium;
+      &:first-child {
+        padding-top: 0;
+      }
+      &:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+      .links {
+        margin-bottom: 13px;
+      }
+    }
+    &-img-link {
+      position: relative;
+      z-index: 10;
+      display: block;
+      flex: 1 1 150px;
+      align-self: flex-start;
+      cursor: pointer;
+    }
+    &-svg {
+      position: absolute;
+      z-index: 5;
+      pointer-events: none;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 37px;
+      transition: 0.3s;
+      &:first-child {
+        opacity: 1;
+      }
+      &:last-child {
+        opacity: 0;
+      }
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-img {
+      &-wrapper {
+        height: 130px;
+      }
+      &-overlay {
+        position: relative;
+        transition: 0.3s;
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          z-index: 2;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: $blue-dark;
+          opacity: 0;
+          transition: 0.3s;
+        }
+      }
+    }
+    &-desc {
+      flex: 1 1 60%;
+      margin-left: 30px;
+    }
+    &-text {
+
+    }
+    &-text-link {
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+}
+
+
+// MEDIA QUERIES FOR TABLET
+@include respond-to($tam) {
+  .media {
+    margin-bottom: 45px;
+    &__video {
+      &-img-link {
+        flex: 1 1 50%;
+      }
+      &-desc {
+        flex: 1 1 50%;
+        margin-left: 30px;
+      }
+    }
+    .media__video-popup {
+      &-container {
+        padding: 0 75px 40px 75px;
+        width: 715px;
+      }
+      &-iframe {
+        min-width: 100%;
+
+      }
+    }
+  }
+}
+
+// MEDIA QUERIES FOR MOBILE
+@include respond-to($mob) {
+  .media {
+    // VIDEO POPUP SECTION
+    .media__video-popup {
+      &-container {
+        padding: 15px 5px 35px 5px;
+        width: 80%;
+      }
+      &-content {
+        margin-top: 20px;
+      }
+      &-iframe {
+        min-height: 200px;
+        width: 100%;
+        height: 200px;
+        &-wrapper {
+          height: 252px;
+        }
+      }
+    }
+    &__row {
+      display: block;
+    }
+    &__photo-wrapper {
+      display: block;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+    &__photo {
+      padding-bottom: 0;
+      &-list {
+        display: block;
+        padding: 0;
+      }
+      &-item {
+        display: block;
+        flex: 1;
+        padding: 0;
+        border-right: none;
+        .links {
+          margin-bottom: 13px;
+        }
+      }
+      &-img-link {
+        width: 100%;
+        display: inline-block;
+        margin-bottom: 25px;
+      }
+      &-img {
+        &-wrapper {
+          height: 200px;
+        }
+      }
+      &-text {
+
+      }
+      &-text-link {
+        display: inline-block;
+      }
+    }
+
+    &__video-wrapper {
+      display: block;
+      flex: 1;
+      .block__link-wrapper {
+        .block__link {
+          margin-left: 0;
+        }
+      }
+    }
+    &__video {
+      padding-top: 57px;
+      padding-bottom: 0;
+      .slick-dots {
+        top: -57px;
+      }
+      &-list {
+        display: block;
+        padding: 0;
+        border-left: none;
+      }
+      &-item {
+        display: block;
+        padding: 0;
+        border-bottom: none;
+        .links {
+          margin-bottom: 13px;
+        }
+      }
+      &-img-link {
+        width: 100%;
+        display: inline-block;
+        flex: 1;
+        margin-bottom: 25px;
+      }
+      &-img {
+        &-wrapper {
+          height: 200px;
+        }
+      }
+      &-desc {
+        flex: 1;
+        margin-left: 0;
+      }
+      &-text {
+
+      }
+      &-text-link {
+        display: inline-block;
+      }
+    }
+  }
+}

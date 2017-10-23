@@ -1,0 +1,14 @@
+//- Variable table block
+
+mixin table(table)
+  .table-wrapper
+    .hidden-table
+    table.table
+      each row in table
+        tr
+          if !row.th
+            each item in row.td
+              td.regular.font_black= item
+          else
+            each item in row.th
+              th.regular-small.font_gray-to-black= item

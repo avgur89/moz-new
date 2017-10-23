@@ -1,0 +1,86 @@
+//- Variable for no-img block
+-
+  var headingLineHeight = "100";
+  var descLineHeight = "100";
+  var headingNoImgLineHeight = "80";
+  var descNoImgLineHeight = "80";
+  var hasImg = true;
+  
+mixin healthItems(items)  
+  - for(var i = 0; i < items.length; i++)
+    - if (items[i].imgSrc === undefined)
+      - hasImg = false
+  if hasImg
+    .health__items
+      each item in items
+        .health__item
+          a(href="#" class="health__item-img-link")
+            .h5.more-info.font_upper.font_white Детальніше
+              span.more-info__stripe.bg_white
+            .health__item-img-overlay
+              .health__item-img-wrapper
+                img(src=`${item.imgSrc}` class="health__item-img obj-fit")
+            if item.icon
+              .health__item-icon-wrapper.bg_white-noise
+                i.health__item-icon-svg.fill_gray
+                  +svg(`${item.icon}`)
+          .health__item-desc
+            .menu-flex-wrapper(data-parent=".health__item-desc")
+              ul.menu-flex
+                each link in item.links
+                  +links(link)
+            a(href="#" class="health__item-desc-heading h4 font_black dot" data-height=`${headingLineHeight}`)= item.title
+            a(href="#" class="health__item-desc-text regular font_gray-dark-to-black dot" data-height=`${descLineHeight}`)= item.desc 
+            span.health__item-desc-date.font_gray-to-black.regular= item.date    
+  else
+    .health__items-no-img
+      each item in items    
+        .health__no-img
+          .health__no-img-desc
+            .menu-flex-wrapper(data-parent=".health__no-img-desc")
+              ul.menu-flex
+                each link in item.links
+                  +links(link)
+            a(href="#" class="health__no-img-desc-heading h4 font_black dot" data-height=`${headingNoImgLineHeight}`)= item.title
+            a(href="#" class="health__no-img-desc-text regular font_gray-dark-to-black dot" data-height=`${descNoImgLineHeight}`)= item.desc 
+            span.health__no-img-desc-date.font_gray-to-black.regular= item.date
+          .health__no-img-stripe-wrapper
+            span.health__no-img-stripe.bg_blue-to-black
+            span.health__no-img-stripe.bg_yellow-to-gray.bg_contrast_yellow-to-white
+
+
+mixin healthItem(item)
+  if item.imgSrc
+    .health__single
+      a(href="#" class="health__single-img-link")
+        .h5.more-info.font_upper.font_white Детальніше
+          span.more-info__stripe.bg_white
+        .health__single-img-overlay
+          .health__single-img-wrapper
+            img(src=`${item.imgSrc}` class="health__single-img obj-fit")
+        if item.icon
+          .health__single-icon-wrapper.bg_white-noise
+            i.health__single-icon-svg.fill_gray
+              +svg(`${item.icon}`)
+      .health__single-desc
+        .menu-flex-wrapper(data-parent=".health__single-desc")
+          ul.menu-flex
+            each link in item.links
+              +links(link)
+        a(href="#" class="health__single-desc-heading h4 font_black dot" data-height=`${headingLineHeight}`)= item.title 
+        a(href="#" class="health__single-desc-text regular font_gray-dark-to-black dot" data-height=`${descLineHeight}`)= item.desc
+        span.health__single-desc-date.font_gray-to-black.regular= item.date
+  else
+    .health__no-img-wrapper
+      .health__no-img
+        .health__no-img-desc
+          .menu-flex-wrapper(data-parent=".health__no-img-desc")
+            ul.menu-flex
+              each link in item.links
+                +links(link)
+          a(href="#" class="health__no-img-desc-heading h4 font_black dot" data-height=`${headingNoImgLineHeight}`)= item.title
+          a(href="#" class="health__no-img-desc-text regular font_gray-dark-to-black dot" data-height=`${descNoImgLineHeight}`)= item.desc 
+          span.health__no-img-desc-date.font_gray-to-black.regular= item.date
+        .health__no-img-stripe-wrapper
+          span.health__no-img-stripe.bg_blue-to-black
+          span.health__no-img-stripe.bg_yellow-to-gray.bg_contrast_yellow-to-white

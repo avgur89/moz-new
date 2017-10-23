@@ -1,0 +1,91 @@
+//- Variable for articles
+
+-
+  var latestArticles = [
+    {
+      links: [{ text: 'регіони', href: '/region' }],
+      desc: 'МОЗ та регіони визначили план роботи на січень 2017',
+      date: '16:30'
+    },
+    {
+      links: [{ text: 'Уляна супрун', href: '/suprun' }, { text: 'ліки', href: '/medicine' }],
+      desc: 'МОЗ',
+      date: '15:45'
+    },
+    {
+      links: [{ text: 'здоров’я', href: '/doc' }],
+      desc: 'МОЗ та регіони визначили план роботи на січень 2017',
+      date: '31/12'
+    },
+    {
+      links: [{ text: 'рішення', href: '/solutions' }, { text: 'план роботи', href: '/plan' }],
+      desc: 'МОЗ та регіони визначили план роботи на січень 2017',
+      date: '29/12'
+    }
+  ];
+  
+mixin articles(articles)
+ - articles = articles || latestArticles;
+  .container
+    .articles__row
+      .articles__flex
+        section.articles
+          +blockTitle('Статті')
+          
+          .articles__wrapper
+            article.article__primary
+              a(href="#" class="article__primary-img-link")
+                .article__primary-img-overlay
+                  img(src="static/img/article_img1.jpg" class="article__primary-img")
+                .article__primary-desc
+                  p(class="h4 font_white dot" data-height="180") Міністерство охорони здоров’я затвердило дорожню карту і принципи першого компоненту системи E-Health в Україні
+                  span.article__primary-date.regular-small.font_white 9 грудня
+                div.h5.more-info.font_upper.font_white Детальніше
+                  span.more-info__stripe.bg_white
+                  
+            section.article__secondary
+              article.article__secondary-item
+                a(href="#" class="article__secondary-img-link")
+                  .article__secondary-img-overlay
+                    img(src="static/img/article_img2.jpg" class="article__secondary-img")
+                  div.h5.more-info.font_upper.font_white Детальніше
+                    span.more-info__stripe.bg_white
+                .article__secondary-desc
+                  .menu-flex-wrapper(data-parent=".article__secondary-desc")
+                    ul.links.menu-flex 
+                      +links({text: 'госпiтальнi округи', href: '/moz'}, {text: 'Медична iнфраструктура', href: '/suprun'})
+                  p.article__secondary-text
+                    a(href="#" class="article__secondary-text-link regular font_black dot" data-height="115") МОЗ та регіони визначили план роботи на січень 2017
+                  span.article__secondary-date.regular-small.font_gray-to-black 18 грудня
+                  
+              article.article__secondary-item
+                a(href="#" class="article__secondary-img-link")
+                  .article__secondary-img-overlay
+                    img(src="static/img/article_img3.jpg" class="article__secondary-img")
+                  div.h5.more-info.font_upper.font_white Детальніше
+                    span.more-info__stripe.bg_white
+                .article__secondary-desc
+                  .menu-flex-wrapper(data-parent=".article__secondary-desc")
+                    ul.links.menu-flex 
+                      +links({text: 'госпiтальнi округи', href: '/moz'}, {text: 'Медична iнфраструктура', href: '/suprun'})
+                  p.article__secondary-text
+                    a(href="#" class="article__secondary-text-link regular font_black dot" data-height="115") МОЗ працює над розробкою нової національної політики щодо забезпечення ліками
+                  span.article__secondary-date.regular-small.font_gray-to-black 9 грудня
+                  
+        section.articles__latest
+          +blockTitle('Останні статті')
+          .articles__latest-wrapper
+            ul.articles__latest-list
+              each article in articles
+                li.articles__latest-item
+                  .menu-flex-wrapper(data-parent=".articles__latest-item")
+                    ul.links.menu-flex 
+                      each link in article.links
+                        +links(link)
+                  .articles__latest-link-wrapper      
+                    a(href="#" class="articles__latest-link regular font_black dot" data-height="115")= article.desc
+                    span(class="h5 articles__latest-date font_yellow-to-black font_contrast_yellow-to-gray font_upper")= article.date 
+      
+          .articles__all-link-wrapper            
+            a(href="#" class="h5 articles__all-link font_upper font_blue-light-to-black font_contrast_blue-light-to-black")= 'Всі статті'
+              span.articles__all-stripe.bg_blue-light-to-black.bg_contrast_blue-light-to-black

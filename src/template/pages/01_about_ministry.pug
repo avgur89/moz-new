@@ -1,0 +1,157 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    var bannerContent = {
+        title: "Міністерство охорони здоров'я України",
+        desc:  "МОЗ є головним органом у системі центральних органів виконавчої влади, що забезпечує формування та реалізує державну політику у сфері охорони здоров'я, протидії ВІЛ-інфекції/СНІДу та іншим соціально небезпечним захворюванням, забезпечує формування.",
+        image: "static/img/about_ministry_banner.jpg"
+    };
+    var bannerStructure = {
+        title: "структура",
+        desc:  "У нашій структурі зібрано 3 департаменти, 10 управлінь, 8 відділів та більш ніж 5 радників. Повну структуру МОЗ України ви можете побачити, натиснувши на кнопку.",
+        image: "static/img/structure_banner.jpg",
+        button: "вся структура моз україни"
+    };
+    var bannerCoop = {
+      title: "міжнародна співпраця",
+      desc:  "Розробка стратегії для досягнення відповідності стандартам GMP (належної виробничої практики); впровадження юридичної бази, необхідної для функціонування національної регулятивної інспекції.",
+      image: "static/img/coop_banner.jpg",
+      button: "докладнiше"
+    };
+    var noImgStrategy = {
+        title: "Стратегiя",
+        heading: "Карта медзакладiв",
+        links: ["Докладніше про стратегію"],
+        desc:  "Проведення екстреної постконтактної профілактики працівників, які під час надання медичної допомоги та соціальних послуг людям, які живуть з ВІЛ або контактують з кров'ю або біологічними матеріалами людини, забрудненими ними інструментарієм, обладнанням чи предметами, отримали пошкодження шкірного покриву або слизової оболонки фізичного. контакту із забрудненими кров'ю або біологічними матеріалами людини інструментами, обладнанням чи іншими предметами або зазнали безпосереднього відкритого фізичного контакту з кров'ю або біологічними матеріалами людини",
+        image: "static/img/government-building.jpg"
+    };
+    var noImgReforms = {
+      title: "плани реформ",
+      heading: "Про теперiшнiй стан реформ",
+      links: ["Докладніше про плани реформ"],
+      desc:  "Формує пропозиції до державного замовлення на підготовку фахівців, наукових, науково-педагогічних кадрів, підвищення кваліфікації та перепідготовку кадрів у сфері охорони здоров'я на відповідні роки та розміщує затверджені обсяги в установленому законодавством порядку."
+      //image: "static/img/about_ministery_reforms.jpg"
+    };
+    var managementPersons = [
+      {
+        imgSrc: 'static/img/boss_img1.jpg',
+        link: 'Супрун Уляна Надія',
+        desc: 'Виконуюча обов’язкі міністра охорони здоров’я'
+      },
+      {
+        imgSrc: 'static/img/boss_img2.jpg',
+        link: 'Ілик Роман Романович',
+        desc: 'Заступник міністра'
+      },
+      {
+        imgSrc: 'static/img/boss_img3.jpg',
+        link: 'Лінчевський Олександр Володимирович',
+        desc: 'Заступник міністра'
+      },
+      {
+        imgSrc: 'static/img/boss_img4.jpg',
+        link: 'Ковтонюк Павло Анатолійович',
+        desc: 'Заступник міністра'
+      },
+      {
+        imgSrc: 'static/img/boss_img5.jpg',
+        link: 'Сивак Оксана Василівна',
+        desc: 'Заступник міністра з питань європейської інтеграції'
+      },
+      {
+        imgSrc: 'static/img/boss_img6.jpg',
+        link: 'Кулик Віктор Добролюбович',
+        desc: 'Заступник міністра'
+      }
+    ];
+    var vacancyItems = [
+      {
+        title: "Заступник директора",
+        desc: "Відділ організації та забезпечення державних закупівель",
+        region: "Київська обл., м.Сквира"
+      },
+      {
+        title: "Оператор колл-центру",
+        desc: "Управління координації центрів реформ",
+        region: "Івано-Франківська обл., м.Івано-франківськ"
+      },
+      {
+        title: "Голова відділу",
+        desc: "Відділ забезпечення взаємодії з державними органами та громадськістю",
+        region: "Київська обл., м.Київ"
+      },
+      {
+        title: "Директор",
+        desc: "Сектор мобілізаційної роботи та цивільного захисту",
+        region: "Вінницька обл., м.Вінниця"
+      },
+      {
+        title: "Головний бухгалтер",
+        desc: "Управління бухгалтерського обліку і фінансової звітності",
+        region: "Львівська обл., м.Львів"
+      },
+      {
+        title: "Помічник юриста",
+        desc: "Управління ліцензування та контролю якості надання медичної допомоги",
+        region: "Київська обл., м.Київ"
+      }
+    ];
+block main
+  main.main(class="bg_white-to-light-blue" data-page='about-ministry')
+    +disabilities()
+    +bannerSecondary(bannerContent, ['Головна'], 'Про міністерство', 'font_white')
+    .container
+      .about__row
+        .accordion__wrapper
+          +accordion(accordion, true)
+        .about__ministry
+          +no_img(noImgStrategy)
+          +separateBorder()
+          
+          //- Management section
+          .management
+            +headingTitle("Керiвництво")
+            +headingLink("Все керiвництво")
+            div.clearfix
+            .management__persons
+              ul.management__persons-list.slider
+                each person in managementPersons
+                  li.management__persons-item
+                    .management__persons-img-wrapper
+                      img(class="management__persons-img obj-fit" src=`${person.imgSrc}`)
+                    .management__persons-desc-wrapper
+                      a(href="#" class="management__persons-link h4 font_black")= person.link
+                      p.management__persons-desc.regular.font_gray-dark-to-black= person.desc
+          
+          +banner(bannerStructure)    
+          +no_img(noImgReforms)
+          +separateBorder()
+          +banner(bannerCoop)
+          
+          //- Vacancy section
+          .vacancy
+            .vacancy__top-row
+              +blockTitle("Актуальні вакансії")
+              form(class="top_vacancy__form" action="" method="")
+                input(class="top_vacancy__form-input font_gray regular bg_white-noise-to-dark-blue" type="text" placeholder="Поле пошуку вакансії")
+                .top_vacancy__form-submit.bg_white-noise
+                  input(type="text" class="top_vacancy__form-submit-control")
+                  i.top_vacancy__form-submit-icon.fill_blue-light-to-black.fill_contrast_blue-light-to-black
+                      +svg('search')
+            ul.vacancy__list.slider.slider_row
+              each vacancy in vacancyItems
+                li.vacancy__item        
+                  .vacancy__item-wrapper
+                    h5.vacancy__item-heading
+                      a(href="#" class="h4 font_black vacancy__item-heading-link")= vacancy.title
+                        span.vacancy__item-heading-stripe.bg_black
+                    p(class="vacancy__item-text regular font_gray-dark-to-black")= vacancy.desc
+                    span.vacancy__item-region.regular-small.font_gray-to-black= vacancy.region
+                  .vacancy__item-stripe-wrapper
+                    span.vacancy__item-stripe.bg_blue-to-black
+                    span.vacancy__item-stripe.bg_yellow-to-gray.bg_contrast_yellow-to-white
+            +headingLink("Всі вакансії")
+            
+          +accordion_qa()

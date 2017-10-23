@@ -1,0 +1,487 @@
+// BLACK AND WHITE PAGE STYLES
+
+.switch-to-black {
+  // ONLINE HELPER MAIN PAGE SECTION
+  .online-helper__form-switch-btn--active {
+    background-color: $black;
+    border-color: $black;
+  }
+
+  // SCROLLBAR PLUGIN STYLES
+  .mCS-dark-thin.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: $black;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  .mCS-dark-thin.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+    background-color: $black;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+  .mCS-dark-thin.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+  .mCS-dark-thin.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+    background-color: $black;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  // SLIDER PHOTOGALLERY SECTION
+  .sl__gallery-main {
+    .slick-next:before,
+    .slick-prev:before {
+      background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i0KHQu9C+0LlfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMiAyMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzIgMjI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojZmZmO308L3N0eWxlPjxwYXRoIGlkPSJBcnJvd19Gb3J3YXJkIiBjbGFzcz0ic3QwIiBkPSJNMzIsMTFjMC0wLjMtMC4xLTAuNS0wLjMtMC43bC05LjktMTBjLTAuNC0wLjQtMS0wLjQtMS40LDBjLTAuNCwwLjQtMC40LDEsMCwxLjRsOC4yLDguM0gxYy0wLjYsMC0xLDAuNS0xLDFzMC40LDEsMSwxaDI3LjZsLTguMiw4LjNjLTAuNCwwLjQtMC40LDEsMCwxLjRjMC40LDAuNCwxLDAuNCwxLjQsMGw5LjktMTBDMzEuOSwxMS41LDMyLDExLjMsMzIsMTF6Ii8+PC9zdmc+") no-repeat;
+    }
+    .slick-next,
+    .slick-prev {
+      background-color: $black;
+    }
+  }
+
+  // REGISTER HEADER SECTION
+  .register__header-desc-link,
+  .register__header-download-desc {
+    text-decoration: underline;
+  }
+
+  // EDITOR SECTION
+  .editor  a {
+    color: $black;
+  }
+  .editor > ol li {
+    border-left-color: $black;
+  }
+  .register__editor > a {
+    background-color: $black;
+    color: $white;
+  }
+
+  // FIRST LINE STYLES 23_firts_line
+  .first__line {
+    &-item {
+      &-active {
+        .first__line-link {
+          color: $gray;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // NAVIGATION SECTION
+  .nav {
+    &__item {
+      &-active {
+        background-color: $black;
+        color: $white;
+        &:hover {
+          color: $white !important;
+        }
+        &:after {
+          display: none !important;
+        }
+        &:first-child {
+          &:before {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+
+  // IMAGES
+  .banner__img,
+  .banner-secondary__img,
+  .banner-btn__img,
+  .article__banner-img,
+  img,
+  .google-map {
+    // -webkit-filter: grayscale(100%);
+    // -webkit-filter: grayscale(1);
+    // filter: grayscale(100%);
+    //
+    // filter: url('../img/gray.svg#grayscale');
+    // filter: gray;
+  }
+
+  // DROPDOWN SECTION
+  .helper__dropdown-open .helper__dropdown-title svg,
+  .categories__dropdown-open .categories__dropdown-title svg {
+    fill: $black;
+  }
+
+  // HELPER QUIZ MAIN PAGE
+  .helper__quiz-stage-active {
+    background-color: $gray-light;
+  }
+  .helper__quiz-stage-index-active {
+    background-color: $gray-light;
+    color: #2b2b2b;
+    border: 1px solid $gray-light;
+  }
+
+  .fullcalendar__filter-item-active .fullcalendar__filter-link {
+    color: $black;
+  }
+
+  // SUBSCRIBE FORM SECTION
+  .subscribe__form-input:focus,
+  .subscribe__form-input:active, {
+    border-bottom: 2px solid $black;
+    caret-color: $black;
+  }
+
+  // SLICK DOTS STYLES
+  .slick-dots li.slick-active button:before {
+    color: $black;
+  }
+
+  // SELECTRIC STYLES
+  .select__icon-svg-active {
+    fill: $gray;
+  }
+
+  // DATEPICKER SECTION
+  .datepicker {
+    &__item {
+      color: $black;
+      caret-color: $black;
+      transition: 0.3s;
+      &:focus {
+        border-bottom-color: $black;
+      }
+      &-active {
+        border-bottom-color: $black;
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i0KHQu9C+0LlfMSIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnNvZGlwb2RpPSJodHRwOi8vc29kaXBvZGkuc291cmNlZm9yZ2UubmV0L0RURC9zb2RpcG9kaS0wLmR0ZCIgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIzMS4yIDIwLjUgMTQwLjMgMTE3LjUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMzEuMiAyMC41IDE0MC4zIDExNy41IiB4bWw6c3BhY2U9InByZXNlcnZlIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLC05NTIuMzYyMTgpIj48cGF0aCBkPSJNMzUuOCw5NzUuNmMtMS44LDAtMy4yLDEuNC0zLjIsMy4ydjI1LjZoMTM3LjZ2LTI1LjZjMC0xLjgtMS40LTMuMi0zLjItMy4yQzE2Ni45LDk3NS42LDM1LjgsOTc1LjYsMzUuOCw5NzUuNnogTTY0LjYsOTgwLjRjNS4zLDAsOS42LDQuMyw5LjYsOS42YzAsNS4zLTQuMyw5LjYtOS42LDkuNmMtNS4zLDAtOS42LTQuMy05LjYtOS42QzU1LDk4NC43LDU5LjMsOTgwLjQsNjQuNiw5ODAuNHogTTEzOC4xLDk4MC40YzUuMywwLDkuNiw0LjMsOS42LDkuNmMwLDUuMy00LjMsOS42LTkuNiw5LjZjLTUuMywwLTkuNi00LjMtOS42LTkuNkMxMjguNiw5ODQuNywxMzIuOSw5ODAuNCwxMzguMSw5ODAuNHogTTY0LjYsOTg2LjhjLTEuOCwwLTMuMiwxLjQtMy4yLDMuMmMwLDEuOCwxLjQsMy4yLDMuMiwzLjJjMS44LDAsMy4yLTEuNCwzLjItMy4yQzY3LjgsOTg4LjIsNjYuNCw5ODYuOCw2NC42LDk4Ni44eiBNMTM4LjEsOTg2LjhjLTEuOCwwLTMuMiwxLjQtMy4yLDMuMmMwLDEuOCwxLjQsMy4yLDMuMiwzLjJjMS44LDAsMy4yLTEuNCwzLjItMy4yQzE0MS40LDk4OC4yLDE0MCw5ODYuOCwxMzguMSw5ODYuOHogTTMyLjYsMTAxMC44djczLjZjMCwxLjgsMS40LDMuMiwzLjIsMy4yaDEwOC44di0xOS4yYzAtMy41LDIuOS02LjQsNi40LTYuNGgxOS4ydi01MS4ySDMyLjZ6IE01My40LDEwMjMuNmgxOS4ydjIyLjRINTMuNFYxMDIzLjZ6IE03OSwxMDIzLjZoMTkuMnYyMi40SDc5VjEwMjMuNnogTTEwNC42LDEwMjMuNmgxOS4ydjIyLjRoLTE5LjJDMTA0LjYsMTA0NiwxMDQuNiwxMDIzLjYsMTA0LjYsMTAyMy42eiBNMTMwLjIsMTAyMy42aDE5LjJ2MjIuNGgtMTkuMlYxMDIzLjZ6IE01My40LDEwNTIuNGgxOS4ydjIyLjRINTMuNFYxMDUyLjR6IE03OSwxMDUyLjRoMTkuMnYyMi40SDc5VjEwNTIuNHogTTEwNC42LDEwNTIuNGgxOS4ydjIyLjRoLTE5LjJWMTA1Mi40eiBNMTUxLDEwNjguNHYxNmwxNi0xNkgxNTF6Ii8+PC9nPjwvc3ZnPg==) !important;
+      }
+    }
+  }
+
+  .ui-state-active, .ui-widget-content .ui-state-active {
+    background-color: $black;
+    color: $white !important;
+  }
+  .ui-state-hover {
+    background-color: $black !important;
+    color: $white !important;
+  }
+
+  // DISABILITIES SECTION
+  .disabilities__item-current {
+    background-color: $white-noise;
+    .disabilities__item-icon {
+      fill: $black;
+    }
+  }
+
+  // PHOTO LICENCE LINK
+  .photo__licence-link {
+    text-decoration: underline;
+  }
+
+  // HEADER LOGO SECTION
+  .header__logo-svg-icon {
+    &-st3 {
+      fill: $gray-light;
+    }
+  }
+  .header__logo-svg-en {
+    &-st0 {
+      fill: $gray-light;
+    }
+  }
+
+  // REGISTER SELECTRIC STYLES
+  .register__form-wrapper,
+  .appeals__form-wrapper {
+    // SELECTRIC STYLES
+    .selectric-items li.highlighted,
+    .selectric-items li.selected {
+      background-color: $black;
+      color: $white;
+      transition: 0.3s;
+    }
+    .selectric-items {
+      li {
+        &:hover {
+          background-color: $black;
+          color: $white;
+        }
+      }
+    }
+  }
+  .career__filter,
+  .contacts__filter,
+  .contacts__map-form-wrapper {
+    // SELECTRIC STYLES
+    .selectric-items li.highlighted,
+    .selectric-items li.selected {
+      background-color: $black;
+      color: $white;
+      transition: 0.3s;
+    }
+    .selectric-items {
+      li {
+        &:hover {
+          background-color: $black;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  // CHECKBOX STYLES
+  .appeals__form-checkbox {
+    label > input[type=radio]:checked + span:before {
+      background-color: $black;
+      box-shadow: inset 0 0 0 4.2px white;
+    }
+  }
+
+  // DISABILITIES SECTION
+  .disabilities__item + .disabilities__desc {
+    background-color: $black;
+    color: $white;
+  }
+  .disabilities__wrapper .disabilities__desc-black {
+    background-color: $white-noise;
+    color: $black;
+  }
+
+  // VACANCY FORM SECTION
+  .top_vacancy__form-submit-active {
+    background-color: $black !important;
+    .top_vacancy__form-submit-icon {
+      fill: $white !important;
+    }
+  }
+
+  // UNIT SECTION
+  .unit__text-active {
+    color: $black;
+  }
+
+  // MEDICAL VACANCY
+  .medical__vacancy-desc ul li:before {
+    background-color: $black;
+  }
+
+  // PHOTOGALLERY SLIDER SECTION
+  .sl__gallery-thumb-item {
+    &.slick-current {
+      background-color: $black;
+    }
+  }
+
+  // TABLE SECTION
+  .table__link {
+    text-decoration: underline;
+  }
+
+  // ACCORDION SECTION
+  .accordion__qa-title {
+    &-active {
+      .accordion__qa-arrow {
+        fill: $black;
+      }
+    }
+  }
+  .accordion__qa {
+    &-panel {
+      a {
+        color: $black;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // FORM STYLES
+  .form-input:focus {
+    border-bottom-color: $black;
+    caret-color: $black;
+  }
+  .has-error {
+    .form-input {
+      border-color: $red;
+      caret-color: $red;
+    }
+  }
+
+  .calendar__cnt-desc {
+    a {
+      color: $black;
+    }
+    a:after {
+      background-color: $black;
+    }
+  }
+
+  // NO IMG SECTION
+  .no-img__cnt-disabled-desc {
+    a {
+      color: $black;
+    }
+    a:after {
+      background-color: $black;
+    }
+  }
+  .no-img__cnt-active-wrapper {
+    a {
+      color: $black;
+    }
+    a:after {
+      background-color: $black;
+    }
+  }
+
+  // PAGINATION SECTION
+  .pagination {
+    a, span {
+      color: $black;
+    }
+    span {
+      color: $black;
+    }
+    li {
+      &:not(.pagination__active) + .pagination__dots {
+        &::before {
+          background-color: $black;
+        }
+      }
+      &:nth-child(6) {
+        &.pagination__active {
+          &::after {
+            background-color: $black;
+          }
+          &::before {
+            background-color: $black;
+          }
+        }
+        &:not(.pagination__dots)::after {
+          background-color: $black;
+        }
+      }
+      &:not(.pagination__arrow):not(.pagination__dots){
+        &::before {
+          background-color: $black;
+        }
+      }
+    }
+    &__arrow {
+      &_disabled {
+        .icon {
+          fill: $black!important;
+        }
+      }
+    }
+    &__active {
+      a, span {
+        color: $black!important;
+      }
+      &::before {
+        background-color: $black!important;
+      }
+      &::after {
+        background-color: $black!important;
+      }
+    }
+  }
+
+  // CHECKBOX SECTION
+  .useful__qa-checkbox,
+  .appeals__form-checkbox,
+  .access__form-checkbox,
+  .request__form-checkbox {
+    label > input[type=checkbox]:checked + span:before {
+      background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyNCAxOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjQgMTg7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBkPSJNMjEuNywwLjJjLTAuMy0wLjMtMC44LTAuMy0xLjEsMEw5LjQsMTEuNGMtMC4zLDAuMy0wLjgsMC4zLTEuMSwwbC00LjktNUMzLjMsNi4yLDMuMSw2LjEsMi45LDYuMWMtMC4yLDAtMC40LDAuMS0wLjUsMC4yTDAuMiw4LjNDMC4xLDguNSwwLDguNiwwLDguOEMwLDksMC4xLDkuMiwwLjIsOS40bDQuOSw1LjJjMC4zLDAuMywwLjgsMC44LDEuMSwxLjFsMi4xLDIuMWMwLjMsMC4zLDAuOCwwLjMsMS4xLDBMMjMuOCwzLjRjMC4zLTAuMywwLjMtMC44LDAtMS4xTDIxLjcsMC4yeiIvPjwvc3ZnPg==) center center no-repeat #ebe9e9;
+      background-size: 65%;
+    }
+  }
+
+  // FULLCALENDAR SECTION
+  #fullcalendar {
+    // Today Button styles
+    .fc-today-button {
+      margin-right: 0;
+      background-color: transparent;
+      //padding-left: 13px;
+      &:hover {
+        background-color: transparent;
+        color: $black;
+      }
+      &:active,
+      &:focus {
+        color: $black;
+      }
+    }
+    // Active button state
+    .fc-state-active {
+      background-color: $black;
+      color: $white;
+      transition: 0.3s;
+    }
+    // Hover button state
+    .fc-state-hover {
+      background-color: $black;
+      color: $white;
+      transition: 0.3s;
+    }
+    .fc-sun {
+      color: $black;
+      span {
+        color: $black !important;
+      }
+    }
+    // EVENTS STYLES
+    .fc-event {
+      border-radius: 0;
+      border: none;
+      background-color: $black;
+      text-align: center;
+      text-transform: none;
+    }
+    .fc-event-container {
+      .fc-time {
+        color: $white;
+        font-family: $HelveticaNeueCyrRoman;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 20px;
+      }
+    }
+    .fc-event-dot {
+      background-color: $black;
+    }
+  }
+
+  // ACCORDION SECCTION
+  .accordion {
+    &__title {
+      &-active {
+        background-color: $black;
+        .accordion__submenu {
+          display: block;
+        }
+        .accordion__title-link {
+          color: $white;
+        }
+        .accordion__arrow {
+          transform: rotate(180deg);
+          .icon {
+            fill: $white;
+          }
+        }
+      }
+    }
+    &__title {
+      &.active {
+        background-color: $black;
+        .accordion__title-link {
+          color: $white;
+        }
+        .accordion__arrow {
+          transform: rotate(-180deg);
+          .icon {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+}

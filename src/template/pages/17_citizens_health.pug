@@ -1,0 +1,115 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    var healthCategories = ['Антибіотикорезистентність', 'Алкоголь, тютюн та інші наркотики', 'Грип', 'Здорове харчування', 'Здорове довкілля', 'Здоров\'я матері та дитини', 'Діабет', 'Для тих, хто подорожує', 'Інфекційні захворювання', 'Здоров\'я пенсіонерів', 'гепатит', 'Людям у віці', 'Ожиріння', 'Психічне здоров\'я', 'Онкозахворювання', 'Серцево-судинні захворювання', 'Сексуальне життя', 'Туберкульоз', 'Фізичні активності'];
+    var singleItem_1 = {
+        imgSrc: "static/img/health_img1.jpg",
+        icon: 'photo',
+        links: [{text: 'здоров’я', href: '/moz'}, {text: 'пам’ятка', href: '/suprun'}],
+        title: "Профилактика інфекцій: пам’ятка для населення",
+        desc: "У зв'язку зі зниженням добової температури Міністерство охорони здоров'я України звертається до населення з проханням дотримуватися порад медиків, як уникнути шкідливого впливу низьких температур на організм.",
+        date: '21 грудня'
+    };
+    var singleItem_2 = {
+        //imgSrc: "static/img/health_img1.jpg",
+        icon: 'photo',
+        links: [{text: 'здорове довкілля', href: '/moz'}, {text: 'гепатит', href: '/suprun'}],
+        title: "Держава закуповуватиме препарати для лікування гепатиту С за найнижчими в Європі цінами",
+        desc: "25 січня Кабінет Міністрів України погодив укладення Мирової угоди з американською біофармацевтичною компанією Gilead.",
+        date: '22 лютого'
+    };
+    var healthItems_1 = [
+      {
+        imgSrc: "static/img/health_img2.jpg",
+        icon: 'photo',
+        links: [{text: "фізичні активності", href: "/moz"}],
+        title: "МОЗ звертається до населення: остерігайтесь переохолоджень та обморожень",
+        desc: "У зв'язку зі зниженням добової температури Міністерство охорони здоров'я України звертається до населення з проханням... дотримуватися порад медиків, як уникнути шкідливого впливу низьких температур на організм.",
+        date: '9 грудня'
+      },
+      {
+        imgSrc: "static/img/health_img3.jpg",
+        icon: 'video',
+        links: [{text: "діабет", href: "/moz"}, {text: "реформи", href: "/suprun"}, {text: "людям у віці", href: "/suprun"}],
+        title: "Медична реформа у 2017 році відбуватиметься поетапно",
+        desc: "Із січня 2017 року в Україні стартував перший етап медичної реформи, який полягає в зміні фінансування первинної ланки медичної допомоги.",
+        date: '30 січня'
+      }
+    ];
+    var healthItems_2 = [
+      {
+        imgSrc: "static/img/health_img4.jpg",
+        icon: 'photo',
+        links: [{text: "підртимка", href: "/moz"}],
+        title: "Українців просять підтримати пацієнтів із рідкісними хворобами",
+        desc: "Щороку в останній день лютого у світі відзначають Міжнародний день.",
+        date: '16 січня'
+      },
+      {
+        imgSrc: "static/img/health_img5.jpg",
+        icon: 'photo',
+        links: [{text: "медицина", href: "/moz"}, {text: "реформи", href: "/suprun"}],
+        title: "Медична реформа – складова реформи децентралізації",
+        desc: "Медична реформа є важливою складовою децентралізації влади. Стара модель функціонування медзакладів, особливо в селах.",
+        date: '5 січня'
+      }
+    ];
+    
+block main
+  main.main(class="bg_white-to-light-blue" )
+    #search__wrapper
+      +search()
+    +disabilities()
+    .container
+      +breadrcrumbs(['Головна', 'Громадянам'], 'Здоров’я А-Я')
+      h1.citizens__title.h2.font_upper.font_black Здоров'я А-Я
+      .citizens__row
+        .accordion__wrapper
+          +accordion(accordion, true)
+        .citizens.citizens__health
+          .health
+            +healthItem(singleItem_1)
+            +healthItems(healthItems_1)
+            +healthItem(singleItem_2)
+            +healthItems(healthItems_2)
+            
+            .health__single
+              a(href="#" class="health__single-img-link")
+                .h5.more-info.font_upper.font_white Детальніше
+                  span.more-info__stripe.bg_white
+                .health__single-img-overlay
+                  .health__single-img-wrapper
+                    img(src='static/img/health_img5.jpg' class="health__single-img obj-fit")
+                .health__icons.bg_white-noise
+                  .health__icons-wrapper
+                    i.health__icons-svg.health__icons-svg-photo.fill_gray
+                      +svg('photo')
+                    i.health__icons-svg.health__icons-svg-video.fill_gray
+                      +svg('video')
+                    .health__icons-border
+              .health__single-desc
+                .menu-flex-wrapper(data-parent=".health__single-desc")
+                  ul.menu-flex
+                    +links({text: "медицина", href: "/moz"}, {text: "реформи", href: "/suprun"})
+                a(href="#" class="health__single-desc-heading h4 font_black dot" data-height=`${headingLineHeight}`) Медична реформа – складова реформи децентралізації 
+                a(href="#" class="health__single-desc-text regular font_gray-dark-to-black dot" data-height=`${descLineHeight}`) Медична реформа є важливою складовою децентралізації влади. Стара модель функціонування медзакладів, особливо в селах.
+                span.health__single-desc-date.font_gray-to-black.regular 5 січня
+            
+            +separateBorder()
+            +loadMore()
+              
+          .health__categories
+            .health__categories-mobile
+              +blockTitle('Категорії')
+              .health__categories-mobile-icon
+                i.health__categories-mobile-icon-svg.fill_black
+                  +svg('arrow_small')
+            ul.health__categories-list
+              each category in healthCategories
+                li.health__categories-item
+                  a(href="#" class="health__categories-link h5 font_gray-to-black font_upper")= category
+                  span.health__categories-stripe.bg_blue-light-to-black
+    +subscribe()
+              

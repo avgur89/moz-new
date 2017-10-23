@@ -1,0 +1,72 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    var headingSearchResultHeight = '80';
+    var descSearchResultHeight = '90';
+    var resultItems = [
+      {
+        links: [{text: "Уляна Супрун", href: "/suprun"}, {text: "Лікар", href: "/doctor"}],
+        title: "Наказ МОЗ України від 16.01.2017 №29 'Про внесення змін до складу експертного комітету з відбору та використання основних лікарських засобів' Наказ МОЗ України від 16.01.2017 №29 'Про внесення змін до складу експертного комітету з відбору та використання основних лікарських засобів'",
+        desc: "",
+        date: "13 вересня"
+      },
+      {
+        links: [{text: "Здорове довкілля", href: "/suprun"}, {text: "Гепатит", href: "/doctor"}],
+        title: "Держава закуповуватиме препарати для лікування гепатиту С за найнижчими в Європі цінами Держава закуповуватиме препарати для лікування гепатиту С за найнижчими в Європі цінами Держава закуповуватиме препарати для лікування гепатиту С за найнижчими в Європі цінами",
+        desc: "25 січня Кабінет Міністрів України погодив укладення Мирової угоди з американською біофармацевтичною компанією Gllead. Сьогодні, 22 лютого відбулося офіційне підписання Угоди, яка дозволяє забезпечити українців доступнішими. Погодив укладення Мирової угоди з американською біофармацевтичною компанією Gllead. Сьогодні, 22 лютого відбулося офіційне підписання Угоди, яка дозволяє забезпечити українців доступнішими",
+        date: "22 лютого"
+      },
+      {
+        links: [{text: "Здорове довкілля", href: "/suprun"}, {text: "Гепатит", href: "/doctor"}],
+        title: "Держава закуповуватиме препарати для лікування гепатиту С за найнижчими в Європі цінами",
+        desc: "25 січня Кабінет Міністрів України погодив укладення Мирової угоди з американською біофармацевтичною компанією Gllead. Сьогодні, 22 лютого відбулося офіційне підписання Угоди, яка дозволяє забезпечити українців доступнішими. Погодив укладення Мирової угоди з американською біофармацевтичною компанією Gllead. Сьогодні, 22 лютого відбулося офіційне підписання Угоди, яка дозволяє забезпечити українців доступнішими",
+        date: "22 лютого"
+      },
+      {
+        links: [{text: "Здорове довкілля", href: "/suprun"}, {text: "Гепатит", href: "/doctor"}],
+        title: "Держава закуповуватиме препарати для лікування гепатиту С за найнижчими в Європі цінами",
+        desc: "25 січня Кабінет Міністрів України погодив укладення Мирової угоди з американською біофармацевтичною компанією Gllead. Сьогодні, 22 лютого відбулося офіційне підписання Угоди, яка дозволяє забезпечити українців доступнішими. Погодив укладення Мирової угоди з американською біофармацевтичною компанією Gllead. Сьогодні, 22 лютого відбулося офіційне підписання Угоди, яка дозволяє забезпечити українців доступнішими",
+        date: "22 лютого"
+      }
+    ];
+    
+    
+block main
+  main.main(class="bg_white-to-light-blue" data-page='search_result')
+    #search__wrapper
+      +search()
+    +disabilities()
+    .container
+      +breadrcrumbs(['Головна'], 'Результати пошуку')
+      h1.search-result__title.h2.font_upper.font_black Результати пошуку
+      .search-result
+        //- form section  
+        .search-result__form-wrapper
+          form(class="search-result__form" action="" method="")
+            input(class="search-result__form-input font_gray regular bg_white-noise-to-dark-blue" type="text" placeholder="МОЗ")
+            input.search-result__form-submit.h5.font_upper.font_black-to-white.bg_yellow-to-black.bg_contrast_yellow-to-white(type="submit" value="знайти")
+        //- search result section
+        .search-result__items
+          each item in resultItems
+            .search-result__item
+              .search-result__item-desc
+                .menu-flex-wrapper(data-parent=".search-result__item-desc")
+                  ul.menu-flex
+                    each link in item.links
+                      +links(link)
+                a.search-result__item-heading.h4.font_black.dot(href="#" data-height=`${headingSearchResultHeight}`)= item.title
+                a.search-result__item-text.regular.font_gray-dark-to-black.dot(href="#" data-height=`${descSearchResultHeight}`)= item.desc
+                span.search-result__item-date.font_gray-to-black.regular= item.date
+              .search-result__item-stripe-wrapper
+                span.search-result__item-stripe.bg_blue-to-black
+                span.search-result__item-stripe.bg_yellow-to-gray.bg_contrast_yellow-to-white
+        //- load more section
+        +loadMore()          
+                  
+                  
+                  
+                  
+                  
+                  

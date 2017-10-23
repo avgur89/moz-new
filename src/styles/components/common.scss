@@ -1,0 +1,1825 @@
+html, body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+// Common styles for links
+a {
+  text-decoration: none;
+}
+
+// Common styles for container (grid)
+.container {
+  width: 100%;
+  position: relative;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  @include respond-to($tab) {
+    padding: 0 24px;
+  }
+  @include respond-to($tad) {
+    padding: 0;
+  }
+}
+
+// Fix footer to bottom of screen
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+}
+.main {
+  flex: 1 0 auto;
+  padding-top: 170px;
+  @include respond-to($tam) {
+    //padding-top: 0;
+  }
+}
+
+.slick-dots {
+  pointer-events: none;
+  li {
+    pointer-events: auto;
+  }
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: $gray-light;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ color: $gray-light;
+ opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color: $gray-light;
+ opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  column-rule: $gray-light;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: $gray-light;
+}
+
+/* Font styles */
+// Add necessary class for every text notations
+// Don't styling font inside logic block, use classes!!!
+// It needs for big-font-size application (change by clicking button => add global class to body)
+.h1 {
+  font-family: $AkrobatBold;
+  font-size: 100px;
+  line-height: 90px;
+  letter-spacing: 0;
+}
+
+.h2 {
+  font-family: $AkrobatSemiBold;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: 0;
+}
+
+.h3 {
+  font-family: $HelveticaNeueCyrLight;
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: 0.05em;
+}
+
+.h4 {
+  font-family: $AkrobatSemiBold;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: 0;
+}
+
+.h5 {
+  font-family: $AkrobatBold;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.05em;
+}
+
+.h6 {
+  font-family: $AkrobatBold;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+}
+
+.regular {
+  font-family: $HelveticaNeueCyrRoman;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  &-small {
+    font-family: $HelveticaNeueCyrRoman;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+  }
+}
+
+.extra {
+  font-family: $DINPro;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  &-small {
+    font-family: $DINPro;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+  }
+  &-h1 {
+    font-family: $DINPro;
+    font-size: 100px;
+    line-height: 90px;
+    letter-spacing: 0;
+  }
+  &-h2 {
+    font-family: $DINPro;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: 0;
+  }
+  &-h3 {
+    font-family: $DINPro;
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: 0.05em;
+  }
+  &-h4 {
+    font-family: $DINPro;
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: 0;
+  }
+  &-h5 {
+    font-family: $DINPro;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.05em;
+  }
+  &-h6 {
+    font-family: $DINPro;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: none;
+  vertical-align: bottom;
+}
+
+.no-margin {
+  margin-bottom: 0 !important;
+}
+
+.obj-fit {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-family: 'object-fit: cover;'
+}
+
+a {
+  transition: 0.3s;
+}
+
+/* End of font styles*/
+
+// Common styles for icons
+.icon {
+  &__fb {
+    width: 9px;
+    height: 17px;
+  }
+  &__youtube {
+    width: 46px;
+    height: 18px;
+  }
+  &__youtube_min {
+    width: 25px;
+    height: 24px;
+  }
+  &__twitter {
+    width: 15px;
+    height: 15px;
+  }
+  &__linkedin {
+    width: 15px;
+    height: 15px;
+  }
+  &__google {
+    width: 21px;
+    height: 14px;
+  }
+}
+
+// Width and height must be set for svg wrapper!!!
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+// Common styles for fonts (colors, decoration, etc.)
+.font {
+  &_upper {
+    text-transform: uppercase;
+  }
+  &_white {
+    color: $white;
+  }
+  &_white-noise {
+    color: $white-noise;
+  }
+  &_black {
+    color: $black;
+  }
+  &_grey {
+    color: $grey;
+  }
+  &_gray {
+    color: $gray;
+  }
+  &_gray-dark {
+    color: $gray-dark;
+  }
+  &_gray-light {
+    color: $gray-light;
+  }
+  // Common styles for fonts that will be changed for white-black colors application
+  &_black-to-white {
+    color: $black;
+  }
+  &_blue-to-black {
+    color: $blue;
+  }
+  &_blue-light-to-black {
+    color: $blue-light;
+  }
+  &_blue-to-white {
+    color: $blue;
+  }
+  &_yellow-to-black {
+    color: $yellow;
+  }
+  &_yellow-to-gray {
+    color: $yellow;
+  }
+  &_yellow-to-white {
+    color: $yellow;
+  }
+  // Common styles for fonts that will be changed for blue-white colors application
+  &_gray-dark-to-black {
+    color: $gray-dark;
+  }
+  &_gray-light-to-black {
+    color: $gray-light;
+  }
+  &_gray-to-black {
+    color: $gray;
+  }
+  &_contrast_blue-light-to-black {
+    color: $blue-light;
+  }
+  &_white-to-light-blue {
+    color: $white;
+  }
+  &_white-to-black {
+    color: $white;
+  }
+  &_contrast_yellow-to-black {
+    color: $yellow;
+  }
+  &_contrast_yellow-to-gray {
+    color: $yellow;
+  }
+  &_contrast_white-noise-to-black {
+    color: $white-noise;
+  }
+}
+
+// Common styles for backgrounds (colors, opacity, etc.)
+.bg {
+  &_white {
+    background-color: $white;
+  }
+  &_white-dark {
+    background-color: $white-dark;
+  }
+  &_white-noise {
+    background-color: $white-noise;
+  }
+  &_black {
+    background-color: $black;
+  }
+  &_gray {
+    background-color: $gray;
+  }
+  // Common styles for backgrounds that will be changed for white-black colors application
+  &_blue-to-black {
+    background-color: $blue;
+  }
+  &_blue-dark-to-black {
+    background-color: $blue-dark;
+  }
+  &_white-noise-to-black {
+    background-color: $white-noise;
+  }
+  &_white-to-black {
+    background-color: $white;
+  }
+  &_blue-light-to-black {
+    background-color: $blue-light;
+  }
+  &_blue-light-to-gray {
+    background-color: $blue-light;
+  }
+  &_yellow-to-gray {
+    background-color: $yellow;
+  }
+  &_blue-to-white {
+    background-color: $blue;
+  }
+  &_yellow-to-black {
+    background-color: $yellow;
+  }
+  &_yellow-to-white {
+    background-color: $yellow;
+  }
+  // Common styles for backgrounds that will be changed for blue-white colors application
+  &_white-to-light-blue {
+    background-color: $white;
+  }
+  &_white-noise-to-light-blue {
+    background-color: $white-noise;
+  }
+  &_yellow-to-light-blue {
+    background-color: $yellow;
+  }
+  &_contrast_yellow-to-white {
+    background-color: $yellow;
+  }
+  &_yellow-to-dark-blue {
+    background-color: $yellow;
+  }
+  &_white-to-dark-blue {
+    background-color: $white;
+  }
+  &_white-noise-to-dark-blue {
+    background-color: $white-noise;
+  }
+  &_blue-light-to-dark-blue {
+    background-color: $blue-light;
+  }
+  &_white-dark-to-dark-blue {
+    background-color: $white-dark;
+  }
+  &_white-noise-to-white {
+    background-color: $white-noise;
+  }
+  &_contrast_blue-light-to-black {
+    background-color: $blue-light;
+  }
+  &_contrast_white-to-dark-blue {
+    background-color: $white;
+  }
+  &_contrast_black-to-blue-dark {
+    background-color: $black;
+  }
+}
+
+// Common styles for svg-icon's fill (colors)
+.fill {
+  &_white {
+    fill: $white
+  }
+  &_white-noise {
+    fill: $white-noise
+  }
+  &_black {
+    fill: $black;
+  }
+  &_gray {
+    fill: $gray;
+  }
+  // Common styles for svg-icon that will be changed for white-black colors application
+  &_blue-to-black {
+    fill: $blue;
+  }
+  &_blue-light-to-black {
+    fill: $blue-light;
+  }
+  &_blue-to-white {
+    fill: $blue;
+  }
+  &_black-to-white {
+    fill: $black;
+  }
+  &_yellow-to-black {
+    fill: $yellow;
+  }
+  &_yellow-to-white {
+    fill: $yellow;
+  }
+  &_gray-to-white {
+    fill: $gray;
+  }
+  // Common styles for svg-icon that will be changed for blue-white colors application
+  &_gray-to-black {
+    fill: $gray;
+  }
+  &_white-to-black {
+    fill: $white;
+  }
+  &_white-to-blue-light {
+    fill: $white;
+  }
+  &_contrast_blue-light-to-black {
+    fill: $blue-light;
+  }
+  &_contrast_black-to-white {
+    fill: $black;
+  }
+}
+
+// Global class => add it to 'body'
+.global {
+  // Global class for white-black colors application
+  &_black-white {
+    .font {
+      &_blue-to-black, &_yellow-to-black, &_blue-light-to-black {
+        color: $black;
+      }
+      &_blue-to-white, &_yellow-to-white, &_black-to-white {
+        color: $white;
+      }
+      &_blue-light-to-gray, &_yellow-to-gray {
+        color: $gray-light;
+      }
+    }
+    .bg {
+      &_blue-to-black, &_white-to-black, &_yellow-to-black, &_blue-light-to-black, &_white-noise-to-black, &_blue-dark-to-black {
+        background-color: $black;
+      }
+      &_blue-to-white, &_yellow-to-white {
+        background-color: $white;
+      }
+      &_blue-light-to-gray, &_yellow-to-gray {
+        background-color: $gray-light;
+      }
+    }
+    .fill {
+      &_blue-to-black, &_yellow-to-black, &_blue-light-to-black {
+        fill: $black;
+      }
+      &_blue-to-white, &_black-to-white, &_yellow-to-white, &_gray-to-white {
+        fill: $white;
+      }
+    }
+    .editor > ul li{
+      &:before{
+        background-color: #2b2b2b;
+      }
+    }
+  }
+
+  // Global class for blue-white application
+  &_blue-white {
+    .font {
+      &_gray-dark-to-black, &_gray-to-black, &_contrast_blue-light-to-black, &_white-to-black, &_gray-light-to-black, &_contrast_white-noise-to-black {
+        color: $black;
+      }
+      &_white-to-light-blue {
+        color: $blue-light-contrast;
+      }
+      &_contrast_yellow-to-black {
+        color: $black;
+      }
+      &_contrast_yellow-to-gray {
+        color: $gray-light;
+      }
+    }
+    .bg {
+      &_white-to-light-blue, &_white-noise-to-light-blue, &_yellow-to-light-blue {
+        background-color: $blue-light-contrast;
+      }
+      &_white-to-dark-blue, &_white-noise-to-dark-blue, &_yellow-to-dark-blue, &_blue-light-to-dark-blue, &_white-dark-to-dark-blue, &_contrast_white-to-dark-blue {
+        background-color: $blue-dark-contrast;
+      }
+      &_contrast_yellow-to-white, &_white-noise-to-white {
+        background-color: $white;
+      }
+      &_contrast_blue-light-to-black {
+        background-color: $black;
+      }
+      &_contrast_black-to-blue-dark {
+        background-color: $blue-dark;
+      }
+    }
+    .fill {
+      &_gray-to-black, &_white-to-black, &_contrast_blue-light-to-black {
+        fill: $black;
+      }
+      &_contrast_black-to-white {
+        fill: $white;
+      }
+      &_white-to-blue-light {
+        fill: $blue-light-contrast;
+      }
+    }
+  }
+
+  // Global class for big-font-size application
+  &_big-font-size {
+    .h1, .extra-h1 {
+      font-size: 130px;
+      line-height: 90px;
+      letter-spacing: 0;
+    }
+    .h2, .extra-h2 {
+      font-size: 100px;
+      line-height: 90px;
+      letter-spacing: 0;
+    }
+    .h3, .extra-h3 {
+      font-size: 30px;
+      line-height: 36px;
+      letter-spacing: 0;
+    }
+    .h4, .extra-h4 {
+      font-size: 30px;
+      line-height: 38px;
+      letter-spacing: 0.05em;
+    }
+    .h5, .extra-h5 {
+      font-size: 22px;
+      line-height: 30px;
+      letter-spacing: 0;
+    }
+    .h6, .extra-h6 {
+      font-size: 14px;
+      line-height: 22px;
+      letter-spacing: 0.05em;
+    }
+    .regular {
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.05em;
+      &-small {
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.05em;
+      }
+    }
+    .extra {
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.05em;
+      &-small {
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.05em;
+      }
+    }
+    .helper__QA-next{
+      height: 50px;
+    }
+    .grayscale{
+      filter: grayscale(0);
+    }
+  }
+
+  // Global class for hover (not be able for touch device)
+  // For white-black colors application => hovers aren't available
+  &_no-touch:not(.global_black-white):not(.global_blue-white) {
+    .btn {
+      &__switch:hover {
+        border-color: $blue-light;
+        background-color: $blue-light;
+        .font_black {
+          color: $white;
+        }
+        .icon {
+          fill: $white;
+        }
+      }
+      &__search:hover {
+        background-color: $blue-light;
+        .icon {
+          fill: $white;
+        }
+      }
+    }
+
+    // HEADER STYLES
+    .header {
+      &__social-logo:hover {
+        .icon {
+          fill: $yellow;
+        }
+      }
+      &__social-mobile-logo:hover {
+        .icon {
+          fill: $yellow;
+        }
+      }
+      &__hamburger {
+        &:hover {
+          background-color: $blue-light;
+        }
+      }
+      &__search-close {
+        &:hover {
+          background-color: $blue-light;
+        }
+        &:hover .icon {
+          fill: $white;
+        }
+      }
+    }
+
+    // HEADER OVERLAY
+    .header__overlay {
+      &-close {
+        &:hover {
+          background-color: $blue-light;
+        }
+        &:hover .header__overlay-close-svg {
+          fill: $white;
+        }
+      }
+    }
+
+    // HEADER NAVIGATION
+    .nav {
+      &__item:hover {
+        color: $blue-light;
+        &:after {
+          background-color: $blue-light;
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+    // DROPDOWN
+    .dropdown {
+      &__title:hover {
+        .dropdown__title-text {
+          color: $blue-light;
+        }
+        .icon {
+          fill: $blue-light
+        }
+      }
+      &__link:hover {
+        color: $blue-light;
+      }
+    }
+
+    // BANNER
+    .banner {
+      &__close:hover {
+        background-color: $white;
+        .banner__svg {
+          fill: $blue-light;
+        }
+      }
+      &__open:hover {
+        .banner__open-text {
+          color: $yellow;
+        }
+        .banner__arrow {
+          fill: $yellow;
+        }
+      }
+    }
+
+    .banner-btn {
+      &__button {
+        &:hover {
+          background-color: $blue-light;
+          color: $white;
+        }
+      }
+    }
+
+    // FOOTER
+    .footer {
+      &__social-logo:hover {
+        .icon {
+          fill: $yellow;
+        }
+      }
+      &__ref-link:hover {
+        .footer__ref-stripe {
+          background-color: $yellow;
+        }
+        .font_white {
+          color: $yellow;
+        }
+      }
+      a:hover {
+        color: $yellow;
+      }
+    }
+
+    // BLOCK LINK COMPONENT
+    .block__link:hover {
+      color: $yellow;
+      &.block__stripe {
+        color: $yellow;
+      }
+    }
+    .block__link:hover .block__stripe {
+      background-color: $yellow;
+      transform: translate3d(10px, 0, 0);
+    }
+
+    // DISABILITIES
+    .disabilities__item {
+      &:hover {
+        background-color: $blue-light;
+      }
+      &:hover .disabilities__item-icon {
+        fill: $white;
+      }
+    }
+
+    .disabilities__item:hover + .disabilities__desc {
+      background-color: $blue-light;
+      color: $white;
+    }
+
+    // LINKS COMPONENT
+    .links__link {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    // PREVENTION STYLES
+    .prevention__img-link {
+      &:hover .prevention__img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .prevention__img {
+        transform: scale(1.05);
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    .prevention__desc {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    // BIBLIO EDUCATION SECTION
+    .education__item-img-link {
+      &:hover .education__item-img-overlay {
+        opacity: 0.6;
+      }
+
+      &:hover .education__item-img {
+        transform: scale(1.05);
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    // 3 COLUMN STYLES
+    .three_col__img-link {
+      &:hover .three_col__img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .three_col__img {
+        transform: scale(1.05);
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    .three_col__desc {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .register__header-desc-link:hover,
+    .register__header-download-link:hover .register__header-download-desc {
+      text-decoration: underline;
+    }
+
+    .register__unit-text {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    // TRAINEE STYLES
+    .trainee__img-link {
+      &:hover .trainee__img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .trainee__img {
+        transform: scale(1.05);
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    .trainee__desc {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    // INTERVIEW STYLES
+    .press__interview-img-link {
+      &:hover .press__interview-img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .press__interview-img {
+        transform: scale(1.05);
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    // NEWS STYLES
+    .news__img-link {
+      &:hover .news__img {
+        transform: scale(1.05);
+      }
+      &:hover .news__img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    .news__desc {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .slick-next:hover,
+    .slick-prev:hover {
+      background-color: $blue-light;
+      &:before {
+        background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i0KHQu9C+0LlfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMiAyMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzIgMjI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojZmZmO308L3N0eWxlPjxwYXRoIGlkPSJBcnJvd19Gb3J3YXJkIiBjbGFzcz0ic3QwIiBkPSJNMzIsMTFjMC0wLjMtMC4xLTAuNS0wLjMtMC43bC05LjktMTBjLTAuNC0wLjQtMS0wLjQtMS40LDBjLTAuNCwwLjQtMC40LDEsMCwxLjRsOC4yLDguM0gxYy0wLjYsMC0xLDAuNS0xLDFzMC40LDEsMSwxaDI3LjZsLTguMiw4LjNjLTAuNCwwLjQtMC40LDEsMCwxLjRjMC40LDAuNCwxLDAuNCwxLjQsMGw5LjktMTBDMzEuOSwxMS41LDMyLDExLjMsMzIsMTF6Ii8+PC9zdmc+") no-repeat;
+      }
+    }
+
+    // HEADING LINK COMPONENT
+    .heading__link {
+      &:hover {
+        color: $yellow;
+      }
+      &:hover .heading__stripe {
+        background-color: $yellow;
+        transform: translate3d(10px, 0, 0);
+      }
+    }
+
+    // DOWNLOAD LINK
+    .download__link {
+      &:hover .download__link-desc {
+        text-decoration: underline;
+      }
+    }
+    .download__close:hover {
+      background-color: $yellow;
+      .download__close-icon {
+        fill: $black;
+      }
+    }
+
+    .appeals__form-download-link {
+      &:hover .appeals__form-download-link-desc {
+        text-decoration: underline;
+      }
+    }
+    .appeals__form-download-close:hover {
+      background-color: $yellow;
+      .appeals__form-download-close-icon {
+        fill: $black;
+      }
+    }
+    .appeals__form-submit-btn {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+      }
+    }
+
+    // ACCORDION
+    .accordion__title:hover {
+      transition: .3s;
+      background-color: $blue-light;
+      .accordion__title-link {
+        color: $white;
+      }
+      .icon {
+        fill: $white;
+      }
+    }
+    .accordion__link:hover {
+      transition: color .3s;
+      color: $blue-light;
+      &::after {
+        transition: opacity .3s;
+        opacity: 1;
+      }
+    }
+
+    .accordion__qa-title {
+      &:hover {
+        background-color: $white-dark;
+      }
+    }
+
+    .accordion__qa-panel a:hover {
+      color: $yellow;
+    }
+
+    // BREADCRUMBS
+    .breadcrumbs > li:not(.active) > a:hover {
+      transition: color .3s;
+      color: $grey;
+    }
+
+    // ARTICLES
+    .articles__all-link {
+      &:hover {
+        color: $yellow;
+      }
+    }
+    .articles__all-link:hover .articles__all-stripe {
+      background-color: $yellow;
+      transform: translate3d(10px, 0, 0);
+    }
+
+    // ARTICLES PRIMARY
+    .article__primary-img-link {
+      &:hover .article__primary-img {
+        transform: scale(1.05);
+      }
+      &:hover .article__primary-img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+      &:hover .article__primary-desc {
+        transform: translateY(-40px);
+      }
+    }
+
+    // PRESS NEWS PRIMARY
+    .press__news-main-img-link {
+      &:hover .press__news-main-img {
+        transform: scale(1.05);
+      }
+      &:hover .press__news-main-img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+      &:hover .press__news-main-desc {
+        transform: translateY(-40px);
+      }
+    }
+
+    // ARTICLES SECONDARY
+    .article__secondary-img-link {
+      &:hover .article__secondary-img {
+        transform: scale(1.05);
+      }
+      &:hover .article__secondary-img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    .article__secondary-text-link {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    // PRESS NEWS SECONDARY
+    .press__news-secondary-img-link {
+      &:hover .press__news-secondary-img {
+        transform: scale(1.05);
+      }
+      &:hover .press__news-secondary-img-overlay::after {
+        opacity: 0.6;
+      }
+    }
+    .press__news-secondary-desc-link {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .pagination a:hover {
+      color: $blue-light;
+    }
+
+    .pagination__dots span:hover {
+      color: $yellow;
+    }
+
+    .pagination__arrow_next span:hover,
+    .pagination__arrow_prev span:hover {
+      fill: $yellow;
+    }
+
+    // ARTICLES LATEST
+    .articles__latest-link-item {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    .articles__latest-link:hover {
+      opacity: 0.5;
+    }
+
+    // ONLINE FORM
+    .online-form__heading-link:hover {
+      .online-form__heading-stripe {
+        opacity: 1;
+      }
+    }
+
+    // STATISTICS SECTION
+    .press__statistics-heading-link:hover {
+      .press__statistics-heading-stripe {
+        opacity: 1;
+      }
+    }
+
+    // CAREER
+    .career__item-heading-link:hover {
+      .career__item-heading-stripe {
+        opacity: 1;
+      }
+    }
+
+    .career__address-department {
+      &:hover {
+        color: $yellow;
+      }
+    }
+
+    // NO IMAGE BLOCK
+    .no-img__cnt-active-heading-link:hover {
+      .no-img__cnt-active-heading-stripe {
+        opacity: 1;
+      }
+    }
+
+    .no-img__cnt-disabled-desc {
+      a:hover {
+        color: $yellow;
+      }
+      a:hover:after {
+        background-color: $yellow;
+        transform: translate3d(10px, -50%, 0);
+      }
+    }
+
+    .calendar__cnt-desc {
+      a:hover {
+        color: $yellow;
+      }
+      a:hover:after {
+        background-color: $yellow;
+        transform: translate3d(10px, -50%, 0);
+      }
+    }
+
+    .no-img__cnt-active-wrapper {
+      a:hover {
+        color: $yellow;
+      }
+      a:hover:after {
+        background-color: $yellow;
+        transform: translate3d(10px, -50%, 0);
+      }
+      h5 a:hover {
+        color: $black;
+      }
+      h5 a:hover:after {
+        opacity: 1;
+        background-color: $black;
+        transform: none;
+      }
+    }
+
+    .register__form-submit {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+      }
+    }
+    .request__form-submit-btn {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+      }
+    }
+
+    .contacts__form-btn {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+      }
+    }
+
+    .fullcalendar__filter-link:hover {
+      color: $blue-light;
+    }
+
+    // MEDIA PHOTO
+    .media__photo-text-link {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    .media__photo-img-link {
+      &:hover .media__photo-img {
+        transform: scale(1.05);
+      }
+      &:hover .media__photo-img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    // MEDIA VIDEO
+    .media__video-text-link {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    .media__video-img-link {
+      &:hover .media__video-img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .media__video-svg {
+        &:first-child {
+          opacity: 0;
+        }
+        &:last-child {
+          opacity: 1;
+        }
+      }
+    }
+
+    // SUBSCRIBE
+    .subscribe__hint {
+      &:hover {
+        background-color: $blue-light;
+      }
+      &:hover svg {
+        fill: $black;
+      }
+    }
+    .subscribe__popup-close {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+      }
+    }
+
+    .material__popup-close {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+      }
+    }
+
+    .subscribe__form-btn {
+      &:hover {
+        background-color: $blue-light;
+      }
+      &:hover span {
+        top: 300%;
+      }
+      &:hover .subscribe__form-btn-icon {
+        top: 50%;
+      }
+    }
+
+    // PRESS SUBSCRIBE
+    .press__subscribe-hint-icon {
+      &:hover {
+        background-color: $blue-light;
+      }
+      &:hover .press__subscribe-hint-svg {
+        fill: $black;
+      }
+    }
+    .press__subscribe-popup-close {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+      }
+    }
+    .press__subscribe-hint-close-icon {
+      &:hover .press__subscribe-hint-close-svg {
+        fill: $blue-light;
+      }
+    }
+
+    .press__subscribe-form-btn {
+      &:hover {
+        background-color: $blue-light;
+      }
+      &:hover .press__subscribe-form-btn-text {
+        top: 300%;
+      }
+      &:hover .press__subscribe-form-btn-svg {
+        top: 50%;
+      }
+    }
+
+
+    // ALPHABET
+    .alphabet__tab {
+      &:hover {
+        background-color: $white-noise;
+      }
+    }
+    .alphabet__tab-content-link {
+      &:hover {
+        color: $blue-light;
+      }
+    }
+    .alphabet__close-icon {
+      &:hover {
+        fill: $yellow;
+      }
+    }
+    .alphabet__tab-mobile {
+      &:hover {
+        color: $white;
+        background-color: $blue-light;
+      }
+    }
+    .alphabet__choose-letter {
+      &:hover {
+        background-color: $yellow;
+        color: $black;
+      }
+      &:hover .alphabet__choose-letter-dot {
+        color: $black;
+      }
+    }
+
+    // ONLINE HELPER
+    .online-helper__form-switch-btn {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+        border-color: $blue-light;
+      }
+    }
+
+    .helper__QA-next {
+      &:hover {
+        background-color: $blue-light;
+      }
+      &:hover span {
+        top: 300%;
+      }
+      &:hover .helper__QA-next-icon {
+        top: 50%;
+      }
+    }
+
+    // CATEGORIES
+    .categories__item {
+      &:hover .categories__link {
+        color: $blue-light;
+      }
+      &:hover {
+        .categories__stripe {
+          opacity: 1;
+          transition: 0.3s;
+        }
+      }
+    }
+
+    // DATEPICKER SECTION
+    .datepicker {
+      &__item {
+        &:hover {
+          cursor: pointer;
+          background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i0KHQu9C+0LlfMSIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnNvZGlwb2RpPSJodHRwOi8vc29kaXBvZGkuc291cmNlZm9yZ2UubmV0L0RURC9zb2RpcG9kaS0wLmR0ZCIgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIzMS4yIDIwLjUgMTQwLjMgMTE3LjUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMzEuMiAyMC41IDE0MC4zIDExNy41IiB4bWw6c3BhY2U9InByZXNlcnZlIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLC05NTIuMzYyMTgpIj48cGF0aCBmaWxsPSIjRkZDOTA0IiBkPSJNMzUuOCw5NzUuNmMtMS44LDAtMy4yLDEuNC0zLjIsMy4ydjI1LjZoMTM3LjZ2LTI1LjZjMC0xLjgtMS40LTMuMi0zLjItMy4yQzE2Ni45LDk3NS42LDM1LjgsOTc1LjYsMzUuOCw5NzUuNnogTTY0LjYsOTgwLjRjNS4zLDAsOS42LDQuMyw5LjYsOS42YzAsNS4zLTQuMyw5LjYtOS42LDkuNmMtNS4zLDAtOS42LTQuMy05LjYtOS42QzU1LDk4NC43LDU5LjMsOTgwLjQsNjQuNiw5ODAuNHogTTEzOC4xLDk4MC40YzUuMywwLDkuNiw0LjMsOS42LDkuNmMwLDUuMy00LjMsOS42LTkuNiw5LjZjLTUuMywwLTkuNi00LjMtOS42LTkuNkMxMjguNiw5ODQuNywxMzIuOSw5ODAuNCwxMzguMSw5ODAuNHogTTY0LjYsOTg2LjhjLTEuOCwwLTMuMiwxLjQtMy4yLDMuMmMwLDEuOCwxLjQsMy4yLDMuMiwzLjJjMS44LDAsMy4yLTEuNCwzLjItMy4yQzY3LjgsOTg4LjIsNjYuNCw5ODYuOCw2NC42LDk4Ni44eiBNMTM4LjEsOTg2LjhjLTEuOCwwLTMuMiwxLjQtMy4yLDMuMmMwLDEuOCwxLjQsMy4yLDMuMiwzLjJjMS44LDAsMy4yLTEuNCwzLjItMy4yQzE0MS40LDk4OC4yLDE0MCw5ODYuOCwxMzguMSw5ODYuOHogTTMyLjYsMTAxMC44djczLjZjMCwxLjgsMS40LDMuMiwzLjIsMy4yaDEwOC44di0xOS4yYzAtMy41LDIuOS02LjQsNi40LTYuNGgxOS4ydi01MS4ySDMyLjZ6IE01My40LDEwMjMuNmgxOS4ydjIyLjRINTMuNFYxMDIzLjZ6IE03OSwxMDIzLjZoMTkuMnYyMi40SDc5VjEwMjMuNnogTTEwNC42LDEwMjMuNmgxOS4ydjIyLjRoLTE5LjJDMTA0LjYsMTA0NiwxMDQuNiwxMDIzLjYsMTA0LjYsMTAyMy42eiBNMTMwLjIsMTAyMy42aDE5LjJ2MjIuNGgtMTkuMlYxMDIzLjZ6IE01My40LDEwNTIuNGgxOS4ydjIyLjRINTMuNFYxMDUyLjR6IE03OSwxMDUyLjRoMTkuMnYyMi40SDc5VjEwNTIuNHogTTEwNC42LDEwNTIuNGgxOS4ydjIyLjRoLTE5LjJWMTA1Mi40eiBNMTUxLDEwNjguNHYxNmwxNi0xNkgxNTF6Ii8+PC9nPjwvc3ZnPg==) !important;
+        }
+      }
+      .has-error {
+        .datepicker__item {
+          &:hover {
+            background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i0KHQu9C+0LlfMSIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnNvZGlwb2RpPSJodHRwOi8vc29kaXBvZGkuc291cmNlZm9yZ2UubmV0L0RURC9zb2RpcG9kaS0wLmR0ZCIgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIzMS4yIDIwLjUgMTQwLjMgMTE3LjUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMzEuMiAyMC41IDE0MC4zIDExNy41IiB4bWw6c3BhY2U9InByZXNlcnZlIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLC05NTIuMzYyMTgpIj48cGF0aCBmaWxsPSIjQzk0MDQwIiBkPSJNMzUuOCw5NzUuNmMtMS44LDAtMy4yLDEuNC0zLjIsMy4ydjI1LjZoMTM3LjZ2LTI1LjZjMC0xLjgtMS40LTMuMi0zLjItMy4yQzE2Ni45LDk3NS42LDM1LjgsOTc1LjYsMzUuOCw5NzUuNnogTTY0LjYsOTgwLjRjNS4zLDAsOS42LDQuMyw5LjYsOS42YzAsNS4zLTQuMyw5LjYtOS42LDkuNmMtNS4zLDAtOS42LTQuMy05LjYtOS42QzU1LDk4NC43LDU5LjMsOTgwLjQsNjQuNiw5ODAuNHogTTEzOC4xLDk4MC40YzUuMywwLDkuNiw0LjMsOS42LDkuNmMwLDUuMy00LjMsOS42LTkuNiw5LjZjLTUuMywwLTkuNi00LjMtOS42LTkuNkMxMjguNiw5ODQuNywxMzIuOSw5ODAuNCwxMzguMSw5ODAuNHogTTY0LjYsOTg2LjhjLTEuOCwwLTMuMiwxLjQtMy4yLDMuMmMwLDEuOCwxLjQsMy4yLDMuMiwzLjJjMS44LDAsMy4yLTEuNCwzLjItMy4yQzY3LjgsOTg4LjIsNjYuNCw5ODYuOCw2NC42LDk4Ni44eiBNMTM4LjEsOTg2LjhjLTEuOCwwLTMuMiwxLjQtMy4yLDMuMmMwLDEuOCwxLjQsMy4yLDMuMiwzLjJjMS44LDAsMy4yLTEuNCwzLjItMy4yQzE0MS40LDk4OC4yLDE0MCw5ODYuOCwxMzguMSw5ODYuOHogTTMyLjYsMTAxMC44djczLjZjMCwxLjgsMS40LDMuMiwzLjIsMy4yaDEwOC44di0xOS4yYzAtMy41LDIuOS02LjQsNi40LTYuNGgxOS4ydi01MS4ySDMyLjZ6IE01My40LDEwMjMuNmgxOS4ydjIyLjRINTMuNFYxMDIzLjZ6IE03OSwxMDIzLjZoMTkuMnYyMi40SDc5VjEwMjMuNnogTTEwNC42LDEwMjMuNmgxOS4ydjIyLjRoLTE5LjJDMTA0LjYsMTA0NiwxMDQuNiwxMDIzLjYsMTA0LjYsMTAyMy42eiBNMTMwLjIsMTAyMy42aDE5LjJ2MjIuNGgtMTkuMlYxMDIzLjZ6IE01My40LDEwNTIuNGgxOS4ydjIyLjRINTMuNFYxMDUyLjR6IE03OSwxMDUyLjRoMTkuMnYyMi40SDc5VjEwNTIuNHogTTEwNC42LDEwNTIuNGgxOS4ydjIyLjRoLTE5LjJWMTA1Mi40eiBNMTUxLDEwNjguNHYxNmwxNi0xNkgxNTF6Ii8+PC9nPjwvc3ZnPg==) !important;
+          }
+        }
+      }
+    }
+
+    .health__categories-item {
+      &:hover .health__categories-link {
+        color: $blue-light;
+      }
+      &:hover .health__categories-stripe {
+        opacity: 1;
+      }
+
+      @include respond-to($tam) {
+        &:hover {
+          color: $black;
+        }
+      }
+    }
+
+    ._404__btn {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+      }
+    }
+
+    .popup__close {
+      &:hover span {
+        background-color: $blue-light;
+      }
+    }
+
+    .helper__dropdown-title {
+      &:hover .helper__dropdown-title-text {
+        color: $black;
+      }
+      &:hover svg {
+        fill: $yellow;
+      }
+    }
+
+    .table__link {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .categories__dropdown-title {
+      &:hover svg {
+        fill: $yellow;
+      }
+    }
+
+    .helper__dropdown {
+      &-item {
+        &:hover {
+          background-color: $yellow;
+        }
+      }
+      &-link {
+        &:hover {
+          color: $black;
+        }
+      }
+      &-scroll-down {
+        &:hover svg {
+          fill: $yellow;
+        }
+      }
+      &-scroll-up {
+        &:hover svg {
+          fill: $yellow;
+        }
+      }
+    }
+
+    .helper__render-btn {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+      }
+    }
+
+    .categories__dropdown {
+      &-link {
+        &:hover {
+          color: $blue-light;
+        }
+      }
+    }
+
+    .helper__quiz-stage-answer {
+      &:hover {
+        color: $black;
+      }
+    }
+
+    .helper__render-img-link {
+      &:hover .helper__render-img {
+        transform: scale(1.05);
+      }
+      &:hover .helper__render-img-overlay::after {
+        opacity: 0.6;
+      }
+    }
+
+    .helper__render-desc {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    // MANAGEMENT PERSONS
+    .management__persons-link {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    // VACANCIES
+    .top_vacancy__form-submit {
+      &:hover {
+        background-color: $blue-light;
+      }
+      &:hover .top_vacancy__form-submit-icon {
+        fill: $white;
+      }
+    }
+
+    .vacancy__item-heading-link:hover {
+      .vacancy__item-heading-stripe {
+        opacity: 1;
+      }
+    }
+
+    .select__icon-svg-active {
+      fill: $yellow;
+    }
+
+    .head__person-desc-name {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .unit__text {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .unit__hint-close-icon {
+      &:hover {
+        fill: $blue-light;
+      }
+    }
+
+    .subscribe__hint-close {
+      &:hover .subscribe__hint-close-icon {
+        fill: $blue-light;
+      }
+    }
+
+    .thanks__btn {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+      }
+    }
+
+    .unit__hint-link {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    // HEALTH STYLES
+    .health__single-img-link {
+      &:hover .health__single-img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .health__single-img {
+        transform: scale(1.05);
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    // ANNOUNCE STYLES
+    .announce__img-link {
+      &:hover .announce__img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .announce__img {
+        transform: scale(1.05);
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    // EDUCATION STYLES
+    .education__item-img-link {
+      &:hover .education__item-img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .education__item-img {
+        transform: scale(1.05);
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    // PARTNERS STYLES
+    .partners__item-img-link {
+      &:hover .partners__item-img-overlay {
+        opacity: 0.6;
+      }
+      &:hover .partners__item-img {
+        transform: scale(1.05);
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    // BIBLIO STYLES
+    .biblio__latest-img-link {
+      &:hover .biblio__latest-img-overlay {
+        opacity: 0.6;
+      }
+      &:hover .biblio__latest-img {
+        transform: scale(1.05);
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    // INNOVATION STYLES
+    .innovation__img-link {
+      &:hover .innovation__img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .innovation__img {
+        transform: scale(1.05);
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .health__single-desc-heading,
+    .health__single-desc-text,
+    .health__item-desc-heading,
+    .health__item-desc-text,
+    .press__news-item-desc-heading,
+    .press__news-item-desc-text,
+    .press__video-item-desc-text,
+    .health__no-img-desc-heading,
+    .health__no-img-desc-text,
+    .education__item-desc-heading,
+    .grants__item-heading,
+    .biblio__latest-desc-heading,
+    .biblio__latest-desc-text,
+    .innovation__desc-heading,
+    .announce__desc-heading,
+    .announce__desc-text,
+    .announce__heading-desc-title,
+    .press__news-latest-desc-link,
+    .press__news-main-desc-mobile-text,
+    .press__preview-desc,
+    .press__interview-heading,
+    .press__interview-desc,
+    .press__bulletin-desc,
+    .press__statistics-desc,
+    .press__previews-desc,
+    .search-result__item-heading,
+    .search-result__item-text {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .health__item-img-link {
+      &:hover .health__item-img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .health__item-img {
+        transform: scale(1.05);
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .search-result__form-submit {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+      }
+    }
+
+    .press__news-item-img-link {
+      &:hover .press__news-item-img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .press__news-item-img {
+        transform: scale(1.05);
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .press__video-item-img-link {
+      &:hover .press__video-item-img-overlay::after {
+        opacity: 0.6;
+      }
+      &:hover .press__video-item-img {
+        transform: scale(1.05);
+      }
+      &:hover .more-info {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .load__more-btn,
+    .photo__licence-btn {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+      }
+    }
+
+    .photo__licence-link {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .back-to {
+      &:hover .back-to__link {
+        color: $yellow;
+      }
+      &:hover .back-to__icon-svg {
+        fill: $yellow;
+      }
+    }
+
+    // MEDICAL
+    .medical__vacancy-link {
+      &:hover {
+        color: $yellow;
+      }
+    }
+
+    .share__social-icon {
+      &:hover .share__social-svg {
+        fill: $yellow;
+      }
+    }
+
+    .article__links-social-icon {
+      &:hover .article__links-social-svg {
+        fill: $yellow;
+      }
+    }
+
+    // FIRST LINE STYLES 23_firts_line
+    .first__line-link {
+      &:hover {
+        color: $blue-light;
+      }
+    }
+
+    // 23_vacancy
+    .vacancy-respond__btn {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+      }
+    }
+    .vacancy-respond__social-svg {
+      &:hover {
+        fill: $yellow;
+      }
+    }
+
+    .vacancy__form-btn:hover:hover,
+    .vacancy__form-sidebar-btn:hover {
+      background-color: $blue-light;
+      color: $white;
+    }
+
+    .vacancy__form-close:hover {
+      .vacancy__form-close-icon {
+        fill: $blue-light;
+      }
+    }
+
+    .service__line-social-icon:hover {
+      .service__line-social-svg {
+        fill: $yellow;
+      }
+    }
+
+    .service__line-link:hover {
+      color: $blue-light;
+    }
+
+    .editor  a:hover {
+      color: $yellow;
+    }
+
+    .register__editor a:hover {
+      background-color: $blue-light;
+      color: $white;
+    }
+
+    .more-info {
+      &:hover {
+        color: $yellow;
+      }
+      &:hover .more-info__stripe {
+        background-color: $yellow;
+      }
+    }
+
+    .useful__btn-yes,
+    .useful__qa-btn {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+      }
+    }
+
+    .useful__btn-no {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+        border-color: $blue-light;
+      }
+    }
+
+    .useful__submit-btn {
+      &:hover {
+        background-color: $blue-light;
+        color: $white;
+      }
+    }
+  }
+  // For white-black colors application => hovers are available
+  &_no-touch {
+
+  }
+}

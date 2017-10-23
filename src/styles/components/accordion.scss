@@ -1,0 +1,191 @@
+.accordion {
+  width: 270px;
+  margin: 0 0 30px 0;
+  letter-spacing: 0.8px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0;
+  &__title {
+    width: 100%;
+    margin-bottom: 1px;
+    user-select: none;
+    will-change: transform;
+    transition: transform .3s;
+    cursor: pointer;
+    &-active {
+      background-color: $blue-light;
+      .accordion__submenu {
+        display: block;
+      }
+      .accordion__title-link {
+        color: $white;
+      }
+      .accordion__arrow {
+        transform: rotate(180deg);
+        .icon {
+          fill: $white;
+        }
+      }
+    }
+
+    &-link {
+      position: relative;
+      display: block;
+      padding: 14px 40px;
+      width: 100%;
+      transition: 0.3s;
+    }
+  }
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: calc(50% - 3px);
+    right: 40px;
+    width: 10px;
+    height: 6px;
+    transition: 0.3s;
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10px;
+      height: 6px;
+    }
+  }
+  &__link {
+    display: inline-block;
+    line-height: 22px;
+    position: relative;
+    padding: 7px 40px;
+    &::after {
+      content: '';
+      width: 15px;
+      height: 2px;
+      position: absolute;
+      opacity: 0;
+      top: 50%;
+      //right: -25px;
+      right: 0;
+      background-color: $blue-light;
+      transform: translateY(-50%);
+    }
+
+    &_disable {
+      //pointer-events: none;
+    }
+  }
+  &__submenu {
+    display: none;
+    padding: 0;
+    font-size: 14px;
+    font-family: $AkrobatSemiBold;
+    line-height: 22px;
+    li {
+      &:first-child {
+        padding-top: 7px;
+      }
+      &:last-child {
+        padding-bottom: 7px;
+      }
+    }
+    li.accordion__title-active {
+      background-color: $white;
+      > .accordion__link {
+        color: $blue-light;
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__show-mobile {
+    display: none;
+  }
+  &__wrapper {
+    flex: 0 0 270px;
+    margin-bottom: 50px;
+    margin-right: 30px;
+  }
+
+  @include respond-to($tam) {
+    width: 225px;
+    &__wrapper {
+        flex: 0 0 225px;
+        margin-right: 25px;
+    }
+  }
+
+  @include respond-to($mob) {
+    width: 100%;
+    display: none;
+    margin: 0 0 30px 0;
+    &__show-mobile {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 26px 40px;
+      text-decoration: none;
+      text-align: center;
+      line-height: 74px;
+      transition: background-color .3s;
+      &-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 12px;
+        width: 10px;
+        height: 6px;
+        will-change: transform;
+        transition: transform .35s ease;
+        .icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 10px;
+          height: 6px;
+        }
+      }
+      .h5 {
+        transition: color .3s;
+      }
+      .icon {
+        transition: fill .3s;
+      }
+      &.active {
+        background-color: $blue-light;
+        .h5 {
+          color: $white;
+          transition: color .3s;
+        }
+        .icon {
+          fill: $white;
+          transition: fill .3s;
+        }
+        .accordion__show-mobile-arrow {
+          transform: rotate(180deg);
+        }
+      }
+      .block__title {
+        margin-bottom: 0;
+        position: relative;
+        padding-left: 12px;
+        &-stripe {
+          display: inline-block;
+          position: absolute;
+          top: calc(50% - 7.5px);
+          left: 0;
+          background-color: $yellow;
+          height: 15px;
+          width: 2px;
+        }
+      }
+    }
+    &__wrapper {
+      flex: 1 1 auto;
+      margin-right: 0;
+    }
+  }
+}

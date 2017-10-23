@@ -1,0 +1,85 @@
+extends ../extend/default
+
+block variables
+  -
+    var title = "Міністерство охорони здоров'я України";
+    var serviceContent = {
+      heading: "Первинна ланка",
+      links: ['Як укласти договір з лікарем?', 'гарантовані послуги та інші важливі речі', 'Контакти сімейних лікарів'],
+      social: ['fb', 'fb', 'fb', 'fb']
+    };
+    var tableContent = [
+      {
+        th: ['№ Послуги', 'Лікар', 'Регіон', 'Місто', 'Район', 'Телефон']
+      },
+      {
+        td: ['№302', 'Медичний огляд', 'Медичний огляд', 'Київ', 'Святошинський', '044 445 12 45']
+      },
+      {
+        td: ['№1045', 'Обстеження', 'Повне обстеження організму', 'Тернопіль', 'Городецький', '044 009 45 11']
+      },
+      {
+        td: ['№621', 'Аналіз лейкоцитів', 'Абсолютно повний аналіз кількості лейкоцитів в крові (дорослим, дітям від 12-ти років, а також людям у віці)', 'Черкаси', 'Шевченківський', '044 845 23 55']
+      },
+      {
+        td: ['№002', 'Стоматологія', 'Стоматологічне обстеження, включно чистка та лікування', 'Чернігів', 'Химки', '044 103 54 09']
+      },
+      {
+        td: ['№461', 'Ліки', 'Безкоштовна видача ліків залежно від діагнозу', 'Львів', 'Лук’янівський', '044 813 00 22']
+      },
+      {
+        td: ['№299', 'Імунітет', 'Обстеження імунної системи', 'Донецьк', 'Ленінський', '044 519 99 76']
+      },
+      {
+        td: ['№620', 'Авітаміноз, обстеження, лікування, спостерігання у лікарні під наглядом', 'Лікування авітамінозу та видача вітамінів за необхідністю', 'Івано-Франківськ', 'Молдавський', '044 714 04 21 044 001 42 88']
+      },
+      {
+        td: ['№746', 'Імунізація', 'Імунізація', 'Харків', 'Дніпровський', '044 111 73 51']
+      }
+    ];
+    
+    
+block main
+  main.main(class="bg_white-to-light-blue" data-page='citizens')
+    #search__wrapper
+      +search()
+    +disabilities()
+    .container
+      +breadrcrumbs(['Головна', 'Громадянам'], 'Медична опіка')
+      h1.citizens__title.h2.font_upper.font_black Медична опіка
+      .citizens__row
+        .accordion__wrapper
+          +accordion(accordion, true, "Первинна ланка")
+        .citizens.citizens__contacts
+          .contacts
+            //- first line section
+            +service_line(serviceContent)
+                      
+            +separateBorder()
+            
+            //- filter section
+            .contacts__filter
+              select.contacts__select.select
+                option Регіон
+                option Лікар
+                option Місто
+                option Район
+                option Телефон
+              select.contacts__select.select
+                option Місто
+                option Регіон
+                option Лікар
+                option Район
+                option Телефон
+              select.contacts__select.select
+                option Район
+                option Місто
+                option Регіон
+                option Лікар
+                option Телефон
+            
+            //- table section
+            +table(tableContent)
+            
+            //- load more section
+            +loadMore()    

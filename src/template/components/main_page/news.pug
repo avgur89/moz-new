@@ -1,0 +1,51 @@
+//- Variable for news block
+
+-
+  var newsTitle = 'новини';
+  var newsLink = 'всі новини';
+  var newsLineHeight = '100';
+  var newsItems = [
+    {
+      imgSrc: 'static/img/news_img1.jpg',
+      links: [{ text: 'моз 2017', href: '/link1' }, { text: 'реформи', href: '/link1' }, { text: 'медицина', href: '/link1' }],
+      desc: 'МОЗ активно працюватиме з Ассоціацією міст України над впровадженням медичної реформи'
+    },
+    {
+      imgSrc: 'static/img/news_img2.jpg',
+      links: [{ text: 'реформи', href: '/link2' }],
+      desc: 'Конкурс без вибору: держсекретарі можуть поховати реформи'
+    },
+    {
+      imgSrc: 'static/img/news_img3.jpg',
+      links: [{ text: 'реформи', href: '/link4' }, { text: 'фінансування', href: '/link5' }],
+      desc: 'Наказ МОЗ Україні від 04.02.2016 №6 «Про внесення змін до складу робочої групи з питань реформи фінансуваня системи охорони здоров’я України»'
+    },
+    {
+      imgSrc: 'static/img/news_img4.jpg',
+      links: [{ text: 'реформи', href: '/link4' }, { text: 'медицина', href: '/link5' }, { text: 'суспільство', href: '/link6' }],
+      desc: 'До обговорення проекту медічної реформи можуть долучитися усі охочі громадяни'
+    }
+  ];
+
+mixin news()
+  - var objects = objects || newsItems;
+  - var height = lineHeight || newsLineHeight;
+   .container
+     .news__row
+       +headingTitle(newsTitle)
+       +headingLink(newsLink)
+       div.clearfix
+       ul.news__list.slider
+         each item in objects
+           li.news__list-item
+             a(href="#" class="news__img-link")
+               div.h5.more-info.font_upper.font_white Детальніше
+                 span.more-info__stripe.bg_white
+               .news__img-overlay
+                 .news__img-wrapper
+                   img(src=`${item.imgSrc}` class="news__img obj-fit")
+             .menu-flex-wrapper(data-parent=".news__list-item")
+               ul.links.menu-flex
+                 each link in item.links
+                   +links(link)
+             a(href="#" class="news__desc regular font_black dot" data-height=`${height}`)= item.desc               

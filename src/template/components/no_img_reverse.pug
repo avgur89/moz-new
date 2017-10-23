@@ -1,0 +1,35 @@
+//- Variable for no-img reverse block
+-
+  var noimgLineHeight = '100';
+  var noimgHeadingLineHeight = '80';
+
+mixin no_img_reverse(item)
+  .no-img.no-img__reverse
+    if item.title
+      +blockTitle(item.title)
+    .no-img__cnt
+      if item.image
+        .no-img__cnt-disabled
+          .no-img__cnt-disabled-img-wrapper
+            img(class="no-img__cnt-disabled-img obj-fit" src=`${item.image}`)
+          .no-img__cnt-disabled-desc
+            each link in item.links
+              a(href="#")= link
+            p= item.desc
+            
+              
+      else
+        .no-img__cnt-active
+          .no-img__cnt-active-wrapper
+            h5
+              a(href="#")= item.heading
+            p= item.desc
+            each link in item.links
+              a(href="#")= link
+          .no-img__cnt-active-stripe-wrapper
+            span.no-img__cnt-active-stripe.bg_blue-to-black
+            span.no-img__cnt-active-stripe.bg_yellow-to-gray.bg_contrast_yellow-to-white
+            
+        
+      
+  

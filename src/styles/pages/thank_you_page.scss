@@ -1,0 +1,44 @@
+// Thank you page styles
+
+/* COMPONENTS */
+
+//[data-page='thank_you'] {
+  .thanks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 675px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-top: 97px;
+    padding-bottom: 120px;
+    &__title {
+      margin-bottom: 44px;
+    }
+    &__text {
+      width: 100%;
+      margin-bottom: 58px;
+      letter-spacing: 1.02px;
+    }
+    &__btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 30px;
+      border: none;
+      outline: none;
+      padding: 5px 10px;
+      height: 45px;
+      max-width: 270px;
+      width: 100%;
+      margin-bottom: 20px;
+      transition: 0.3s;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+//}
